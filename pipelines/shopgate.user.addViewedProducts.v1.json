@@ -1,7 +1,7 @@
 {
   "version": "1",
   "pipeline": {
-    "id": "shopgate.addRecentlyViewedProducts.v1",
+    "id": "shopgate.user.addViewedProducts.v1",
     "public": true,
     "input": [
       {
@@ -14,7 +14,7 @@
       {
         "type": "extension",
         "id": "@shopgate/recently-viewed-products",
-        "path": "@shopgate/recently-viewed-products/addRecentlyViewedProducts.js",
+        "path": "@shopgate/recently-viewed-products/addViewedProducts.js",
         "input": [
           {
             "key": "productIds",
