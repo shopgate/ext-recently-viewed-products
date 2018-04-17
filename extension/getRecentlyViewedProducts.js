@@ -9,7 +9,10 @@ const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
 module.exports = async function (context, input) {
   const recentlyViewedProductIdsList = getRecentlyViewedProducts(context.storage.device)
 
-  recentlyViewedProductIdsList.getList(input.offset ? input.offset : 0, input.limit ? input.limit : 5)
+  return {
+    totalProductCount: recentlyViewedProductIdsList.count(),
+    productIds: recentlyViewedProductIdsList.getList(input.offset ? input.offset : 0, input.limit ? input.limit : null)
+  }
 }
 
 /**

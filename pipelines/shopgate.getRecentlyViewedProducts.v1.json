@@ -7,6 +7,16 @@
       {
         "key": "sgxsMeta",
         "id": "1000"
+      },
+      {
+        "key": "limit",
+        "id": "1010",
+        "optional": true
+      },
+      {
+        "key": "offset",
+        "id": "1020",
+        "optional": true
       }
     ],
     "output": [
@@ -16,7 +26,7 @@
       },
       {
         "key": "products",
-        "id": "2001"
+        "id": "2010"
       }
     ],
     "steps": [
@@ -24,7 +34,18 @@
         "type": "extension",
         "id": "@shopgate/recently-viewed-products",
         "path": "@shopgate/recently-viewed-products/getRecentlyViewedProducts.js",
-        "input": [],
+        "input": [
+          {
+            "key": "limit",
+            "id": "1010",
+            "optional": true
+          },
+          {
+            "key": "offset",
+            "id": "1020",
+            "optional": true
+          }
+        ],
         "output": [
           {
             "key": "totalProductCount",
@@ -32,7 +53,7 @@
           },
           {
             "key": "productIds",
-            "id": "1001"
+            "id": "2030"
           }
         ]
       },
@@ -46,13 +67,13 @@
           },
           {
             "key": "productIds",
-            "id": "1001"
+            "id": "2030"
           }
         ],
         "output": [
           {
             "key": "products",
-            "id": "2001"
+            "id": "2010"
           }
         ]
       }

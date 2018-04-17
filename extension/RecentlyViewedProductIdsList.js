@@ -2,10 +2,12 @@ const ArrayUtil = require('./util/Array')
 
 class RecentlyViewedProductIdsList {
   /**
-   * @param {number[]} productIds
+   * @param {number[]} [productIds=[]]
+   * @param {number} [maximumEntries=50]
    */
-  constructor (productIds) {
-    this._productIds = productIds
+  constructor (productIds = [], maximumEntries = 50) {
+    this._productIds = productIds.slice(0, maximumEntries)
+    this._maximumEntries = maximumEntries
   }
 
   /**
@@ -13,7 +15,7 @@ class RecentlyViewedProductIdsList {
    */
   addProductIds (productIds) {
     Array.prototype.push.apply(productIds, this._productIds)
-    this._productIds = ArrayUtil.unique(productIds)
+    this._productIds = ArrayUtil.unique(productIds).slice(0, this._maximumEntries)
   }
 
   /**
@@ -32,6 +34,13 @@ class RecentlyViewedProductIdsList {
     }
 
     return this._productIds.slice(offset, offset + limit)
+  }
+
+  /**
+   * @returns {number}
+   */
+  count() {
+    return this._productIds.length
   }
 }
 
