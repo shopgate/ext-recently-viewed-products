@@ -1,6 +1,6 @@
 const assert = require('assert')
 const {describe, it, beforeEach} = require('mocha')
-const RecentlyViewedProductIdsList = require('./../../RecentlyViewedProductIdsList')
+const RecentlyViewedProductIdsList = require('../../RecentlyViewedProductIdList')
 
 describe('RecentlyViewedProductIdsList', () => {
   /**

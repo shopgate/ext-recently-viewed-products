@@ -1,6 +1,6 @@
 const ArrayUtil = require('./util/Array')
 
-class RecentlyViewedProductIdsList {
+class RecentlyViewedProductIdList {
   /**
    * @param {number[]} [productIds=[]]
    * @param {number} [maximumEntries=50]
@@ -44,4 +44,4 @@ class RecentlyViewedProductIdsList {
   }
 }
 
-module.exports = RecentlyViewedProductIdsList
+module.exports = RecentlyViewedProductIdList

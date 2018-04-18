@@ -1,4 +1,4 @@
-const RecentlyViewedProductIdsList = require('./RecentlyViewedProductIdsList')
+const RecentlyViewedProductIdsList = require('./RecentlyViewedProductIdList')
 const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
 const InvalidParameterException = require('./error/InvalidParameterException')
 /**
