@@ -1,0 +1,82 @@
+{
+  "version": "1",
+  "pipeline": {
+    "id": "shopgate.user.getViewedProducts.v1",
+    "public": true,
+    "input": [
+      {
+        "key": "sgxsMeta",
+        "id": "1000"
+      },
+      {
+        "key": "limit",
+        "id": "1010",
+        "optional": true
+      },
+      {
+        "key": "offset",
+        "id": "1020",
+        "optional": true
+      }
+    ],
+    "output": [
+      {
+        "key": "totalProductCount",
+        "id": "2000"
+      },
+      {
+        "key": "products",
+        "id": "2010"
+      }
+    ],
+    "steps": [
+      {
+        "type": "extension",
+        "id": "@shopgate/recently-viewed-products",
+        "path": "@shopgate/recently-viewed-products/getViewedProducts.js",
+        "input": [
+          {
+            "key": "limit",
+            "id": "1010",
+            "optional": true
+          },
+          {
+            "key": "offset",
+            "id": "1020",
+            "optional": true
+          }
+        ],
+        "output": [
+          {
+            "key": "totalProductCount",
+            "id": "2000"
+          },
+          {
+            "key": "productIds",
+            "id": "2030"
+          }
+        ]
+      },
+      {
+        "type": "pipeline",
+        "id": "shopgate.catalog.getProducts.v1",
+        "input": [
+          {
+            "key": "sgxsMeta",
+            "id": "1000"
+          },
+          {
+            "key": "productIds",
+            "id": "2030"
+          }
+        ],
+        "output": [
+          {
+            "key": "products",
+            "id": "2010"
+          }
+        ]
+      }
+    ]
+  }
+}

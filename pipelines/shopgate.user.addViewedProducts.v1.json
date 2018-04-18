@@ -1,0 +1,28 @@
+{
+  "version": "1",
+  "pipeline": {
+    "id": "shopgate.user.addViewedProducts.v1",
+    "public": true,
+    "input": [
+      {
+        "key": "productIds",
+        "id": "1000"
+      }
+    ],
+    "output": [],
+    "steps": [
+      {
+        "type": "extension",
+        "id": "@shopgate/recently-viewed-products",
+        "path": "@shopgate/recently-viewed-products/addViewedProducts.js",
+        "input": [
+          {
+            "key": "productIds",
+            "id": "1000"
+          }
+        ],
+        "output": []
+      }
+    ]
+  }
+}
