@@ -1,5 +1,6 @@
 const RecentlyViewedProductIdsList = require('./RecentlyViewedProductIdList')
 const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
+const InternalErrorException = require('./error/InternalErrorException')
 
 /**
  * @param {PipelineContext} context
@@ -15,7 +16,7 @@ module.exports = async function (context, input) {
     recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
   } catch (err) {
     context.log.error(err)
-    throw err
+    throw new InternalErrorException()
   }
 
   return {

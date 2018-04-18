@@ -1,6 +1,8 @@
 const RecentlyViewedProductIdsList = require('./RecentlyViewedProductIdList')
 const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
 const InvalidParameterException = require('./error/InvalidParameterException')
+const InternalErrorException = require('./error/InternalErrorException')
+
 /**
  * @param {PipelineContext} context
  * @param {addRecentlyViewedProductsInput} input
@@ -19,7 +21,7 @@ module.exports = async function (context, input) {
     await context.storage.device.set(STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST, recentlyViewedProductIdsList.getList())
   } catch (err) {
     context.log.error(err)
-    throw err
+    throw new InternalErrorException()
   }
 }
 
