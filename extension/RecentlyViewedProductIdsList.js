@@ -39,7 +39,7 @@ class RecentlyViewedProductIdsList {
   /**
    * @returns {number}
    */
-  count() {
+  count () {
     return this._productIds.length
   }
 }

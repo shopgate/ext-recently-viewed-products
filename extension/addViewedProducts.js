@@ -11,7 +11,7 @@ module.exports = async function (context, input) {
     return {}
   }
 
-  const recentlyViewedProductIdsList = getRecentlyViewedProductsList(context.storage.device)
+  const recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
 
   recentlyViewedProductIdsList.addProductIds(input.productIds)
 
@@ -22,13 +22,14 @@ module.exports = async function (context, input) {
 
 /**
  * @param {PipelineStorage} storage
+ * @param {number} maximumEntriesPerUser
  * @returns {RecentlyViewedProductIdsList}
  */
-async function getRecentlyViewedProductsList (storage) {
+async function getRecentlyViewedProductsList (storage, maximumEntriesPerUser) {
   let currentRecentlyViewedProducts = await storage.get(STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST)
   if (!currentRecentlyViewedProducts) {
     currentRecentlyViewedProducts = []
   }
 
-  return new RecentlyViewedProductIdsList(currentRecentlyViewedProducts)
+  return new RecentlyViewedProductIdsList(currentRecentlyViewedProducts, maximumEntriesPerUser)
 }

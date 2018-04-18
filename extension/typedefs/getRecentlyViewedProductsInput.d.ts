@@ -1,4 +1,4 @@
 interface getRecentlyViewedProductsInput {
-  limit: number | undefined
-  offset: number | undefined
+  limit?: number
+  offset?: number
 }

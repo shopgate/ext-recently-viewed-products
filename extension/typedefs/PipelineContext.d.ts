@@ -21,6 +21,5 @@ interface PipelineStorageContainer {
 }
 
 interface PipelineConfiguration {
-  merchantId: string
-  merchantKey: string
+  maximumHistoryEntriesPerUser: number
 }
