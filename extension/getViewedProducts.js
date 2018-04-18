@@ -7,11 +7,13 @@ const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
  * @returns {Promise<getRecentlyViewedProductsResponse>}
  */
 module.exports = async function (context, input) {
+  const offset = input.offset || 0
+  const limit = input.limit || null
   const recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
 
   return {
     totalProductCount: recentlyViewedProductIdsList.count(),
-    productIds: recentlyViewedProductIdsList.getList(input.offset ? input.offset : 0, input.limit ? input.limit : null)
+    productIds: recentlyViewedProductIdsList.getList(offset, limit)
   }
 }
 
