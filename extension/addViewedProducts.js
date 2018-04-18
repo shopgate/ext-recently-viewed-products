@@ -1,23 +1,26 @@
 const RecentlyViewedProductIdsList = require('./RecentlyViewedProductIdsList')
 const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
-
+const InvalidParameterException = require('./error/InvalidParameterException')
 /**
  * @param {PipelineContext} context
  * @param {addRecentlyViewedProductsInput} input
- * @returns {Promise<addRecentlyViewedProductsResponse>}
+ * @returns {Promise<void>}
  */
 module.exports = async function (context, input) {
   if (!input.productIds || !Array.isArray(input.productIds)) {
-    return {}
+    throw new InvalidParameterException('parameter productIds is invalid')
   }
 
-  const recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
+  try {
+    const recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
 
-  recentlyViewedProductIdsList.addProductIds(input.productIds)
+    recentlyViewedProductIdsList.addProductIds(input.productIds)
 
-  await context.storage.device.set(STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST, recentlyViewedProductIdsList.getList())
-
-  return {}
+    await context.storage.device.set(STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST, recentlyViewedProductIdsList.getList())
+  } catch (err) {
+    context.log.error(err)
+    throw err
+  }
 }
 
 /**
