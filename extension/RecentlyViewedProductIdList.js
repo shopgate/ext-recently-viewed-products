@@ -19,6 +19,15 @@ class RecentlyViewedProductIdList {
   }
 
   /**
+   * @param {number} productId
+   */
+  removeProductId (productId) {
+    this._productIds = this._productIds.filter((elementProductId) => {
+      return elementProductId !== productId
+    })
+  }
+
+  /**
    * @param {number} [offset=0]
    * @param {number|null} [limit=null]
    *
