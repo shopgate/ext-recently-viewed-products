@@ -46,7 +46,7 @@ describe('RecentlyViewedProductIdsList', () => {
     assert.deepEqual(recentlyViewedProductIds.getList(), [1, 2])
   })
 
-  it('should not remove an item on remove if there is no element fitting', () => {
+  it('should not remove an item on remove if there is no element matching', () => {
     recentlyViewedProductIds = new RecentlyViewedProductIdList([1, 2, 3])
     recentlyViewedProductIds.removeProductId(4)
     assert.deepEqual(recentlyViewedProductIds.getList(), [1, 2, 3])
