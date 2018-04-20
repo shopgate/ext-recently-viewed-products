@@ -27,15 +27,21 @@ export const fetchRecentlyViewedProducts = () => (dispatch, getState) => {
     })
     .dispatch()
     .then(async (response) => {
-      // TODO refactor if the new pipeline is updated and provides only productIds
-      const { products } = response;
-      const productIds = products.map(({ id }) => id);
       const state = getState();
+      let { productIds } = response;
+
+      // TODO remove the products conversion logic when the pipeline responds within the new format
+      const { products } = response;
+
+      if (products) {
+        productIds = products.map(({ id }) => id);
+      }
+
       // Collect the productIds where no product entity is available within the store
       const missingProductsIds = productIds.filter(id => !getProductById(state, id));
 
       if (missingProductsIds.length) {
-        // Fetch missing product data before the list data is put to the store
+        // Fetch missing product data before the store is updated with the recently viewed list
         await dispatch(getProducts({
           params: {
             productIds: missingProductsIds,

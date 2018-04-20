@@ -11,7 +11,7 @@ const getRecentlyViewedProductsState = state =>
   state.extensions[REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS];
 
 /**
- * Gets a list of viewed products from the cache.
+ * Gets a list of recently viewed products from the cache.
  * @param {Object} state The application state.
  * @returns {Object} The result.
  */
@@ -23,6 +23,7 @@ export const getRecentlyViewedProducts = createSelector(
     // Collect product entities for the productIds on the list
     return productIds.reduce((list, currentId) => {
       const product = getProductById(state, currentId);
+      // Take care that only products appear on the list where a product entity is available.
       if (product && product.productData) {
         list.push(product.productData);
       }
