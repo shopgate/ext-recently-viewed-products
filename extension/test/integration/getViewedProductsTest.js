@@ -28,7 +28,7 @@ describe('getViewedProducts', () => {
     sandbox.restore()
   })
 
-  it('should add productIds', async () => {
+  it('should respond with totalProductCount and productIds', async () => {
     storageMock.expects('get').returns([1, 2])
     const response = await getViewedProducts(context, {})
 
