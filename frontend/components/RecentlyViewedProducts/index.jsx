@@ -10,20 +10,15 @@ import styles from './style';
 /**
  * Creates an item for a single product.
  * @param {Object} product The product data.
- * @param {boolean} settings.showName Show the product name?
- * @param {boolean} settings.showPrice Show the product price?
- * @param {boolean} settings.showReviews Show the product reviews?
  * @return {JSX} The rendered product card.
  */
-const createSliderItem = (product, { showName }) => {
+const createSliderItem = (product ) => {
   const key = `s${product.id}`;
-
   return (
     <Slider.Item key={key} className={styles.sliderItem}>
       <Card className={styles.card}>
         <ProductCard
           product={product}
-          hideName={!showName}
           titleRows={2}
         />
       </Card>

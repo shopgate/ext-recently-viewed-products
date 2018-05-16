@@ -22,11 +22,13 @@ export default function recentlyViewedProducts(subscribe) {
    */
   const addProductToList$ = routeDidEnter(ITEM_PATH).filter((
     ({ pathname, historyAction }) =>
-      !(pathname.endsWith('reviews') ||
+      !(
+        pathname.endsWith('reviews') ||
         pathname.endsWith('reviews/') ||
         pathname.endsWith('write_review') ||
-        pathname.endsWith('write_review/')) &&
-      (historyAction === HISTORY_PUSH_ACTION || historyAction === HISTORY_REPLACE_ACTION)
+        pathname.endsWith('write_review/')
+      )
+      && (historyAction === HISTORY_PUSH_ACTION || historyAction === HISTORY_REPLACE_ACTION)
   ));
 
   subscribe(addProductToList$, ({ dispatch, getState }) => {

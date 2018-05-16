@@ -9,10 +9,6 @@ import ProductImage from '../ProductImage';
  * The ProductCard component.
  * @param {Object} props The component props.
  * @param {Object} props.product The product data.
- * @param {boolean} props.hidePrice Whether the price should be hidden.
- * @param {boolean} props.hideRating Whether the rating should be hidden.
- * @param {boolean} props.hideName Whether the name should be hidden.
- * @param {number} props.titleRows The max number of rows for the product title.
  * @return {JSX}
  */
 const ProductCard = ({
