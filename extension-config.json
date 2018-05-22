@@ -3,6 +3,12 @@
   "id": "@shopgate/recently-viewed-products",
   "components": [
     {
+      "id": "EmptyCartPage",
+      "type": "portals",
+      "path": "frontend/pages/EmptyCard",
+      "target": "cart.empty"
+    },
+    {
       "id": "RecentlyViewedProducts",
       "type": "portals",
       "path": "frontend/components/RecentlyViewedProducts",

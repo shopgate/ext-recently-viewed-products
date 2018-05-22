@@ -45,7 +45,7 @@ const RecentlyViewedProducts = ({ products, settings }) => {
   return (
     <div className={styles.slider}>
       <h3 className={styles.headline}>
-        <I18n.Text string="recently_viewed_products.headline" />
+        <I18n.Text string="recently_viewed_products.empty_cart_headline" />
       </h3>
       <Slider
         autoPlay={sliderSettings.autoPlay}
