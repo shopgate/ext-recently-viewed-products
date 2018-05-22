@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecentlyViewedProducts should render slider 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(RecentlyViewedProducts)>
+    <RecentlyViewedProducts
+      dispatch={[Function]}
+      products={
+        Array [
+          Object {
+            "featuredImageUrl": "https://example.com/one",
+            "id": 1,
+            "name": "one",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/two",
+            "id": 2,
+            "name": "two",
+          },
+        ]
+      }
+      settings={
+        Object {
+          "headline": "Recently viewed",
+          "showName": false,
+          "sliderSettings": Object {
+            "autostart": false,
+            "delay": null,
+          },
+        }
+      }
+    >
+      <div
+        className="css-1qazn57"
+      >
+        <h3
+          className="css-rsku8h"
+        >
+          <Translate
+            className=""
+            params={Object {}}
+            string="recently_viewed_products.headline"
+          >
+            <span
+              className=""
+            >
+              recently_viewed_products.headline
+            </span>
+          </Translate>
+        </h3>
+        <_class
+          classNames={
+            Object {
+              "container": "css-y5yof0",
+            }
+          }
+          controls={false}
+          indicators={false}
+          interval={NaN}
+          loop={false}
+          slidesPerView={2.3}
+          snapItems={false}
+        >
+          <div>
+            <Item
+              className="css-j85wo1"
+              key="s1"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/one",
+                          "id": 1,
+                          "name": "one",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className=""
+                        href="/item/31"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 "
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="one"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/one"
+                          >
+                            <Image
+                              alt="one"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/one"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s2"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/two",
+                          "id": 2,
+                          "name": "two",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className=""
+                        href="/item/32"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 "
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="two"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/two"
+                          >
+                            <Image
+                              alt="two"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/two"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+          </div>
+        </_class>
+      </div>
+    </RecentlyViewedProducts>
+  </Connect(RecentlyViewedProducts)>
+</Provider>
+`;
