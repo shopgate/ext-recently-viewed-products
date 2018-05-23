@@ -12,6 +12,8 @@ jest.mock('@shopgate/pwa-common/components/Slider', () => (class extends mockedC
   }
 }));
 
+jest.mock('@shopgate/pwa-common-commerce/market/helpers/showTaxDisclaimer', () => () => null);
+
 jest.mock(
   '@shopgate/pwa-common/helpers/config',
   () => require('@shopgate/pwa-common/helpers/config/mock')
