@@ -10,16 +10,17 @@ const container = css({
   justifyContent: 'center',
   flexGrow: '1',
   flexShrink: '0',
+  padding: '2em 0',
 }).toString();
 
 const icon = css({
-  width: 150,
-  padding: '1em 0',
+  width: 130,
+  padding: '1em 0 0',
 }).toString();
 
 const title = css({
   textAlign: 'left',
-  color: colors.shade9,
+  color: colors.shade11,
 }).toString();
 
 export default {

@@ -7,14 +7,13 @@ const sliderContainer = css({
   marginLeft: 'auto',
   marginRight: 'auto',
   position: 'relative',
-  paddingBottom: 8,
+  paddingBottom: variables.gap.small,
 }).toString();
 
 const slider = css({
   width: '100%',
   flex: 1,
-  paddingTop: 16,
-  paddingBottom: 16,
+  padding: variables.gap.small,
 }).toString();
 
 const sliderItem = css({
@@ -69,9 +68,16 @@ const headline = css({
   textAlign: 'center',
 }).toString();
 
+const headlineCart = css({
+  fontSize: 'medium',
+  margin: `${variables.gap.small}px`,
+  textAlign: 'left',
+}).toString();
+
 export default {
   card,
   headline,
+  headlineCart,
   sliderContainer,
   slider,
   sliderItem,
