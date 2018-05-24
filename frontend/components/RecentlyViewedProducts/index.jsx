@@ -12,7 +12,7 @@ import styles from './style';
  * @param {Object} product The product data.
  * @return {JSX} The rendered product card.
  */
-const createSliderItem = (product ) => {
+const createSliderItem = (product) => {
   const key = `s${product.id}`;
   return (
     <Slider.Item key={key} className={styles.sliderItem}>
@@ -20,6 +20,7 @@ const createSliderItem = (product ) => {
         <ProductCard
           product={product}
           titleRows={2}
+          hidePrice
         />
       </Card>
     </Slider.Item>
@@ -30,29 +31,26 @@ const createSliderItem = (product ) => {
  * The RecentlyViewedProducts component
  * @return {JSX}
  */
-const RecentlyViewedProducts = ({ products, settings }) => {
-  const { sliderSettings } = settings;
-
+const RecentlyViewedProducts = ({ products }) => {
   const items = products.map((
-    product => createSliderItem(product, settings)
+    product => createSliderItem(product)
   ));
 
   if (!items.length) {
     return null;
   }
-
+  // TODO: when it would be shown in a different place than cart
+  // Use styles.headline and recently_viewed_products.headline as defaults
   // Finally, build the slider.
   return (
     <div className={styles.slider}>
-      <h3 className={styles.headline}>
-        <I18n.Text string="recently_viewed_products.headline" />
+      <h3 className={styles.headlineCart}>
+        <I18n.Text string="recently_viewed_products.empty_cart_headline" />
       </h3>
       <Slider
-        autoPlay={sliderSettings.autoPlay}
         loop={false}
         indicators={false}
         controls={false}
-        interval={Number.parseInt(sliderSettings.delay, 10)}
         snapItems={false}
         slidesPerView={2.3}
         classNames={{ container: styles.sliderContainer }}
@@ -65,29 +63,9 @@ const RecentlyViewedProducts = ({ products, settings }) => {
 
 RecentlyViewedProducts.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape()),
-  // The settings as received by the pipeline request
-  settings: PropTypes.shape({
-    headline: PropTypes.string,
-    sliderSettings: PropTypes.shape({
-      autostart: PropTypes.bool,
-      delay: PropTypes.oneOfType([ // The delay between the automatic slides loops
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-    }),
-    showName: PropTypes.bool,
-  }),
 };
 
 RecentlyViewedProducts.defaultProps = {
-  settings: {
-    headline: 'Recently viewed',
-    sliderSettings: {
-      autostart: false,
-      delay: null,
-    },
-    showName: false,
-  },
   products: [],
 };
 

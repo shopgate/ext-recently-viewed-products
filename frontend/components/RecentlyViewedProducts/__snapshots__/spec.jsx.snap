@@ -30,32 +30,22 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
           },
         ]
       }
-      settings={
-        Object {
-          "headline": "Recently viewed",
-          "showName": false,
-          "sliderSettings": Object {
-            "autostart": false,
-            "delay": null,
-          },
-        }
-      }
     >
       <div
-        className="css-1qazn57"
+        className="css-12dm38s"
       >
         <h3
-          className="css-rsku8h"
+          className="css-v5unl0"
         >
           <Translate
             className=""
             params={Object {}}
-            string="recently_viewed_products.headline"
+            string="recently_viewed_products.empty_cart_headline"
           >
             <span
               className=""
             >
-              recently_viewed_products.headline
+              recently_viewed_products.empty_cart_headline
             </span>
           </Translate>
         </h3>
@@ -67,7 +57,6 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
           }
           controls={false}
           indicators={false}
-          interval={NaN}
           loop={false}
           slidesPerView={2.3}
           snapItems={false}
@@ -85,6 +74,9 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                     className="css-1l0if7f css-6r0d5j"
                   >
                     <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={false}
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/one",
@@ -95,7 +87,7 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                       titleRows={2}
                     >
                       <Link
-                        className=""
+                        className="css-b4pchx"
                         href="/item/31"
                         itemProp="item"
                         itemScope={true}
@@ -104,7 +96,8 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                       >
                         <div
                           aria-hidden={true}
-                          className="css-c6ki83 "
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/31"
                           onClick={[Function]}
                           role="link"
                         >
@@ -162,6 +155,35 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                               />
                             </Image>
                           </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    one
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
                         </div>
                       </Link>
                     </ProductCard>
@@ -181,6 +203,9 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                     className="css-1l0if7f css-6r0d5j"
                   >
                     <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={false}
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/two",
@@ -191,7 +216,7 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                       titleRows={2}
                     >
                       <Link
-                        className=""
+                        className="css-b4pchx"
                         href="/item/32"
                         itemProp="item"
                         itemScope={true}
@@ -200,7 +225,8 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                       >
                         <div
                           aria-hidden={true}
-                          className="css-c6ki83 "
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/32"
                           onClick={[Function]}
                           role="link"
                         >
@@ -258,6 +284,35 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                               />
                             </Image>
                           </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    two
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
                         </div>
                       </Link>
                     </ProductCard>

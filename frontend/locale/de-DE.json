@@ -1,5 +1,6 @@
 {
   "recently_viewed_products": {
-    "headline": "Zuletzt angesehen"
+    "headline": "Zuletzt angesehen",
+    "empty_cart_headline": "Zuletzt angesehene Produkte bestellen"
   }
 }

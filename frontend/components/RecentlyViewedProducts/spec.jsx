@@ -12,6 +12,8 @@ jest.mock('@shopgate/pwa-common/components/Slider', () => (class extends mockedC
   }
 }));
 
+jest.mock('@shopgate/pwa-common-commerce/market/helpers/showTaxDisclaimer', () => () => null);
+
 jest.mock(
   '@shopgate/pwa-common/helpers/config',
   () => require('@shopgate/pwa-common/helpers/config/mock')
@@ -20,19 +22,19 @@ jest.mock(
 
 describe('RecentlyViewedProducts', () => {
   it('should render nothing', () => {
-    const component = mount(
+    const component = mount((
       <Provider store={getEmptyStore()}>
         <RecentlyViewedProducts />
       </Provider>
-    );
+    ));
     expect(component.html()).toBe(null);
   });
   it('should render slider', () => {
-    const component = mount(
+    const component = mount((
       <Provider store={getStoreWithProducts()}>
         <RecentlyViewedProducts />
       </Provider>
-    );
+    ));
     expect(component.find('Item').length).toBe(2);
     expect(component).toMatchSnapshot();
   });

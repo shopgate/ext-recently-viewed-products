@@ -16,6 +16,7 @@
     "@shopgate/pwa-common": "*",
     "@shopgate/pwa-common-commerce": "*",
     "@shopgate/pwa-core": "*",
+    "@shopgate/pwa-ui-shared": "*",
     "jest": "^22.4.3",
     "@shopgate/pwa-unit-test": "*",
     "babel-core": "^6.26.0",
