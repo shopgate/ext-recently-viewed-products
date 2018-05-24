@@ -20,6 +20,7 @@ const createSliderItem = (product) => {
         <ProductCard
           product={product}
           titleRows={2}
+          hidePrice
         />
       </Card>
     </Slider.Item>
