@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import EmptyCard from './index';
+import EmptyCart from './index';
 
-describe('EmptyCard page', () => {
+describe('EmptyCart page', () => {
   it('should render empty cart icon and title', () => {
-    const component = mount(<EmptyCard />);
+    const component = mount(<EmptyCart />);
     expect(component.find('Icon').exists()).toBe(true);
     expect(component.html().indexOf('cart.empty')).toBeTruthy();
     expect(component).toMatchSnapshot();

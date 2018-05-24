@@ -26,7 +26,7 @@ import styles from './style';
  * @return {JSX}
  */
 const ProductCard = ({
- product, hidePrice, hideRating, hideName, titleRows,
+  product, hidePrice, hideRating, hideName, titleRows,
 }) => (
   <Link
     tagName="a"
