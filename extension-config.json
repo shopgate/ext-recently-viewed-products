@@ -33,6 +33,12 @@
       "type": "translations",
       "path": "frontend/locale/de-DE.json",
       "id": "locale/de-DE"
+    },
+    {
+      "id": "RecentlyViewedRoute",
+      "type": "portals",
+      "path": "frontend/pages/RecentlyViewed",
+      "target": "app.routes"
     }
   ],
   "configuration": {
