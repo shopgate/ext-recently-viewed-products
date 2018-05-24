@@ -75,7 +75,7 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                   >
                     <ProductCard
                       hideName={false}
-                      hidePrice={false}
+                      hidePrice={true}
                       hideRating={false}
                       product={
                         Object {
@@ -204,7 +204,7 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
                   >
                     <ProductCard
                       hideName={false}
-                      hidePrice={false}
+                      hidePrice={true}
                       hideRating={false}
                       product={
                         Object {
