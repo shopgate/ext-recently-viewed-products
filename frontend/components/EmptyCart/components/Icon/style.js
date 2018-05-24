@@ -49,9 +49,6 @@ const handle = css({
   ...basketBase,
 }).toString();
 
-const basketAnimation = css({
-  transformOrigin: 'center center',
-}).toString();
 
 export default {
   leave1,
@@ -62,5 +59,4 @@ export default {
   leave6,
   basket,
   handle,
-  basketAnimation,
 };

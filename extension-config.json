@@ -3,9 +3,9 @@
   "id": "@shopgate/recently-viewed-products",
   "components": [
     {
-      "id": "EmptyCartPage",
+      "id": "EmptyCart",
       "type": "portals",
-      "path": "frontend/pages/EmptyCard",
+      "path": "frontend/components/EmptyCart",
       "target": "cart.empty"
     },
     {

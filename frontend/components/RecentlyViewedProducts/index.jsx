@@ -12,7 +12,7 @@ import styles from './style';
  * @param {Object} product The product data.
  * @return {JSX} The rendered product card.
  */
-const createSliderItem = (product ) => {
+const createSliderItem = (product) => {
   const key = `s${product.id}`;
   return (
     <Slider.Item key={key} className={styles.sliderItem}>
@@ -31,7 +31,6 @@ const createSliderItem = (product ) => {
  * @return {JSX}
  */
 const RecentlyViewedProducts = ({ products }) => {
-
   const items = products.map((
     product => createSliderItem(product)
   ));
