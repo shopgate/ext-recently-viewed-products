@@ -9,9 +9,9 @@
       "target": "cart.empty"
     },
     {
-      "id": "RecentlyViewedProducts",
+      "id": "ProductSlider",
       "type": "portals",
-      "path": "frontend/components/RecentlyViewedProducts",
+      "path": "frontend/components/ProductSlider",
       "target": "cart.empty.after"
     },
     {

@@ -79,6 +79,7 @@ const showMoreContainer = css({
   justifyContent: 'flex-start',
   textAlign: 'left',
   marginBottom: -variables.gap.bigger,
+  marginLeft: -variables.gap.small,
 });
 
 export default {

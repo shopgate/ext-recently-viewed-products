@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getRecentlyViewedProducts } from '../../../../selectors';
+import { getRecentlyViewedProducts } from '../../selectors';
 
 /**
  * Maps the contents of the state to the component props.

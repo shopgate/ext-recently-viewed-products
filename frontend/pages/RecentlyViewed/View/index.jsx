@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ProductList from './ProductList';
+import ProductList from '../../../components/ProductList';
 
 /* eslint-disable react/prefer-stateless-function */
 

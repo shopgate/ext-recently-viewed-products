@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
-import { getEmptyStore, getStoreWithProducts } from '../../../../mock';
+import { getEmptyStore, getStoreWithProducts } from '../../mock';
 import ProductList from './index';
 
 /* eslint-disable global-require */

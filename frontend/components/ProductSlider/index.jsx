@@ -30,10 +30,10 @@ const createSliderItem = (product) => {
 };
 
 /**
- * The RecentlyViewedProducts component
+ * The ProductSlider component
  * @return {JSX}
  */
-const RecentlyViewedProducts = ({ products }) => {
+const ProductSlider = ({ products }) => {
   const items = products.map((
     product => createSliderItem(product)
   ));
@@ -68,12 +68,12 @@ const RecentlyViewedProducts = ({ products }) => {
   );
 };
 
-RecentlyViewedProducts.propTypes = {
+ProductSlider.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape()),
 };
 
-RecentlyViewedProducts.defaultProps = {
+ProductSlider.defaultProps = {
   products: [],
 };
 
-export default connect(RecentlyViewedProducts);
+export default connect(ProductSlider);

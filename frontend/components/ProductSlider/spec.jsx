@@ -2,7 +2,7 @@ import React, { Component as mockedComponent } from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { getEmptyStore, getStoreWithProducts } from '../../mock';
-import RecentlyViewedProducts from './index';
+import ProductSlider from './index';
 
 /* eslint-disable require-jsdoc, global-require */
 jest.mock('@shopgate/pwa-common/components/Slider', () => (class extends mockedComponent {
@@ -20,11 +20,11 @@ jest.mock(
 );
 /* eslint-enable */
 
-describe('RecentlyViewedProducts', () => {
+describe('ProductSlider', () => {
   it('should render nothing', () => {
     const component = mount((
       <Provider store={getEmptyStore()}>
-        <RecentlyViewedProducts />
+        <ProductSlider />
       </Provider>
     ));
     expect(component.html()).toBe(null);
@@ -32,7 +32,7 @@ describe('RecentlyViewedProducts', () => {
   it('should render slider', () => {
     const component = mount((
       <Provider store={getStoreWithProducts()}>
-        <RecentlyViewedProducts />
+        <ProductSlider />
       </Provider>
     ));
     expect(component.find('Item').length).toBe(2);

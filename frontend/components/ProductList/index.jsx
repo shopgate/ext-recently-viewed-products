@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from '@shopgate/pwa-common/components/List';
-import ProductCard from '../../../../components/ProductCard';
-import NoProducts from '../../../../components/NoProducts';
+import ProductCard from '../../components/ProductCard';
+import NoProducts from '../../components/NoProducts';
 import connect from './connector';
 import styles from './style';
 
