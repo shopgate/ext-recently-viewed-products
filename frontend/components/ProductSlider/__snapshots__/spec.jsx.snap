@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RecentlyViewedProducts should render slider 1`] = `
+exports[`ProductSlider should render slider 1`] = `
 <Provider
   store={
     Object {
@@ -13,8 +13,8 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
     }
   }
 >
-  <Connect(RecentlyViewedProducts)>
-    <RecentlyViewedProducts
+  <Connect(ProductSlider)>
+    <ProductSlider
       dispatch={[Function]}
       products={
         Array [
@@ -325,7 +325,7 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
         <div
           className={
             Object {
-              "data-css-n1bfwo": "",
+              "data-css-1n3c8nm": "",
             }
           }
         >
@@ -415,7 +415,7 @@ exports[`RecentlyViewedProducts should render slider 1`] = `
           </ButtonLink>
         </div>
       </div>
-    </RecentlyViewedProducts>
-  </Connect(RecentlyViewedProducts)>
+    </ProductSlider>
+  </Connect(ProductSlider)>
 </Provider>
 `;
