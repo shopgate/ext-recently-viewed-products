@@ -2,7 +2,7 @@ export const PIPELINE_ADD_VIEWED_PRODUCTS = 'shopgate.user.addViewedProducts';
 export const PIPELINE_GET_VIEWED_PRODUCTS = 'shopgate.user.getViewedProducts';
 
 export const GET_VIEWED_PRODUCTS_LIMIT = 50;
-export const RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT = 4;
+export const RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT = 10;
 
 export const REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS = '@shopgate/recently-viewed-products/productList';
 
