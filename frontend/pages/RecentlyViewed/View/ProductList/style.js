@@ -3,16 +3,12 @@ import { themeConfig } from '@shopgate/pwa-common/helpers/config';
 
 const { colors } = themeConfig;
 
-const listContainer = css({
-  height: '100%',
-  background: colors.background,
-}).toString();
-
 const list = css({
   display: 'flex',
   minWidth: '100%',
   flexWrap: 'wrap',
   paddingTop: 2,
+  background: colors.background,
 }).toString();
 
 const listItem = css({
@@ -33,7 +29,6 @@ const listItem = css({
 }).toString();
 
 export default {
-  listContainer,
   list,
   listItem,
 };

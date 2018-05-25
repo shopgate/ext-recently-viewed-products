@@ -15,6 +15,18 @@
       "target": "cart.empty.after"
     },
     {
+      "id": "RecentlyViewedRoute",
+      "type": "portals",
+      "path": "frontend/pages/RecentlyViewed",
+      "target": "app.routes"
+    },
+    {
+      "id": "NavDrawerItemGMD",
+      "path": "frontend/components/NavDrawerItem/index.jsx",
+      "target": "nav-menu.cart.after",
+      "type": "portals"
+    },
+    {
       "id": "Subscribers",
       "path": "frontend/subscriptions/index.js",
       "type": "subscribers"
@@ -33,12 +45,6 @@
       "type": "translations",
       "path": "frontend/locale/de-DE.json",
       "id": "locale/de-DE"
-    },
-    {
-      "id": "RecentlyViewedRoute",
-      "type": "portals",
-      "path": "frontend/pages/RecentlyViewed",
-      "target": "app.routes"
     }
   ],
   "configuration": {

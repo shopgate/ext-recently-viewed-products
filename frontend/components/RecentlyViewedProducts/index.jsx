@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import I18n from '@shopgate/pwa-common/components/I18n';
 import Slider from '@shopgate/pwa-common/components/Slider';
+import ButtonLink from '@shopgate/pwa-ui-shared/ButtonLink';
 import Card from '../Card';
 import ProductCard from '../ProductCard';
 import connect from './connector';
 import styles from './style';
+import { RECENTLY_VIEWED_PATH } from '../../constants';
 
 /**
  * Creates an item for a single product.
@@ -57,6 +59,11 @@ const RecentlyViewedProducts = ({ products }) => {
       >
         {items}
       </Slider>
+      <div className={styles.showMoreContainer}>
+        <ButtonLink href={RECENTLY_VIEWED_PATH}>
+          <I18n.Text string="recently_viewed_products.show_more" />
+        </ButtonLink>
+      </div>
     </div>
   );
 };

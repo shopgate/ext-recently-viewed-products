@@ -13,13 +13,20 @@ const getRecentlyViewedProductsState = state =>
 /**
  * Gets a list of recently viewed products from the cache.
  * @param {Object} state The application state.
+ * @param {number} limit The maximum number of products to return.
  * @returns {Object} The result.
  */
 export const getRecentlyViewedProducts = createSelector(
   state => state,
+  (state, limit) => limit,
   getRecentlyViewedProductsState,
-  (state, recentlyViewedProductsState) => {
-    const { productIds } = recentlyViewedProductsState || [];
+  (state, limit, recentlyViewedProductsState) => {
+    let { productIds = [] } = recentlyViewedProductsState || {};
+
+    if (typeof limit !== 'undefined') {
+      productIds = productIds.slice(0, limit);
+    }
+
     // Collect product entities for the productIds on the list
     return productIds.reduce((list, currentId) => {
       const product = getProductById(state, currentId);

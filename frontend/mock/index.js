@@ -10,7 +10,7 @@ const defaultState = {
   },
 };
 
-const stateWithProducts = {
+export const stateWithProducts = {
   product: {
     productsById: {
       1: {
@@ -43,4 +43,5 @@ const stateWithProducts = {
  */
 export const getEmptyStore = () => configureStore()(defaultState);
 
+// eslint-disable-next-line require-jsdoc
 export const getStoreWithProducts = () => configureStore()(stateWithProducts);

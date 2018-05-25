@@ -74,6 +74,13 @@ const headlineCart = css({
   textAlign: 'left',
 }).toString();
 
+const showMoreContainer = css({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  textAlign: 'left',
+  marginBottom: -variables.gap.bigger,
+});
+
 export default {
   card,
   headline,
@@ -89,4 +96,5 @@ export default {
   priceBase,
   priceStriked,
   price,
+  showMoreContainer,
 };
