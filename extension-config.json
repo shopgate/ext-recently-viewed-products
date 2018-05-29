@@ -50,7 +50,7 @@
   "configuration": {
     "maximumHistoryEntriesPerUser": {
       "type": "static",
-      "destination": "backend",
+      "destination": "both",
       "params": {
         "value": 50
       }

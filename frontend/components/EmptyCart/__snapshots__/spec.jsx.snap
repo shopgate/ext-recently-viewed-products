@@ -3,7 +3,7 @@
 exports[`EmptyCart page should render empty cart icon and title 1`] = `
 <Empty>
   <div
-    className="css-b5sjk8"
+    className="css-j0ijp4"
   >
     <div
       className="css-17sj0df"

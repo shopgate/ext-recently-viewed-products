@@ -13,7 +13,7 @@ const sliderContainer = css({
 const slider = css({
   width: '100%',
   flex: 1,
-  padding: variables.gap.small,
+  padding: `${variables.gap.small}px 0`,
 }).toString();
 
 const sliderItem = css({
@@ -62,30 +62,31 @@ const card = css({
   margin: '0px 8px',
 }).toString();
 
-const headline = css({
-  fontSize: 18,
-  margin: `0 0 ${variables.gap.big}px`,
-  textAlign: 'center',
-}).toString();
-
-const headlineCart = css({
-  fontSize: 'medium',
+const headlineContainer = css({
+  display: 'flex',
+  justifyContent: 'space-between',
   margin: `${variables.gap.small}px`,
+  overflow: 'hidden',
+});
+
+const headline = css({
+  fontSize: 'medium',
+  // The Button which is right aligned to the headline has a paddingTop modification by 1px
+  margin: `${variables.gap.small + 1}px ${variables.gap.small}px`,
   textAlign: 'left',
 }).toString();
 
 const showMoreContainer = css({
-  display: 'flex',
-  justifyContent: 'flex-start',
-  textAlign: 'left',
-  marginBottom: -variables.gap.bigger,
-  marginLeft: -variables.gap.small,
+  marginRight: `-${variables.gap.small}px`,
+  ' button': {
+    fontSize: 'medium',
+  },
 });
 
 export default {
   card,
+  headlineContainer,
   headline,
-  headlineCart,
   sliderContainer,
   slider,
   sliderItem,

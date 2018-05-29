@@ -23,6 +23,7 @@ const createSliderItem = (product) => {
           product={product}
           titleRows={2}
           hidePrice
+          hideRating
         />
       </Card>
     </Slider.Item>
@@ -33,7 +34,7 @@ const createSliderItem = (product) => {
  * The ProductSlider component
  * @return {JSX}
  */
-const ProductSlider = ({ products }) => {
+const ProductSlider = ({ products, showMore }) => {
   const items = products.map((
     product => createSliderItem(product)
   ));
@@ -41,14 +42,22 @@ const ProductSlider = ({ products }) => {
   if (!items.length) {
     return null;
   }
-  // TODO: when it would be shown in a different place than cart
-  // Use styles.headline and recently_viewed_products.headline as defaults
-  // Finally, build the slider.
+
   return (
     <div className={styles.slider}>
-      <h3 className={styles.headlineCart}>
-        <I18n.Text string="recently_viewed_products.empty_cart_headline" />
-      </h3>
+      <div className={styles.headlineContainer}>
+        <h3 className={styles.headline}>
+          <I18n.Text string="recently_viewed_products.headline" />
+        </h3>
+        { showMore && (
+          <div className={styles.showMoreContainer}>
+            <ButtonLink href={RECENTLY_VIEWED_PATH} noGap>
+              <I18n.Text string="recently_viewed_products.show_more" />
+            </ButtonLink>
+          </div>
+        )}
+      </div>
+
       <Slider
         loop={false}
         indicators={false}
@@ -59,21 +68,18 @@ const ProductSlider = ({ products }) => {
       >
         {items}
       </Slider>
-      <div className={styles.showMoreContainer}>
-        <ButtonLink href={RECENTLY_VIEWED_PATH}>
-          <I18n.Text string="recently_viewed_products.show_more" />
-        </ButtonLink>
-      </div>
     </div>
   );
 };
 
 ProductSlider.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape()),
+  showMore: PropTypes.bool,
 };
 
 ProductSlider.defaultProps = {
   products: [],
+  showMore: false,
 };
 
 export default connect(ProductSlider);

@@ -10,6 +10,7 @@ import { RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT } from '../../constants';
  */
 const mapStateToProps = state => ({
   products: getRecentlyViewedProducts(state, RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT),
+  showMore: getRecentlyViewedProducts(state).length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
 });
 
 export default connect(mapStateToProps);

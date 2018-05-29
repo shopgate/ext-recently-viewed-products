@@ -1,8 +1,8 @@
 {
   "recently_viewed_products": {
+    "title": "Zuletzt angesehen",
     "headline": "Zuletzt angesehen",
-    "empty_cart_headline": "Zuletzt angesehene Produkte bestellen",
-    "show_more": "Mehr anzeigen",
+    "show_more": "Mehr",
     "empty_product_list": "Sie haben noch keine Produkte auf der Liste."
   }
 }

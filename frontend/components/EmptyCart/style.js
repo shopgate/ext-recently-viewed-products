@@ -10,7 +10,7 @@ const container = css({
   justifyContent: 'center',
   flexGrow: '1',
   flexShrink: '0',
-  padding: '2em 0',
+  padding: '1em 0',
 }).toString();
 
 const icon = css({
