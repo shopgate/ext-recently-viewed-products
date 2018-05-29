@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { getRecentlyViewedProducts } from '../../selectors';
+import {
+  getRecentlyViewedProducts,
+  getPageUrl,
+  isShowMoreVisible,
+} from '../../selectors';
 import { RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT } from '../../constants';
 
 /**
@@ -10,7 +14,8 @@ import { RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT } from '../../constants';
  */
 const mapStateToProps = state => ({
   products: getRecentlyViewedProducts(state, RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT),
-  showMore: getRecentlyViewedProducts(state).length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
+  showMore: isShowMoreVisible(state),
+  showMoreUrl: getPageUrl(state),
 });
 
 export default connect(mapStateToProps);

@@ -65,7 +65,7 @@ const card = css({
 const headlineContainer = css({
   display: 'flex',
   justifyContent: 'space-between',
-  margin: `${variables.gap.small}px`,
+  margin: `${variables.gap.small}px 0 ${variables.gap.small}px ${variables.gap.small}px`,
   overflow: 'hidden',
 });
 
@@ -77,7 +77,6 @@ const headline = css({
 }).toString();
 
 const showMoreContainer = css({
-  marginRight: `-${variables.gap.small}px`,
   ' button': {
     fontSize: 'medium',
   },

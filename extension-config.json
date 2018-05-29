@@ -15,16 +15,10 @@
       "target": "cart.empty.after"
     },
     {
-      "id": "RecentlyViewedRoute",
+      "id": "RecentlyViewedPage",
       "type": "portals",
-      "path": "frontend/pages/RecentlyViewed",
-      "target": "app.routes"
-    },
-    {
-      "id": "NavDrawerItemGMD",
-      "path": "frontend/components/NavDrawerItem/index.jsx",
-      "target": "nav-menu.cart.after",
-      "type": "portals"
+      "path": "frontend/components/RecentlyViewedPage",
+      "target": "page.content.after"
     },
     {
       "id": "Subscribers",
@@ -53,6 +47,13 @@
       "destination": "both",
       "params": {
         "value": 50
+      }
+    },
+    "pageId": {
+      "type": "static",
+      "destination": "frontend",
+      "params": {
+        "value": "recently-viewed"
       }
     }
   }

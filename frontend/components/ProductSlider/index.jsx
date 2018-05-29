@@ -7,7 +7,6 @@ import Card from '../Card';
 import ProductCard from '../ProductCard';
 import connect from './connector';
 import styles from './style';
-import { RECENTLY_VIEWED_PATH } from '../../constants';
 
 /**
  * Creates an item for a single product.
@@ -34,7 +33,7 @@ const createSliderItem = (product) => {
  * The ProductSlider component
  * @return {JSX}
  */
-const ProductSlider = ({ products, showMore }) => {
+const ProductSlider = ({ products, showMore, showMoreUrl }) => {
   const items = products.map((
     product => createSliderItem(product)
   ));
@@ -51,7 +50,7 @@ const ProductSlider = ({ products, showMore }) => {
         </h3>
         { showMore && (
           <div className={styles.showMoreContainer}>
-            <ButtonLink href={RECENTLY_VIEWED_PATH} noGap>
+            <ButtonLink href={showMoreUrl} noGap>
               <I18n.Text string="recently_viewed_products.show_more" />
             </ButtonLink>
           </div>
@@ -75,11 +74,13 @@ const ProductSlider = ({ products, showMore }) => {
 ProductSlider.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape()),
   showMore: PropTypes.bool,
+  showMoreUrl: PropTypes.string,
 };
 
 ProductSlider.defaultProps = {
   products: [],
   showMore: false,
+  showMoreUrl: null,
 };
 
 export default connect(ProductSlider);

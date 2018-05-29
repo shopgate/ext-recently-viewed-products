@@ -19,14 +19,14 @@ exports[`ProductList should render a list of products 1`] = `
       products={
         Array [
           Object {
-            "featuredImageUrl": "https://example.com/one",
+            "featuredImageUrl": "https://example.com/1",
             "id": 1,
-            "name": "one",
+            "name": "1",
           },
           Object {
-            "featuredImageUrl": "https://example.com/two",
+            "featuredImageUrl": "https://example.com/2",
             "id": 2,
-            "name": "two",
+            "name": "2",
           },
         ]
       }
@@ -58,9 +58,9 @@ exports[`ProductList should render a list of products 1`] = `
                   hideRating={false}
                   product={
                     Object {
-                      "featuredImageUrl": "https://example.com/one",
+                      "featuredImageUrl": "https://example.com/1",
                       "id": 1,
-                      "name": "one",
+                      "name": "1",
                     }
                   }
                   titleRows={2}
@@ -81,7 +81,7 @@ exports[`ProductList should render a list of products 1`] = `
                       role="link"
                     >
                       <ProductImage
-                        alt="one"
+                        alt="1"
                         animating={true}
                         forcePlaceholder={false}
                         highestResolutionLoaded={[Function]}
@@ -100,10 +100,10 @@ exports[`ProductList should render a list of products 1`] = `
                             },
                           ]
                         }
-                        src="https://example.com/one"
+                        src="https://example.com/1"
                       >
                         <Image
-                          alt="one"
+                          alt="1"
                           animating={true}
                           backgroundColor="#f2f2f2"
                           className=""
@@ -126,7 +126,7 @@ exports[`ProductList should render a list of products 1`] = `
                               },
                             ]
                           }
-                          src="https://example.com/one"
+                          src="https://example.com/1"
                           transition={null}
                         >
                           <div
@@ -157,7 +157,7 @@ exports[`ProductList should render a list of products 1`] = `
                               <div
                                 className=""
                               >
-                                one
+                                1
                               </div>
                             </Dotdotdot>
                           </Ellipsis>
@@ -182,9 +182,9 @@ exports[`ProductList should render a list of products 1`] = `
                   hideRating={false}
                   product={
                     Object {
-                      "featuredImageUrl": "https://example.com/two",
+                      "featuredImageUrl": "https://example.com/2",
                       "id": 2,
-                      "name": "two",
+                      "name": "2",
                     }
                   }
                   titleRows={2}
@@ -205,7 +205,7 @@ exports[`ProductList should render a list of products 1`] = `
                       role="link"
                     >
                       <ProductImage
-                        alt="two"
+                        alt="2"
                         animating={true}
                         forcePlaceholder={false}
                         highestResolutionLoaded={[Function]}
@@ -224,10 +224,10 @@ exports[`ProductList should render a list of products 1`] = `
                             },
                           ]
                         }
-                        src="https://example.com/two"
+                        src="https://example.com/2"
                       >
                         <Image
-                          alt="two"
+                          alt="2"
                           animating={true}
                           backgroundColor="#f2f2f2"
                           className=""
@@ -250,7 +250,7 @@ exports[`ProductList should render a list of products 1`] = `
                               },
                             ]
                           }
-                          src="https://example.com/two"
+                          src="https://example.com/2"
                           transition={null}
                         >
                           <div
@@ -281,7 +281,7 @@ exports[`ProductList should render a list of products 1`] = `
                               <div
                                 className=""
                               >
-                                two
+                                2
                               </div>
                             </Dotdotdot>
                           </Ellipsis>

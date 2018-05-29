@@ -1,38 +1,78 @@
 import configureStore from 'redux-mock-store';
+import { QUICKLINKS_MENU } from '@shopgate/pwa-common/constants/MenuIDs';
 import { REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS } from '../constants';
+import { pageId } from '../config';
 
-const defaultState = {
+export const defaultState = {
   extensions: {
     [REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS]: {
       isFetching: false,
       productIds: [],
     },
   },
+  menu: {
+    menusById: {
+
+    },
+  },
 };
 
-export const stateWithProducts = {
-  product: {
-    productsById: {
-      1: {
-        productData: {
-          id: 1,
-          featuredImageUrl: 'https://example.com/one',
-          name: 'one',
-        },
+/**
+ * Creates a mocked store with the passed amount of products.
+ * @param {number} [amount=2] The amount of products.
+ * @param {boolean} [createPageEntry=true] Tells if an entry for a recently viewed products page
+ *   shall be added.
+ * @return {Object}
+ */
+export const createStateWithProducts = (amount = 2, createPageEntry = true) => {
+  const productIds = [];
+  const productsById = {};
+
+  for (let i = 1; i <= amount; i += 1) {
+    productIds.push(i);
+    productsById[i] = {
+      productData: {
+        id: i,
+        featuredImageUrl: `https://example.com/${i}`,
+        name: `${i}`,
       },
-      2: {
-        productData: {
-          id: 2,
-          featuredImageUrl: 'https://example.com/two',
-          name: 'two',
+    };
+  }
+
+  return {
+    product: {
+      productsById,
+    },
+    extensions: {
+      [REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS]: {
+        isFetching: false,
+        productIds,
+      },
+    },
+    menu: {
+      menusById: {
+        [QUICKLINKS_MENU]: {
+          isFetching: false,
+          entries: [{
+            url: `/page/${createPageEntry ? pageId : 'noop'}`,
+            label: 'Recently viewed',
+          }],
         },
       },
     },
-  },
-  extensions: {
-    [REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS]: {
-      isFetching: false,
-      productIds: [1, 2],
+  };
+};
+
+export const stateWithoutValidMenuEntries = {
+  menu: {
+    menusById: {
+      [QUICKLINKS_MENU]: {
+        isFetching: false,
+        entries: [{
+          url: '/page/foobar',
+          label: 'Recently viewed',
+        }],
+      },
     },
   },
 };
@@ -44,4 +84,5 @@ export const stateWithProducts = {
 export const getEmptyStore = () => configureStore()(defaultState);
 
 // eslint-disable-next-line require-jsdoc
-export const getStoreWithProducts = () => configureStore()(stateWithProducts);
+export const getStoreWithProducts = (amount = 2, createPageEntry = true) =>
+  configureStore()(createStateWithProducts(amount, createPageEntry));

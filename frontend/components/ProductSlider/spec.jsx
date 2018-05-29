@@ -2,6 +2,7 @@ import React, { Component as mockedComponent } from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { getEmptyStore, getStoreWithProducts } from '../../mock';
+import { RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT } from '../../constants';
 import ProductSlider from './index';
 
 /* eslint-disable require-jsdoc, global-require */
@@ -27,15 +28,32 @@ describe('ProductSlider', () => {
         <ProductSlider />
       </Provider>
     ));
+
+    expect(component).toMatchSnapshot();
     expect(component.html()).toBe(null);
   });
+
   it('should render slider', () => {
     const component = mount((
       <Provider store={getStoreWithProducts()}>
         <ProductSlider />
       </Provider>
     ));
-    expect(component.find('Item').length).toBe(2);
+
     expect(component).toMatchSnapshot();
+    expect(component.find('Item').length).toBe(2);
+    expect(component.find('ButtonLink').length).toBe(0);
+  });
+
+  it('should render slider with a show more button', () => {
+    const component = mount((
+      <Provider store={getStoreWithProducts(RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT + 1)}>
+        <ProductSlider />
+      </Provider>
+    ));
+
+    expect(component).toMatchSnapshot();
+    expect(component.find('Item').length).toBe(RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT);
+    expect(component.find('ButtonLink').length).toBe(1);
   });
 });
