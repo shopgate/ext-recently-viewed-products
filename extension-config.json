@@ -9,10 +9,16 @@
       "target": "cart.empty"
     },
     {
-      "id": "RecentlyViewedProducts",
+      "id": "ProductSlider",
       "type": "portals",
-      "path": "frontend/components/RecentlyViewedProducts",
+      "path": "frontend/components/ProductSlider",
       "target": "cart.empty.after"
+    },
+    {
+      "id": "RecentlyViewedPage",
+      "type": "portals",
+      "path": "frontend/components/RecentlyViewedPage",
+      "target": "page.content.after"
     },
     {
       "id": "Subscribers",
@@ -38,9 +44,16 @@
   "configuration": {
     "maximumHistoryEntriesPerUser": {
       "type": "static",
-      "destination": "backend",
+      "destination": "both",
       "params": {
         "value": 50
+      }
+    },
+    "pageId": {
+      "type": "static",
+      "destination": "frontend",
+      "params": {
+        "value": "recently-viewed"
       }
     }
   }

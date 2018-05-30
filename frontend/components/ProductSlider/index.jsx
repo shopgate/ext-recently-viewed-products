@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import I18n from '@shopgate/pwa-common/components/I18n';
 import Slider from '@shopgate/pwa-common/components/Slider';
+import ButtonLink from '@shopgate/pwa-ui-shared/ButtonLink';
 import Card from '../Card';
 import ProductCard from '../ProductCard';
 import connect from './connector';
@@ -21,6 +22,7 @@ const createSliderItem = (product) => {
           product={product}
           titleRows={2}
           hidePrice
+          hideRating
         />
       </Card>
     </Slider.Item>
@@ -28,10 +30,10 @@ const createSliderItem = (product) => {
 };
 
 /**
- * The RecentlyViewedProducts component
+ * The ProductSlider component
  * @return {JSX}
  */
-const RecentlyViewedProducts = ({ products }) => {
+const ProductSlider = ({ products, showMore, showMoreUrl }) => {
   const items = products.map((
     product => createSliderItem(product)
   ));
@@ -39,14 +41,22 @@ const RecentlyViewedProducts = ({ products }) => {
   if (!items.length) {
     return null;
   }
-  // TODO: when it would be shown in a different place than cart
-  // Use styles.headline and recently_viewed_products.headline as defaults
-  // Finally, build the slider.
+
   return (
     <div className={styles.slider}>
-      <h3 className={styles.headlineCart}>
-        <I18n.Text string="recently_viewed_products.empty_cart_headline" />
-      </h3>
+      <div className={styles.headlineContainer}>
+        <h3 className={styles.headline}>
+          <I18n.Text string="recently_viewed_products.headline" />
+        </h3>
+        { showMore && (
+          <div className={styles.showMoreContainer}>
+            <ButtonLink href={showMoreUrl} noGap>
+              <I18n.Text string="recently_viewed_products.show_more" />
+            </ButtonLink>
+          </div>
+        )}
+      </div>
+
       <Slider
         loop={false}
         indicators={false}
@@ -61,12 +71,16 @@ const RecentlyViewedProducts = ({ products }) => {
   );
 };
 
-RecentlyViewedProducts.propTypes = {
+ProductSlider.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape()),
+  showMore: PropTypes.bool,
+  showMoreUrl: PropTypes.string,
 };
 
-RecentlyViewedProducts.defaultProps = {
+ProductSlider.defaultProps = {
   products: [],
+  showMore: false,
+  showMoreUrl: null,
 };
 
-export default connect(RecentlyViewedProducts);
+export default connect(ProductSlider);

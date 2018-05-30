@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList should render as expected 1`] = `
+<NoProducts>
+  <div
+    className={
+      Object {
+        "data-css-9gjavs": "",
+      }
+    }
+  >
+    <Translate
+      className=""
+      params={Object {}}
+      string="recently_viewed_products.empty_product_list"
+    >
+      <span
+        className=""
+      >
+        recently_viewed_products.empty_product_list
+      </span>
+    </Translate>
+  </div>
+</NoProducts>
+`;

@@ -47,45 +47,43 @@ const ProductCard = ({
       </div>
     )}
     {/* <FavoritesButton className={styles.wishlist} productId={product.id} /> */}
-    {(!(hidePrice && hideRating)) && (
-      <div className={styles.details}>
-        {!hideRating && product.rating && product.rating.average > 0 && (
-          <RatingStars value={product.rating.average} />
+    <div className={styles.details}>
+      {!hideRating && product.rating && product.rating.average > 0 && (
+      <RatingStars value={product.rating.average} />
         )}
-        {!hideName && (
-          <div itemProp="name" className={styles.title}>
-            <Ellipsis rows={titleRows || 3}>{product.name}</Ellipsis>
-          </div>
-        )}
-        {(!hidePrice && product.price) && (
-          <Grid className={styles.priceWrapper} wrap>
-            <Grid.Item grow={1}>
-              <Price
-                unitPrice={product.price.unitPrice}
-                unitPriceMin={product.price.unitPriceMin}
-                discounted={!!product.price.discount}
-                currency={product.price.currency}
-              />
-            </Grid.Item>
-            {product.price.unitPriceStriked > 0 && (
-              <Grid.Item>
-                <PriceStriked
-                  value={product.price.unitPriceStriked}
-                  currency={product.price.currency}
-                />
-              </Grid.Item>
-            )}
-          </Grid>
-        )}
-        {(!hidePrice && product.price && product.price.info) && (
-          <Grid>
-            <Grid.Item>
-              <PriceInfo className={styles.basicPrice} text={product.price.info} />
-            </Grid.Item>
-          </Grid>
-        )}
+      {!hideName && (
+      <div itemProp="name" className={styles.title}>
+        <Ellipsis rows={titleRows || 3}>{product.name}</Ellipsis>
       </div>
-    )}
+        )}
+      {(!hidePrice && product.price) && (
+      <Grid className={styles.priceWrapper} wrap>
+        <Grid.Item grow={1}>
+          <Price
+            unitPrice={product.price.unitPrice}
+            unitPriceMin={product.price.unitPriceMin}
+            discounted={!!product.price.discount}
+            currency={product.price.currency}
+          />
+        </Grid.Item>
+        {product.price.unitPriceStriked > 0 && (
+        <Grid.Item>
+          <PriceStriked
+            value={product.price.unitPriceStriked}
+            currency={product.price.currency}
+          />
+        </Grid.Item>
+            )}
+      </Grid>
+        )}
+      {(!hidePrice && product.price && product.price.info) && (
+      <Grid>
+        <Grid.Item>
+          <PriceInfo className={styles.basicPrice} text={product.price.info} />
+        </Grid.Item>
+      </Grid>
+        )}
+    </div>
   </Link>
 );
 

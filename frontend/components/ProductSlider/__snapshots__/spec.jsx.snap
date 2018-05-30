@@ -1,0 +1,1865 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductSlider should render nothing 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ProductSlider)>
+    <ProductSlider
+      dispatch={[Function]}
+      products={Array []}
+      showMore={false}
+      showMoreUrl={null}
+    />
+  </Connect(ProductSlider)>
+</Provider>
+`;
+
+exports[`ProductSlider should render slider 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ProductSlider)>
+    <ProductSlider
+      dispatch={[Function]}
+      products={
+        Array [
+          Object {
+            "featuredImageUrl": "https://example.com/1",
+            "id": 1,
+            "name": "1",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/2",
+            "id": 2,
+            "name": "2",
+          },
+        ]
+      }
+      showMore={false}
+      showMoreUrl="/page/recently-viewed"
+    >
+      <div
+        className="css-1my1qng"
+      >
+        <div
+          className={
+            Object {
+              "data-css-341xub": "",
+            }
+          }
+        >
+          <h3
+            className="css-10y5zmf"
+          >
+            <Translate
+              className=""
+              params={Object {}}
+              string="recently_viewed_products.headline"
+            >
+              <span
+                className=""
+              >
+                recently_viewed_products.headline
+              </span>
+            </Translate>
+          </h3>
+        </div>
+        <_class
+          classNames={
+            Object {
+              "container": "css-y5yof0",
+            }
+          }
+          controls={false}
+          indicators={false}
+          loop={false}
+          slidesPerView={2.3}
+          snapItems={false}
+        >
+          <div>
+            <Item
+              className="css-j85wo1"
+              key="s1"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/1",
+                          "id": 1,
+                          "name": "1",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/31"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/31"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="1"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/1"
+                          >
+                            <Image
+                              alt="1"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/1"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    1
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s2"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/2",
+                          "id": 2,
+                          "name": "2",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/32"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/32"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="2"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/2"
+                          >
+                            <Image
+                              alt="2"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/2"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    2
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+          </div>
+        </_class>
+      </div>
+    </ProductSlider>
+  </Connect(ProductSlider)>
+</Provider>
+`;
+
+exports[`ProductSlider should render slider with a show more button 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(ProductSlider)>
+    <ProductSlider
+      dispatch={[Function]}
+      products={
+        Array [
+          Object {
+            "featuredImageUrl": "https://example.com/1",
+            "id": 1,
+            "name": "1",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/2",
+            "id": 2,
+            "name": "2",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/3",
+            "id": 3,
+            "name": "3",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/4",
+            "id": 4,
+            "name": "4",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/5",
+            "id": 5,
+            "name": "5",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/6",
+            "id": 6,
+            "name": "6",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/7",
+            "id": 7,
+            "name": "7",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/8",
+            "id": 8,
+            "name": "8",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/9",
+            "id": 9,
+            "name": "9",
+          },
+          Object {
+            "featuredImageUrl": "https://example.com/10",
+            "id": 10,
+            "name": "10",
+          },
+        ]
+      }
+      showMore={true}
+      showMoreUrl="/page/recently-viewed"
+    >
+      <div
+        className="css-1my1qng"
+      >
+        <div
+          className={
+            Object {
+              "data-css-341xub": "",
+            }
+          }
+        >
+          <h3
+            className="css-10y5zmf"
+          >
+            <Translate
+              className=""
+              params={Object {}}
+              string="recently_viewed_products.headline"
+            >
+              <span
+                className=""
+              >
+                recently_viewed_products.headline
+              </span>
+            </Translate>
+          </h3>
+          <div
+            className={
+              Object {
+                "data-css-1kxjgrr": "",
+              }
+            }
+          >
+            <ButtonLink
+              href="/page/recently-viewed"
+              noGap={true}
+            >
+              <ActionButton
+                className=""
+                disabled={false}
+                flat={true}
+                loading={false}
+                noGap={true}
+                onClick={[Function]}
+                rippleClassName=""
+                rippleSize={null}
+                type="secondary"
+                wrapContent={true}
+              >
+                <div
+                  className="css-1yv2jt6"
+                >
+                  <RippleButton
+                    className=""
+                    disabled={false}
+                    flat={true}
+                    onClick={[Function]}
+                    rippleClassName=""
+                    rippleSize={null}
+                    type="secondary"
+                    wrapContent={true}
+                  >
+                    <Button
+                      className=""
+                      disabled={false}
+                      flat={true}
+                      onClick={[Function]}
+                      type="secondary"
+                      wrapContent={false}
+                    >
+                      <Button
+                        className="css-dh0pju "
+                        disabled={false}
+                        onClick={[Function]}
+                      >
+                        <button
+                          className="css-dh0pju  css-1rn65c0"
+                          data-test-id="Button"
+                          disabled={false}
+                          onClick={[Function]}
+                        >
+                          <Ripple
+                            className="css-8s1fw2 "
+                            color="#000"
+                            disabled={false}
+                            fill={true}
+                            onComplete={[Function]}
+                            overflow={false}
+                            size={null}
+                          >
+                            <div
+                              aria-hidden={true}
+                              className="css-8s1fw2 "
+                              data-test-id="Ripple"
+                              onClick={[Function]}
+                              style={null}
+                            >
+                              <Translate
+                                className=""
+                                params={Object {}}
+                                string="recently_viewed_products.show_more"
+                              >
+                                <span
+                                  className=""
+                                >
+                                  recently_viewed_products.show_more
+                                </span>
+                              </Translate>
+                            </div>
+                          </Ripple>
+                        </button>
+                      </Button>
+                    </Button>
+                  </RippleButton>
+                </div>
+              </ActionButton>
+            </ButtonLink>
+          </div>
+        </div>
+        <_class
+          classNames={
+            Object {
+              "container": "css-y5yof0",
+            }
+          }
+          controls={false}
+          indicators={false}
+          loop={false}
+          slidesPerView={2.3}
+          snapItems={false}
+        >
+          <div>
+            <Item
+              className="css-j85wo1"
+              key="s1"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/1",
+                          "id": 1,
+                          "name": "1",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/31"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/31"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="1"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/1"
+                          >
+                            <Image
+                              alt="1"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/1"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    1
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s2"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/2",
+                          "id": 2,
+                          "name": "2",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/32"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/32"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="2"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/2"
+                          >
+                            <Image
+                              alt="2"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/2"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    2
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s3"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/3",
+                          "id": 3,
+                          "name": "3",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/33"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/33"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="3"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/3"
+                          >
+                            <Image
+                              alt="3"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/3"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    3
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s4"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/4",
+                          "id": 4,
+                          "name": "4",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/34"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/34"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="4"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/4"
+                          >
+                            <Image
+                              alt="4"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/4"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    4
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s5"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/5",
+                          "id": 5,
+                          "name": "5",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/35"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/35"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="5"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/5"
+                          >
+                            <Image
+                              alt="5"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/5"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    5
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s6"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/6",
+                          "id": 6,
+                          "name": "6",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/36"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/36"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="6"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/6"
+                          >
+                            <Image
+                              alt="6"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/6"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    6
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s7"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/7",
+                          "id": 7,
+                          "name": "7",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/37"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/37"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="7"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/7"
+                          >
+                            <Image
+                              alt="7"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/7"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    7
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s8"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/8",
+                          "id": 8,
+                          "name": "8",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/38"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/38"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="8"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/8"
+                          >
+                            <Image
+                              alt="8"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/8"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    8
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s9"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/9",
+                          "id": 9,
+                          "name": "9",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/39"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/39"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="9"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/9"
+                          >
+                            <Image
+                              alt="9"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/9"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    9
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+            <Item
+              className="css-j85wo1"
+              key="s10"
+            >
+              <div>
+                <Card
+                  className="css-6r0d5j"
+                >
+                  <div
+                    className="css-1l0if7f css-6r0d5j"
+                  >
+                    <ProductCard
+                      hideName={false}
+                      hidePrice={true}
+                      hideRating={true}
+                      product={
+                        Object {
+                          "featuredImageUrl": "https://example.com/10",
+                          "id": 10,
+                          "name": "10",
+                        }
+                      }
+                      titleRows={2}
+                    >
+                      <Link
+                        className="css-b4pchx"
+                        href="/item/3130"
+                        itemProp="item"
+                        itemScope={true}
+                        itemType="http://schema.org/Product"
+                        tagName="a"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="css-c6ki83 css-b4pchx"
+                          data-test-id="link: /item/3130"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <ProductImage
+                            alt="10"
+                            animating={true}
+                            forcePlaceholder={false}
+                            highestResolutionLoaded={[Function]}
+                            itemProp="image"
+                            ratio={null}
+                            resolutions={
+                              Array [
+                                Object {
+                                  "blur": 2,
+                                  "height": 50,
+                                  "width": 50,
+                                },
+                                Object {
+                                  "height": 440,
+                                  "width": 440,
+                                },
+                              ]
+                            }
+                            src="https://example.com/10"
+                          >
+                            <Image
+                              alt="10"
+                              animating={true}
+                              backgroundColor="#f2f2f2"
+                              className=""
+                              forcePlaceholder={false}
+                              highestResolutionLoaded={[Function]}
+                              itemProp="image"
+                              onError={[Function]}
+                              onLoad={null}
+                              ratio={null}
+                              resolutions={
+                                Array [
+                                  Object {
+                                    "blur": 2,
+                                    "height": 50,
+                                    "width": 50,
+                                  },
+                                  Object {
+                                    "height": 440,
+                                    "width": 440,
+                                  },
+                                ]
+                              }
+                              src="https://example.com/10"
+                              transition={null}
+                            >
+                              <div
+                                className="css-326p2s "
+                              />
+                            </Image>
+                          </ProductImage>
+                          <div
+                            className="css-1rbh2c4"
+                          >
+                            <div
+                              className="css-by38mh"
+                              itemProp="name"
+                            >
+                              <Ellipsis
+                                className=""
+                                ellipsis="..."
+                                rows={2}
+                              >
+                                <Dotdotdot
+                                  clamp={2}
+                                  className=""
+                                  ellipsis="..."
+                                  tagName="div"
+                                  truncationChar="…"
+                                  useNativeClamp={true}
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    10
+                                  </div>
+                                </Dotdotdot>
+                              </Ellipsis>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </ProductCard>
+                  </div>
+                </Card>
+              </div>
+            </Item>
+          </div>
+        </_class>
+      </div>
+    </ProductSlider>
+  </Connect(ProductSlider)>
+</Provider>
+`;
