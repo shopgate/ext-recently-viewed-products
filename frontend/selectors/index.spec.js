@@ -39,6 +39,19 @@ describe('selectors', () => {
       expect(result).toHaveLength(1);
       expect(result[0]).toEqual(stateWithProducts.product.productsById[1].productData);
     });
+
+    it('should not return the current product', () => {
+      const result = getRecentlyViewedProducts({
+        ...stateWithProducts,
+        product: {
+          ...stateWithProducts.product,
+          currentProduct: { productId: 2 },
+        },
+      });
+      expect(result).toBeInstanceOf(Array);
+      expect(result).toHaveLength(1);
+      expect(result[0]).toEqual(stateWithProducts.product.productsById[1].productData);
+    });
   });
 
   describe('getPageUrl', () => {

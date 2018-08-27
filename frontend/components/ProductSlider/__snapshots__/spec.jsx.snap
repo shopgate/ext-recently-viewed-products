@@ -17,6 +17,7 @@ exports[`ProductSlider should render nothing 1`] = `
     <ProductSlider
       dispatch={[Function]}
       isCartPage={false}
+      isProductPage={false}
       products={Array []}
       showMore={false}
       showMoreUrl={null}
@@ -42,6 +43,7 @@ exports[`ProductSlider should render slider 1`] = `
     <ProductSlider
       dispatch={[Function]}
       isCartPage={false}
+      isProductPage={false}
       products={
         Array [
           Object {
@@ -383,6 +385,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
     <ProductSlider
       dispatch={[Function]}
       isCartPage={false}
+      isProductPage={false}
       products={
         Array [
           Object {
