@@ -13,7 +13,7 @@ module.exports = async function (context, input) {
 
   let recentlyViewedProductIdsList
   try {
-    recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, parseInt(context.config.maximumHistoryEntriesPerUser))
+    recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
   } catch (err) {
     context.log.error(err)
     throw new InternalErrorException()

@@ -3,8 +3,8 @@ import { maximumHistoryEntriesPerUser, sliderLimit } from '../config';
 export const PIPELINE_ADD_VIEWED_PRODUCTS = 'shopgate.user.addViewedProducts';
 export const PIPELINE_GET_VIEWED_PRODUCTS = 'shopgate.user.getViewedProducts';
 
-export const GET_VIEWED_PRODUCTS_LIMIT = parseInt(maximumHistoryEntriesPerUser, 10);
-export const RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT = parseInt(sliderLimit, 10);
+export const GET_VIEWED_PRODUCTS_LIMIT = maximumHistoryEntriesPerUser;
+export const RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT = sliderLimit;
 
 export const REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS = '@shopgate/recently-viewed-products/productList';
 

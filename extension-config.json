@@ -57,9 +57,9 @@
     "maximumHistoryEntriesPerUser": {
       "type": "admin",
       "destination": "both",
-      "default": "50",
+      "default": 50,
       "params": {
-        "type": "textbox",
+        "type": "number",
         "label": "Maximum of recently viewed item in the history of a user"
       }
     },
@@ -75,27 +75,27 @@
     "sliderLimit" : {
       "type": "admin",
       "destination": "frontend",
-      "default": "1",
+      "default": 10,
       "params": {
-        "type": "textbox",
+        "type": "number",
         "label": "Number of items shown in the slider"
       }
     },
     "showOnEmptyCartPage" : {
       "type": "admin",
       "destination": "frontend",
-      "default": "false",
+      "default": true,
       "params": {
-        "type": "textbox",
+        "type": "boolean",
         "label": "Slider is shown on the empty cart page"
       }
     },
     "showOnPdpPage" : {
       "type": "admin",
       "destination": "frontend",
-      "default": "true",
+      "default": true,
       "params": {
-        "type": "textbox",
+        "type": "boolean",
         "label": "Slider is shown on the product detail page"
       }
     }
