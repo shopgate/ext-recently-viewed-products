@@ -70,7 +70,8 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                   >
                     <Link
                       className="css-b4pchx"
-                      href="/item/31"
+                      disabled={false}
+                      href="/trampoline/item/31"
                       itemProp="item"
                       itemScope={true}
                       itemType="http://schema.org/Product"
@@ -79,7 +80,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                       <div
                         aria-hidden={true}
                         className="css-c6ki83 css-b4pchx"
-                        data-test-id="link: /item/31"
+                        data-test-id="link: /trampoline/item/31"
                         onClick={[Function]}
                         role="link"
                       >
@@ -194,7 +195,8 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                   >
                     <Link
                       className="css-b4pchx"
-                      href="/item/32"
+                      disabled={false}
+                      href="/trampoline/item/32"
                       itemProp="item"
                       itemScope={true}
                       itemType="http://schema.org/Product"
@@ -203,7 +205,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                       <div
                         aria-hidden={true}
                         className="css-c6ki83 css-b4pchx"
-                        data-test-id="link: /item/32"
+                        data-test-id="link: /trampoline/item/32"
                         onClick={[Function]}
                         role="link"
                       >

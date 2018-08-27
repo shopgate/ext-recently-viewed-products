@@ -33,7 +33,9 @@ const createSliderItem = (product) => {
  * The ProductSlider component
  * @return {JSX}
  */
-const ProductSlider = ({ products, showMore, showMoreUrl }) => {
+const ProductSlider = ({
+  products, showMore, showMoreUrl, isCartPage,
+}) => {
   const items = products.map((
     product => createSliderItem(product)
   ));
@@ -42,11 +44,17 @@ const ProductSlider = ({ products, showMore, showMoreUrl }) => {
     return null;
   }
 
+  let headline = 'recently_viewed_products.headline';
+
+  if (isCartPage) {
+    headline += '_cart';
+  }
+
   return (
     <div className={styles.slider}>
       <div className={styles.headlineContainer}>
         <h3 className={styles.headline}>
-          <I18n.Text string="recently_viewed_products.headline" />
+          <I18n.Text string={headline} />
         </h3>
         { showMore && (
           <div className={styles.showMoreContainer}>
@@ -72,6 +80,7 @@ const ProductSlider = ({ products, showMore, showMoreUrl }) => {
 };
 
 ProductSlider.propTypes = {
+  isCartPage: PropTypes.bool.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape()),
   showMore: PropTypes.bool,
   showMoreUrl: PropTypes.string,

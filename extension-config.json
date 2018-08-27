@@ -9,10 +9,22 @@
       "target": "cart.empty"
     },
     {
-      "id": "ProductSlider",
+      "id": "ProductSlider-cart",
       "type": "portals",
       "path": "frontend/components/ProductSlider",
       "target": "cart.empty.after"
+    },
+    {
+      "id": "ProductSlider-pdp",
+      "type": "portals",
+      "path": "frontend/components/ProductSlider",
+      "target": "product.reviews.after"
+    },
+    {
+      "id": "Trampoline",
+      "path": "frontend/routes/Trampoline.jsx",
+      "target": "app.routes",
+      "type": "portals"
     },
     {
       "id": "RecentlyViewedPage",

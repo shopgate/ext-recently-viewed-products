@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { getMenuById } from '@shopgate/pwa-common/selectors/menu';
 import { QUICKLINKS_MENU } from '@shopgate/pwa-common/constants/MenuIDs';
-import { getProductById } from '@shopgate/pwa-common-commerce/product/selectors/product';
+import { getProducts, getCurrentBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import {
   REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS,
   RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
@@ -23,10 +23,11 @@ const getRecentlyViewedProductsState = state =>
  * @returns {Object} The result.
  */
 export const getRecentlyViewedProducts = createSelector(
-  state => state,
+  state => getProducts(state),
   (state, limit) => limit,
   getRecentlyViewedProductsState,
-  (state, limit, recentlyViewedProductsState) => {
+  state => getCurrentBaseProductId(state),
+  (productsById, limit, recentlyViewedProductsState, currentBaseProductId) => {
     let { productIds = [] } = recentlyViewedProductsState || {};
 
     if (typeof limit !== 'undefined') {
@@ -35,9 +36,13 @@ export const getRecentlyViewedProducts = createSelector(
 
     // Collect product entities for the productIds on the list
     return productIds.reduce((list, currentId) => {
-      const product = getProductById(state, currentId);
-      // Take care that only products appear on the list where a product entity is available.
-      if (product && product.productData) {
+      const product = productsById[currentId];
+
+      /**
+       * Take care that only products appear on the list where a product entity is available and
+       * the product is not the current shown product.
+       */
+      if (product && product.productData && currentBaseProductId !== currentId) {
         list.push(product.productData);
       }
 

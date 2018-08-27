@@ -19,7 +19,9 @@ describe('selectors', () => {
 
   describe('getRecentlyViewedProducts', () => {
     it('should return an empty array', () => {
-      const result = getRecentlyViewedProducts({ extensions: {} });
+      const result = getRecentlyViewedProducts({
+        extensions: {}, product: { currentProduct: { productId: null } },
+      });
       expect(result).toBeInstanceOf(Array);
       expect(result).toHaveLength(0);
     });
