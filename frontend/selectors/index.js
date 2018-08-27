@@ -31,7 +31,8 @@ export const getRecentlyViewedProducts = createSelector(
     let { productIds = [] } = recentlyViewedProductsState || {};
 
     if (typeof limit !== 'undefined') {
-      productIds = productIds.slice(0, limit);
+      // Take here one product more then limit in case it might be the current product
+      productIds = productIds.slice(0, limit + 1);
     }
 
     // Collect product entities for the productIds on the list
@@ -47,7 +48,7 @@ export const getRecentlyViewedProducts = createSelector(
       }
 
       return list;
-    }, []);
+    }, []).slice(0, limit);
   }
 );
 

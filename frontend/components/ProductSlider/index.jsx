@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 import I18n from '@shopgate/pwa-common/components/I18n';
 import Slider from '@shopgate/pwa-common/components/Slider';
 import ButtonLink from '@shopgate/pwa-ui-shared/ButtonLink';
+import config from '../../config';
 import Card from '../Card';
 import ProductCard from '../ProductCard';
 import connect from './connector';
 import styles from './style';
+
+// We need the json parse here to create a bool out of the string "true" / "false"
+const showOnPdpPage = JSON.parse(config.showOnPdpPage);
+const showOnEmptyCartPage = JSON.parse(config.showOnEmptyCartPage);
 
 /**
  * Creates an item for a single product.
@@ -34,8 +39,16 @@ const createSliderItem = (product) => {
  * @return {JSX}
  */
 const ProductSlider = ({
-  products, showMore, showMoreUrl, isCartPage,
+  products, showMore, showMoreUrl, isCartPage, isProductPage,
 }) => {
+  if (isCartPage && !showOnEmptyCartPage) {
+    return null;
+  }
+
+  if (isProductPage && !showOnPdpPage) {
+    return null;
+  }
+
   const items = products.map((
     product => createSliderItem(product)
   ));
@@ -81,6 +94,7 @@ const ProductSlider = ({
 
 ProductSlider.propTypes = {
   isCartPage: PropTypes.bool.isRequired,
+  isProductPage: PropTypes.bool.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape()),
   showMore: PropTypes.bool,
   showMoreUrl: PropTypes.string,

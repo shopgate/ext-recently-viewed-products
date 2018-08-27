@@ -14,7 +14,7 @@ module.exports = async function (context, input) {
   }
 
   try {
-    const recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, context.config.maximumHistoryEntriesPerUser)
+    const recentlyViewedProductIdsList = await getRecentlyViewedProductsList(context.storage.device, parseInt(context.config.maximumHistoryEntriesPerUser))
 
     recentlyViewedProductIdsList.addProductIds(input.productIds)
 

@@ -21,5 +21,5 @@ interface PipelineStorageContainer {
 }
 
 interface PipelineConfiguration {
-  maximumHistoryEntriesPerUser: number
+  maximumHistoryEntriesPerUser: string
 }

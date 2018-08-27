@@ -17,7 +17,7 @@ describe('getViewedProducts', () => {
     storageMock = sandbox.mock(storageStub)
 
     context = {
-      config: {maximumHistoryEntriesPerUser: 50},
+      config: {maximumHistoryEntriesPerUser: '50'},
       storage: {device: storageStub},
       log: {error: () => {}}
     }
