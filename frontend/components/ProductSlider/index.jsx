@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import I18n from '@shopgate/pwa-common/components/I18n';
 import Slider from '@shopgate/pwa-common/components/Slider';
@@ -32,74 +32,98 @@ const createSliderItem = (product) => {
 
 /**
  * The ProductSlider component
- * @return {JSX}
  */
-const ProductSlider = ({
-  products, showMore, showMoreUrl, isCartPage, isProductPage,
-}) => {
-  if (isCartPage && !showOnEmptyCartPage) {
-    return null;
+class ProductSlider extends Component {
+  static propTypes = {
+    isCartPage: PropTypes.bool.isRequired,
+    isProductPage: PropTypes.bool.isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape()),
+    showMore: PropTypes.bool,
+    showMoreUrl: PropTypes.string,
+  };
+
+  static defaultProps = {
+    products: [],
+    showMore: false,
+    showMoreUrl: null,
+  };
+
+  /**
+   * Should component update given the new props?
+   * @param {Object} nextProps The next component props.
+   * @return {boolean} Update or not.
+   */
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.isCartPage !== this.props.isCartPage) {
+      return true;
+    }
+
+    if (nextProps.isProductPage !== this.props.isProductPage) {
+      return true;
+    }
+
+    if (nextProps.products.length !== this.props.products.length) {
+      return true;
+    }
+
+    return this.props.products.every(({ id }, index) => id !== nextProps.products[index].id);
   }
 
-  if (isProductPage && !showOnPdpPage) {
-    return null;
-  }
+  /**
+   * Renders the component.
+   * @returns {JSX}
+   */
+  render() {
+    if (this.props.isCartPage && !showOnEmptyCartPage) {
+      return null;
+    }
 
-  const items = products.map((
-    product => createSliderItem(product)
-  ));
+    if (this.props.isProductPage && !showOnPdpPage) {
+      return null;
+    }
 
-  if (!items.length) {
-    return null;
-  }
+    const items = this.props.products.map((
+      product => createSliderItem(product)
+    ));
 
-  let headline = 'recently_viewed_products.headline';
+    if (!items.length) {
+      return null;
+    }
 
-  if (isCartPage) {
-    headline += '_cart';
-  }
+    let headline = 'recently_viewed_products.headline';
 
-  return (
-    <div className={styles.slider}>
-      <div className={styles.headlineContainer}>
-        <h3 className={styles.headline}>
-          <I18n.Text string={headline} />
-        </h3>
-        { showMore && (
-          <div className={styles.showMoreContainer}>
-            <ButtonLink href={showMoreUrl} noGap>
-              <I18n.Text string="recently_viewed_products.show_more" />
-            </ButtonLink>
-          </div>
-        )}
+    if (this.props.isCartPage) {
+      headline += '_cart';
+    }
+
+    return (
+      <div className={styles.slider}>
+        <div className={styles.headlineContainer}>
+          <h3 className={styles.headline}>
+            <I18n.Text string={headline} />
+          </h3>
+          { this.props.showMore && (
+            <div className={styles.showMoreContainer}>
+              <ButtonLink href={this.props.showMoreUrl} noGap>
+                <I18n.Text string="recently_viewed_products.show_more" />
+              </ButtonLink>
+            </div>
+          )}
+        </div>
+
+        <Slider
+          loop={false}
+          indicators={false}
+          controls={false}
+          snapItems={false}
+          slidesPerView={2.3}
+          classNames={{ container: styles.sliderContainer }}
+        >
+          {items}
+        </Slider>
       </div>
-
-      <Slider
-        loop={false}
-        indicators={false}
-        controls={false}
-        snapItems={false}
-        slidesPerView={2.3}
-        classNames={{ container: styles.sliderContainer }}
-      >
-        {items}
-      </Slider>
-    </div>
-  );
-};
-
-ProductSlider.propTypes = {
-  isCartPage: PropTypes.bool.isRequired,
-  isProductPage: PropTypes.bool.isRequired,
-  products: PropTypes.arrayOf(PropTypes.shape()),
-  showMore: PropTypes.bool,
-  showMoreUrl: PropTypes.string,
-};
-
-ProductSlider.defaultProps = {
-  products: [],
-  showMore: false,
-  showMoreUrl: null,
-};
+    );
+  }
+}
 
 export default connect(ProductSlider);
