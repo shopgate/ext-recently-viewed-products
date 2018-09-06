@@ -10,6 +10,10 @@ export const defaultState = {
       productIds: [],
     },
   },
+  product: {
+    currentProduct: { productId: null },
+  },
+  history: { pathname: '' },
   menu: {
     menusById: {
 
@@ -41,8 +45,10 @@ export const createStateWithProducts = (amount = 2, createPageEntry = true) => {
 
   return {
     product: {
+      currentProduct: { productId: null },
       productsById,
     },
+    history: { pathname: '' },
     extensions: {
       [REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS]: {
         isFetching: false,

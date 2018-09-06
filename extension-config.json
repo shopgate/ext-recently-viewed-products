@@ -9,10 +9,22 @@
       "target": "cart.empty"
     },
     {
-      "id": "ProductSlider",
+      "id": "ProductSlider-cart",
       "type": "portals",
       "path": "frontend/components/ProductSlider",
       "target": "cart.empty.after"
+    },
+    {
+      "id": "ProductSlider-pdp",
+      "type": "portals",
+      "path": "frontend/components/ProductSlider",
+      "target": "product.reviews.after"
+    },
+    {
+      "id": "Trampoline",
+      "path": "frontend/routes/Trampoline.jsx",
+      "target": "app.routes",
+      "type": "portals"
     },
     {
       "id": "RecentlyViewedPage",
@@ -43,17 +55,48 @@
   ],
   "configuration": {
     "maximumHistoryEntriesPerUser": {
-      "type": "static",
+      "type": "admin",
       "destination": "both",
+      "default": 50,
       "params": {
-        "value": 50
+        "type": "number",
+        "label": "Maximum of recently viewed item in the history of a user"
       }
     },
     "pageId": {
-      "type": "static",
+      "type": "admin",
       "destination": "frontend",
+      "default": "recently-viewed",
       "params": {
-        "value": "recently-viewed"
+        "type": "textbox",
+        "label": "ID of the cmd page where the recently views products should be shown as list"
+      }
+    },
+    "sliderLimit" : {
+      "type": "admin",
+      "destination": "frontend",
+      "default": 10,
+      "params": {
+        "type": "number",
+        "label": "Number of items shown in the slider"
+      }
+    },
+    "showOnEmptyCartPage" : {
+      "type": "admin",
+      "destination": "frontend",
+      "default": true,
+      "params": {
+        "type": "boolean",
+        "label": "Slider is shown on the empty cart page"
+      }
+    },
+    "showOnPdpPage" : {
+      "type": "admin",
+      "destination": "frontend",
+      "default": true,
+      "params": {
+        "type": "boolean",
+        "label": "Slider is shown on the product detail page"
       }
     }
   }

@@ -13,6 +13,7 @@ import Price from '@shopgate/pwa-ui-shared/Price';
 import DiscountBadge from '@shopgate/pwa-ui-shared/DiscountBadge';
 import PriceStriked from '@shopgate/pwa-ui-shared/PriceStriked';
 import ProductImage from '../ProductImage';
+import { TRAMPOLINE_PATH } from '../../constants';
 import styles from './style';
 
 /**
@@ -30,7 +31,7 @@ const ProductCard = ({
 }) => (
   <Link
     tagName="a"
-    href={`${ITEM_PATH}/${bin2hex(product.id)}`}
+    href={`${TRAMPOLINE_PATH}${ITEM_PATH}/${bin2hex(product.id)}`}
     className={styles.container}
     itemProp="item"
     itemScope

@@ -16,6 +16,8 @@ exports[`ProductSlider should render nothing 1`] = `
   <Connect(ProductSlider)>
     <ProductSlider
       dispatch={[Function]}
+      isCartPage={false}
+      isProductPage={false}
       products={Array []}
       showMore={false}
       showMoreUrl={null}
@@ -40,6 +42,8 @@ exports[`ProductSlider should render slider 1`] = `
   <Connect(ProductSlider)>
     <ProductSlider
       dispatch={[Function]}
+      isCartPage={false}
+      isProductPage={false}
       products={
         Array [
           Object {
@@ -122,7 +126,8 @@ exports[`ProductSlider should render slider 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/31"
+                        disabled={false}
+                        href="/trampoline/item/31"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -131,7 +136,7 @@ exports[`ProductSlider should render slider 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/31"
+                          data-test-id="link: /trampoline/item/31"
                           onClick={[Function]}
                           role="link"
                         >
@@ -251,7 +256,8 @@ exports[`ProductSlider should render slider 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/32"
+                        disabled={false}
+                        href="/trampoline/item/32"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -260,7 +266,7 @@ exports[`ProductSlider should render slider 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/32"
+                          data-test-id="link: /trampoline/item/32"
                           onClick={[Function]}
                           role="link"
                         >
@@ -378,6 +384,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
   <Connect(ProductSlider)>
     <ProductSlider
       dispatch={[Function]}
+      isCartPage={false}
+      isProductPage={false}
       products={
         Array [
           Object {
@@ -480,11 +488,13 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                 onClick={[Function]}
                 rippleClassName=""
                 rippleSize={null}
+                testId={null}
                 type="secondary"
                 wrapContent={true}
               >
                 <div
                   className="css-1yv2jt6"
+                  data-test-id={null}
                 >
                   <RippleButton
                     className=""
@@ -493,6 +503,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     onClick={[Function]}
                     rippleClassName=""
                     rippleSize={null}
+                    testId="Button"
                     type="secondary"
                     wrapContent={true}
                   >
@@ -501,6 +512,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       disabled={false}
                       flat={true}
                       onClick={[Function]}
+                      testId="Button"
                       type="secondary"
                       wrapContent={false}
                     >
@@ -508,6 +520,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         className="css-dh0pju "
                         disabled={false}
                         onClick={[Function]}
+                        testId="Button"
                       >
                         <button
                           className="css-dh0pju  css-1rn65c0"
@@ -592,7 +605,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/31"
+                        disabled={false}
+                        href="/trampoline/item/31"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -601,7 +615,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/31"
+                          data-test-id="link: /trampoline/item/31"
                           onClick={[Function]}
                           role="link"
                         >
@@ -721,7 +735,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/32"
+                        disabled={false}
+                        href="/trampoline/item/32"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -730,7 +745,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/32"
+                          data-test-id="link: /trampoline/item/32"
                           onClick={[Function]}
                           role="link"
                         >
@@ -850,7 +865,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/33"
+                        disabled={false}
+                        href="/trampoline/item/33"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -859,7 +875,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/33"
+                          data-test-id="link: /trampoline/item/33"
                           onClick={[Function]}
                           role="link"
                         >
@@ -979,7 +995,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/34"
+                        disabled={false}
+                        href="/trampoline/item/34"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -988,7 +1005,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/34"
+                          data-test-id="link: /trampoline/item/34"
                           onClick={[Function]}
                           role="link"
                         >
@@ -1108,7 +1125,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/35"
+                        disabled={false}
+                        href="/trampoline/item/35"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -1117,7 +1135,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/35"
+                          data-test-id="link: /trampoline/item/35"
                           onClick={[Function]}
                           role="link"
                         >
@@ -1237,7 +1255,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/36"
+                        disabled={false}
+                        href="/trampoline/item/36"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -1246,7 +1265,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/36"
+                          data-test-id="link: /trampoline/item/36"
                           onClick={[Function]}
                           role="link"
                         >
@@ -1366,7 +1385,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/37"
+                        disabled={false}
+                        href="/trampoline/item/37"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -1375,7 +1395,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/37"
+                          data-test-id="link: /trampoline/item/37"
                           onClick={[Function]}
                           role="link"
                         >
@@ -1495,7 +1515,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/38"
+                        disabled={false}
+                        href="/trampoline/item/38"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -1504,7 +1525,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/38"
+                          data-test-id="link: /trampoline/item/38"
                           onClick={[Function]}
                           role="link"
                         >
@@ -1624,7 +1645,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/39"
+                        disabled={false}
+                        href="/trampoline/item/39"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -1633,7 +1655,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/39"
+                          data-test-id="link: /trampoline/item/39"
                           onClick={[Function]}
                           role="link"
                         >
@@ -1753,7 +1775,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                     >
                       <Link
                         className="css-b4pchx"
-                        href="/item/3130"
+                        disabled={false}
+                        href="/trampoline/item/3130"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
@@ -1762,7 +1785,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                         <div
                           aria-hidden={true}
                           className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /item/3130"
+                          data-test-id="link: /trampoline/item/3130"
                           onClick={[Function]}
                           role="link"
                         >
