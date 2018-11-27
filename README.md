@@ -4,6 +4,19 @@ This extension provides a slider of the recently viewed products within the cart
 
 The amount of items within the slider is limited and will only show up the recent entries. When a cms page with the key `recently-viewed` is available within the `quicklinks` menu, the complete list can be shown within that page.
 
+## Configuration
+Configuration is done by extension config.
+
+```json
+{
+"maximumHistoryEntriesPerUser": "Number, defaults to 50, Maximum of recently viewed item in the history of a user",
+    "pageId": "String, defaults to recently-viewed. ID of the cmd page where the recently views products should be shown as list",
+    "sliderLimit" : "Number, defaults to 10. Number of items shown in the slider",
+    "showOnEmptyCartPage" : "Boolean. Defaults to true. Whether slider is shown on the empty cart page",
+    "showOnPdpPage" : "Boolean. Defaults to true. Whether slider is shown on the product detail page"
+}
+```
+
 ## About Shopgate
 
 Shopgate is the leading mobile commerce platform.
