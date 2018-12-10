@@ -37,6 +37,7 @@ export const fetchRecentlyViewedProducts = () => (dispatch, getState) => {
       if (missingProductsIds.length) {
         // Fetch missing product data before the store is updated with the recently viewed list
         await dispatch(getProducts({
+          includeFilters: false,
           params: {
             productIds: missingProductsIds,
           },
