@@ -21,12 +21,6 @@
       "target": "product.reviews.after"
     },
     {
-      "id": "Trampoline",
-      "path": "frontend/routes/Trampoline.jsx",
-      "target": "app.routes",
-      "type": "portals"
-    },
-    {
       "id": "RecentlyViewedPage",
       "type": "portals",
       "path": "frontend/components/RecentlyViewedPage",

@@ -7,6 +7,9 @@ import {
   requestRecentlyViewedProducts,
   receiveRecentlyViewedProducts,
   errorRecentlyViewedProducts,
+  requestAddRecentlyViewedProducts,
+  successAddRecentlyViewedProducts,
+  errorAddRecentlyViewedProducts,
 } from '../action-creators';
 import {
   PIPELINE_GET_VIEWED_PRODUCTS,
@@ -33,7 +36,7 @@ export const fetchRecentlyViewedProducts = () => (dispatch, getState) => {
       const { productIds } = response;
 
       // Collect the productIds where no product entity is available within the store
-      const missingProductsIds = productIds.filter(id => !getProductById(state, id));
+      const missingProductsIds = productIds.filter(id => !getProductById(state, { productId: id }));
       if (missingProductsIds.length) {
         // Fetch missing product data before the store is updated with the recently viewed list
         await dispatch(getProducts({
@@ -58,15 +61,18 @@ export const fetchRecentlyViewedProducts = () => (dispatch, getState) => {
  * @return {Function} A redux thunk.
  */
 export const addRecentlyViewedProducts = (productIds = []) => (dispatch) => {
+  dispatch(requestAddRecentlyViewedProducts(productIds));
   new PipelineRequest(PIPELINE_ADD_VIEWED_PRODUCTS)
     .setHandleErrors(ERROR_HANDLE_SUPPRESS)
     .setInput({ productIds })
     .dispatch()
     .then(() => {
+      dispatch(successAddRecentlyViewedProducts(productIds));
       // Fetch the updated product list
       dispatch(fetchRecentlyViewedProducts());
     })
     .catch((err) => {
       logger.error(err);
+      dispatch(errorAddRecentlyViewedProducts(productIds, err));
     });
 };
