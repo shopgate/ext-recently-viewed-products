@@ -33,10 +33,10 @@ export const createStateWithProducts = (amount = 2, createPageEntry = true) => {
   const productsById = {};
 
   for (let i = 1; i <= amount; i += 1) {
-    productIds.push(i);
+    productIds.push(i.toString());
     productsById[i] = {
       productData: {
-        id: i,
+        id: i.toString(),
         featuredImageUrl: `https://example.com/${i}`,
         name: `${i}`,
       },
@@ -45,10 +45,8 @@ export const createStateWithProducts = (amount = 2, createPageEntry = true) => {
 
   return {
     product: {
-      currentProduct: { productId: null },
       productsById,
     },
-    history: { pathname: '' },
     extensions: {
       [REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS]: {
         isFetching: false,

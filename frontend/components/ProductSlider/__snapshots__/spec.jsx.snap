@@ -59,7 +59,7 @@ exports[`ProductSlider should render slider 1`] = `
         ]
       }
       showMore={false}
-      showMoreUrl="/page/recently-viewed"
+      showMoreUrl={null}
     >
       <div
         className="css-1my1qng"
@@ -124,54 +124,40 @@ exports[`ProductSlider should render slider 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/31"
+                        href="/item/31"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/31"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/31"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="1"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/1"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/31"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="1"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -187,44 +173,72 @@ exports[`ProductSlider should render slider 1`] = `
                                 ]
                               }
                               src="https://example.com/1"
-                              transition={null}
+                            >
+                              <Image
+                                alt="1"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/1"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    1
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      1
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -254,54 +268,40 @@ exports[`ProductSlider should render slider 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/32"
+                        href="/item/32"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/32"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/32"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="2"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/2"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/32"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="2"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -317,44 +317,72 @@ exports[`ProductSlider should render slider 1`] = `
                                 ]
                               }
                               src="https://example.com/2"
-                              transition={null}
+                            >
+                              <Image
+                                alt="2"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/2"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    2
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      2
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -440,8 +468,8 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
           },
         ]
       }
-      showMore={true}
-      showMoreUrl="/page/recently-viewed"
+      showMore={false}
+      showMoreUrl={null}
     >
       <div
         className="css-1my1qng"
@@ -468,103 +496,6 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
               </span>
             </Translate>
           </h3>
-          <div
-            className={
-              Object {
-                "data-css-1kxjgrr": "",
-              }
-            }
-          >
-            <ButtonLink
-              href="/page/recently-viewed"
-              noGap={true}
-            >
-              <ActionButton
-                className=""
-                disabled={false}
-                flat={true}
-                loading={false}
-                noGap={true}
-                onClick={[Function]}
-                rippleClassName=""
-                rippleSize={null}
-                testId={null}
-                type="secondary"
-                wrapContent={true}
-              >
-                <div
-                  className="css-1yv2jt6"
-                  data-test-id={null}
-                >
-                  <RippleButton
-                    className=""
-                    disabled={false}
-                    flat={true}
-                    onClick={[Function]}
-                    rippleClassName=""
-                    rippleSize={null}
-                    testId="Button"
-                    type="secondary"
-                    wrapContent={true}
-                  >
-                    <Button
-                      className=""
-                      disabled={false}
-                      flat={true}
-                      onClick={[Function]}
-                      testId="Button"
-                      type="secondary"
-                      wrapContent={false}
-                    >
-                      <Button
-                        className="css-dh0pju "
-                        disabled={false}
-                        onClick={[Function]}
-                        testId="Button"
-                      >
-                        <button
-                          className="css-dh0pju  css-1rn65c0"
-                          data-test-id="Button"
-                          disabled={false}
-                          onClick={[Function]}
-                        >
-                          <Ripple
-                            className="css-8s1fw2 "
-                            color="#000"
-                            disabled={false}
-                            fill={true}
-                            onComplete={[Function]}
-                            overflow={false}
-                            size={null}
-                          >
-                            <div
-                              aria-hidden={true}
-                              className="css-8s1fw2 "
-                              data-test-id="Ripple"
-                              onClick={[Function]}
-                              style={null}
-                            >
-                              <Translate
-                                className=""
-                                params={Object {}}
-                                string="recently_viewed_products.show_more"
-                              >
-                                <span
-                                  className=""
-                                >
-                                  recently_viewed_products.show_more
-                                </span>
-                              </Translate>
-                            </div>
-                          </Ripple>
-                        </button>
-                      </Button>
-                    </Button>
-                  </RippleButton>
-                </div>
-              </ActionButton>
-            </ButtonLink>
-          </div>
         </div>
         <_class
           classNames={
@@ -603,54 +534,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/31"
+                        href="/item/31"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/31"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/31"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="1"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/1"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/31"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="1"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -666,44 +583,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/1"
-                              transition={null}
+                            >
+                              <Image
+                                alt="1"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/1"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    1
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      1
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -733,54 +678,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/32"
+                        href="/item/32"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/32"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/32"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="2"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/2"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/32"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="2"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -796,44 +727,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/2"
-                              transition={null}
+                            >
+                              <Image
+                                alt="2"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/2"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    2
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      2
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -863,54 +822,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/33"
+                        href="/item/33"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/33"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/33"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="3"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/3"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/33"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="3"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -926,44 +871,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/3"
-                              transition={null}
+                            >
+                              <Image
+                                alt="3"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/3"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    3
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      3
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -993,54 +966,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/34"
+                        href="/item/34"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/34"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/34"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="4"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/4"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/34"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="4"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1056,44 +1015,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/4"
-                              transition={null}
+                            >
+                              <Image
+                                alt="4"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/4"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    4
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      4
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -1123,54 +1110,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/35"
+                        href="/item/35"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/35"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/35"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="5"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/5"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/35"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="5"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1186,44 +1159,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/5"
-                              transition={null}
+                            >
+                              <Image
+                                alt="5"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/5"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    5
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      5
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -1253,54 +1254,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/36"
+                        href="/item/36"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/36"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/36"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="6"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/6"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/36"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="6"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1316,44 +1303,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/6"
-                              transition={null}
+                            >
+                              <Image
+                                alt="6"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/6"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    6
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      6
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -1383,54 +1398,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/37"
+                        href="/item/37"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/37"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/37"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="7"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/7"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/37"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="7"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1446,44 +1447,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/7"
-                              transition={null}
+                            >
+                              <Image
+                                alt="7"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/7"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    7
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      7
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -1513,54 +1542,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/38"
+                        href="/item/38"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/38"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/38"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="8"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/8"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/38"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="8"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1576,44 +1591,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/8"
-                              transition={null}
+                            >
+                              <Image
+                                alt="8"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/8"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    8
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      8
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -1643,54 +1686,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/39"
+                        href="/item/39"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/39"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/39"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="9"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/9"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/39"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="9"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1706,44 +1735,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/9"
-                              transition={null}
+                            >
+                              <Image
+                                alt="9"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/9"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    9
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      9
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>
@@ -1773,54 +1830,40 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       }
                       titleRows={2}
                     >
-                      <Link
+                      <Connect(Link)
                         className="css-b4pchx"
-                        disabled={false}
-                        href="/trampoline/item/3130"
+                        href="/item/3130"
                         itemProp="item"
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         tagName="a"
                       >
-                        <div
-                          aria-hidden={true}
-                          className="css-c6ki83 css-b4pchx"
-                          data-test-id="link: /trampoline/item/3130"
-                          onClick={[Function]}
-                          role="link"
+                        <Link
+                          className="css-b4pchx"
+                          disabled={false}
+                          historyPush={[Function]}
+                          historyReplace={[Function]}
+                          href="/item/3130"
+                          itemProp="item"
+                          itemScope={true}
+                          itemType="http://schema.org/Product"
+                          replace={false}
+                          state={Object {}}
+                          tag="div"
+                          tagName="a"
                         >
-                          <ProductImage
-                            alt="10"
-                            animating={true}
-                            forcePlaceholder={false}
-                            highestResolutionLoaded={[Function]}
-                            itemProp="image"
-                            ratio={null}
-                            resolutions={
-                              Array [
-                                Object {
-                                  "blur": 2,
-                                  "height": 50,
-                                  "width": 50,
-                                },
-                                Object {
-                                  "height": 440,
-                                  "width": 440,
-                                },
-                              ]
-                            }
-                            src="https://example.com/10"
+                          <div
+                            className="css-c6ki83 css-b4pchx"
+                            data-test-id="link: /item/3130"
+                            onClick={[Function]}
+                            role="link"
                           >
-                            <Image
+                            <ProductImage
                               alt="10"
                               animating={true}
-                              backgroundColor="#f2f2f2"
-                              className=""
                               forcePlaceholder={false}
                               highestResolutionLoaded={[Function]}
                               itemProp="image"
-                              onError={[Function]}
-                              onLoad={null}
                               ratio={null}
                               resolutions={
                                 Array [
@@ -1836,44 +1879,72 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                                 ]
                               }
                               src="https://example.com/10"
-                              transition={null}
+                            >
+                              <Image
+                                alt="10"
+                                animating={true}
+                                backgroundColor="#f2f2f2"
+                                className=""
+                                forcePlaceholder={false}
+                                highestResolutionLoaded={[Function]}
+                                itemProp="image"
+                                onError={[Function]}
+                                onLoad={null}
+                                ratio={null}
+                                resolutions={
+                                  Array [
+                                    Object {
+                                      "blur": 2,
+                                      "height": 50,
+                                      "width": 50,
+                                    },
+                                    Object {
+                                      "height": 440,
+                                      "width": 440,
+                                    },
+                                  ]
+                                }
+                                src="https://example.com/10"
+                                srcmap={null}
+                                transition={null}
+                              >
+                                <div
+                                  className="css-326p2s "
+                                />
+                              </Image>
+                            </ProductImage>
+                            <div
+                              className="css-1rbh2c4"
                             >
                               <div
-                                className="css-326p2s "
-                              />
-                            </Image>
-                          </ProductImage>
-                          <div
-                            className="css-1rbh2c4"
-                          >
-                            <div
-                              className="css-by38mh"
-                              itemProp="name"
-                            >
-                              <Ellipsis
-                                className=""
-                                ellipsis="..."
-                                rows={2}
+                                className="css-by38mh"
+                                itemProp="name"
                               >
-                                <Dotdotdot
-                                  clamp={2}
+                                <Ellipsis
                                   className=""
                                   ellipsis="..."
-                                  tagName="div"
-                                  truncationChar="…"
-                                  useNativeClamp={true}
+                                  rows={2}
                                 >
-                                  <div
+                                  <Dotdotdot
+                                    clamp={2}
                                     className=""
+                                    ellipsis="..."
+                                    tagName="div"
+                                    truncationChar="…"
+                                    useNativeClamp={true}
                                   >
-                                    10
-                                  </div>
-                                </Dotdotdot>
-                              </Ellipsis>
+                                    <div
+                                      className=""
+                                    >
+                                      10
+                                    </div>
+                                  </Dotdotdot>
+                                </Ellipsis>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </Connect(Link)>
                     </ProductCard>
                   </div>
                 </Card>

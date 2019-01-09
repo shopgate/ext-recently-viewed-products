@@ -17,8 +17,8 @@ export default function recentlyViewedProducts(subscribe) {
    * A new stream that emits when the product page is opened. It doesn't get active
    * when the user navigated back within the history.
    */
-  const productWillEnterForward$ = routeDidEnter$.filter((
-    ({ action }) => action.historyAction === ACTION_PUSH && action.route.pattern === ITEM_PATTERN
+  const productWillEnterForward$ = routeDidEnter$.filter(({ action }) => (
+    action.historyAction === ACTION_PUSH && action.route.pattern === ITEM_PATTERN
   ));
 
   subscribe(productWillEnterForward$, ({ dispatch }) => {
