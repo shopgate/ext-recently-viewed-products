@@ -4,8 +4,7 @@ import { getCurrentPathname } from '@shopgate/pwa-common/selectors/router';
 import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
 import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
 import { getProducts, getProductIdFromRoute } from '@shopgate/pwa-common-commerce/product/selectors/product';
-// Update to absolute path after PWA release
-import { getMenuById } from '../../../../libraries/common/selectors/menu';
+import { getMenuById } from '@shopgate/pwa-common/selectors/menu';
 import {
   REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS,
   RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
