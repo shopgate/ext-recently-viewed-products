@@ -20,12 +20,12 @@ exports[`ProductList should render a list of products 1`] = `
         Array [
           Object {
             "featuredImageUrl": "https://example.com/1",
-            "id": 1,
+            "id": "1",
             "name": "1",
           },
           Object {
             "featuredImageUrl": "https://example.com/2",
-            "id": 2,
+            "id": "2",
             "name": "2",
           },
         ]
@@ -57,7 +57,7 @@ exports[`ProductList should render a list of products 1`] = `
                   product={
                     Object {
                       "featuredImageUrl": "https://example.com/1",
-                      "id": 1,
+                      "id": "1",
                       "name": "1",
                     }
                   }
@@ -197,7 +197,7 @@ exports[`ProductList should render a list of products 1`] = `
                   product={
                     Object {
                       "featuredImageUrl": "https://example.com/2",
-                      "id": 2,
+                      "id": "2",
                       "name": "2",
                     }
                   }

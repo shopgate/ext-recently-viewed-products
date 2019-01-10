@@ -34,7 +34,7 @@ describe('Actions', () => {
       mockedResolveCb = (request, resolve, reject) => {
         reject(new Error('Foo'));
         setTimeout(() => {
-          expect(dispatch).not.toHaveBeenCalled();
+          expect(dispatch).toHaveBeenCalled();
           expect(mockedErrorLogger).toHaveBeenCalled();
           done();
         }, 0);
@@ -44,10 +44,10 @@ describe('Actions', () => {
     it('should call addRecentlyViewedProducts and then fetchRecentlyViewedProducts', (done) => {
       const dispatch = jest.fn();
       mockedResolveCb = (request, resolve) => {
-        expect(dispatch).toHaveBeenCalledTimes(0);
+        expect(dispatch).toHaveBeenCalled();
         resolve();
         setTimeout(() => {
-          expect(dispatch).toHaveBeenCalledTimes(1);
+          expect(dispatch).toHaveBeenCalledTimes(3);
           expect(mockedErrorLogger).not.toHaveBeenCalled();
           done();
         }, 0);

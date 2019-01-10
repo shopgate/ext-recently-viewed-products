@@ -1,10 +1,11 @@
 import { createSelector } from 'reselect';
-import { getMenuById } from '@shopgate/pwa-common/selectors/menu';
 import { QUICKLINKS_MENU } from '@shopgate/pwa-common/constants/MenuIDs';
 import { getCurrentPathname } from '@shopgate/pwa-common/selectors/router';
 import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
 import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
 import { getProducts, getProductIdFromRoute } from '@shopgate/pwa-common-commerce/product/selectors/product';
+// Update to absolute path after PWA release
+import { getMenuById } from '../../../../libraries/common/selectors/menu';
 import {
   REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS,
   RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
@@ -62,7 +63,7 @@ export const getRecentlyViewedProducts = createSelector(
  */
 export const getPageUrl = (state) => {
   // Check if quicklinks are available.
-  const quicklinks = (getMenuById(state, QUICKLINKS_MENU).entries || []);
+  const quicklinks = (getMenuById(state, { id: QUICKLINKS_MENU }) || []);
   // Search for an entry with the expected url.
   const { url: pageUrl = null } = quicklinks.find(({ url }) => url.endsWith(pageId)) || {};
   return pageUrl;

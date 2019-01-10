@@ -81,7 +81,8 @@ describe('selectors', () => {
 
   describe('isShowMoreVisible', () => {
     it('should return true when enough products are available', () => {
-      stateWithProducts = createStateWithProducts(RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT + 1);
+      const extraProduct = RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT + 2;
+      stateWithProducts = createStateWithProducts(extraProduct);
       const result = isShowMoreVisible(stateWithProducts);
       expect(result).toBe(true);
     });

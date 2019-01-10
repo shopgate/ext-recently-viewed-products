@@ -23,12 +23,12 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
           Array [
             Object {
               "featuredImageUrl": "https://example.com/1",
-              "id": 1,
+              "id": "1",
               "name": "1",
             },
             Object {
               "featuredImageUrl": "https://example.com/2",
-              "id": 2,
+              "id": "2",
               "name": "2",
             },
           ]
@@ -60,7 +60,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                     product={
                       Object {
                         "featuredImageUrl": "https://example.com/1",
-                        "id": 1,
+                        "id": "1",
                         "name": "1",
                       }
                     }
@@ -200,7 +200,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                     product={
                       Object {
                         "featuredImageUrl": "https://example.com/2",
-                        "id": 2,
+                        "id": "2",
                         "name": "2",
                       }
                     }

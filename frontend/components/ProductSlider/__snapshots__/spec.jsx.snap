@@ -48,18 +48,18 @@ exports[`ProductSlider should render slider 1`] = `
         Array [
           Object {
             "featuredImageUrl": "https://example.com/1",
-            "id": 1,
+            "id": "1",
             "name": "1",
           },
           Object {
             "featuredImageUrl": "https://example.com/2",
-            "id": 2,
+            "id": "2",
             "name": "2",
           },
         ]
       }
       showMore={false}
-      showMoreUrl={null}
+      showMoreUrl="/page/recently-viewed"
     >
       <div
         className="css-1my1qng"
@@ -118,7 +118,7 @@ exports[`ProductSlider should render slider 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/1",
-                          "id": 1,
+                          "id": "1",
                           "name": "1",
                         }
                       }
@@ -262,7 +262,7 @@ exports[`ProductSlider should render slider 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/2",
-                          "id": 2,
+                          "id": "2",
                           "name": "2",
                         }
                       }
@@ -418,58 +418,58 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
         Array [
           Object {
             "featuredImageUrl": "https://example.com/1",
-            "id": 1,
+            "id": "1",
             "name": "1",
           },
           Object {
             "featuredImageUrl": "https://example.com/2",
-            "id": 2,
+            "id": "2",
             "name": "2",
           },
           Object {
             "featuredImageUrl": "https://example.com/3",
-            "id": 3,
+            "id": "3",
             "name": "3",
           },
           Object {
             "featuredImageUrl": "https://example.com/4",
-            "id": 4,
+            "id": "4",
             "name": "4",
           },
           Object {
             "featuredImageUrl": "https://example.com/5",
-            "id": 5,
+            "id": "5",
             "name": "5",
           },
           Object {
             "featuredImageUrl": "https://example.com/6",
-            "id": 6,
+            "id": "6",
             "name": "6",
           },
           Object {
             "featuredImageUrl": "https://example.com/7",
-            "id": 7,
+            "id": "7",
             "name": "7",
           },
           Object {
             "featuredImageUrl": "https://example.com/8",
-            "id": 8,
+            "id": "8",
             "name": "8",
           },
           Object {
             "featuredImageUrl": "https://example.com/9",
-            "id": 9,
+            "id": "9",
             "name": "9",
           },
           Object {
             "featuredImageUrl": "https://example.com/10",
-            "id": 10,
+            "id": "10",
             "name": "10",
           },
         ]
       }
-      showMore={false}
-      showMoreUrl={null}
+      showMore={true}
+      showMoreUrl="/page/recently-viewed"
     >
       <div
         className="css-1my1qng"
@@ -496,6 +496,110 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
               </span>
             </Translate>
           </h3>
+          <div
+            className={
+              Object {
+                "data-css-1kxjgrr": "",
+              }
+            }
+          >
+            <Connect(ButtonLink)
+              href="/page/recently-viewed"
+              noGap={true}
+            >
+              <ButtonLink
+                href="/page/recently-viewed"
+                navigate={[Function]}
+                noGap={true}
+              >
+                <ActionButton
+                  className=""
+                  disabled={false}
+                  flat={true}
+                  loading={false}
+                  noGap={true}
+                  onClick={[Function]}
+                  rippleClassName=""
+                  rippleSize={null}
+                  testId={null}
+                  type="secondary"
+                  wrapContent={true}
+                >
+                  <div
+                    className="css-1yv2jt6"
+                    data-test-id={null}
+                  >
+                    <RippleButton
+                      className=""
+                      disabled={false}
+                      flat={true}
+                      onClick={[Function]}
+                      rippleClassName=""
+                      rippleSize={null}
+                      testId="Button"
+                      type="secondary"
+                      wrapContent={true}
+                    >
+                      <Button
+                        className=""
+                        disabled={false}
+                        flat={true}
+                        onClick={[Function]}
+                        testId="Button"
+                        type="secondary"
+                        wrapContent={false}
+                      >
+                        <Button
+                          className="css-dh0pju "
+                          disabled={false}
+                          onClick={[Function]}
+                          testId="Button"
+                        >
+                          <button
+                            className="css-dh0pju  css-1rn65c0"
+                            data-test-id="Button"
+                            disabled={false}
+                            onClick={[Function]}
+                          >
+                            <Ripple
+                              className="css-1fscwua "
+                              color="#000"
+                              disabled={false}
+                              fill={true}
+                              onClick={[Function]}
+                              onComplete={[Function]}
+                              overflow={false}
+                              size={null}
+                            >
+                              <div
+                                aria-hidden={true}
+                                className="css-1fscwua "
+                                data-test-id="Ripple"
+                                onClick={[Function]}
+                                style={null}
+                              >
+                                <Translate
+                                  className=""
+                                  params={Object {}}
+                                  string="recently_viewed_products.show_more"
+                                >
+                                  <span
+                                    className=""
+                                  >
+                                    recently_viewed_products.show_more
+                                  </span>
+                                </Translate>
+                              </div>
+                            </Ripple>
+                          </button>
+                        </Button>
+                      </Button>
+                    </RippleButton>
+                  </div>
+                </ActionButton>
+              </ButtonLink>
+            </Connect(ButtonLink)>
+          </div>
         </div>
         <_class
           classNames={
@@ -528,7 +632,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/1",
-                          "id": 1,
+                          "id": "1",
                           "name": "1",
                         }
                       }
@@ -672,7 +776,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/2",
-                          "id": 2,
+                          "id": "2",
                           "name": "2",
                         }
                       }
@@ -816,7 +920,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/3",
-                          "id": 3,
+                          "id": "3",
                           "name": "3",
                         }
                       }
@@ -960,7 +1064,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/4",
-                          "id": 4,
+                          "id": "4",
                           "name": "4",
                         }
                       }
@@ -1104,7 +1208,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/5",
-                          "id": 5,
+                          "id": "5",
                           "name": "5",
                         }
                       }
@@ -1248,7 +1352,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/6",
-                          "id": 6,
+                          "id": "6",
                           "name": "6",
                         }
                       }
@@ -1392,7 +1496,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/7",
-                          "id": 7,
+                          "id": "7",
                           "name": "7",
                         }
                       }
@@ -1536,7 +1640,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/8",
-                          "id": 8,
+                          "id": "8",
                           "name": "8",
                         }
                       }
@@ -1680,7 +1784,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/9",
-                          "id": 9,
+                          "id": "9",
                           "name": "9",
                         }
                       }
@@ -1824,7 +1928,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                       product={
                         Object {
                           "featuredImageUrl": "https://example.com/10",
-                          "id": 10,
+                          "id": "10",
                           "name": "10",
                         }
                       }
