@@ -1,12 +1,11 @@
 const RecentlyViewedProductIdsList = require('./RecentlyViewedProductIdList')
-const {STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST} = require('./constants')
+const { STORAGE_RECENTLY_VIEWED_PRODUCTS_LIST } = require('./constants')
 const InvalidParameterException = require('./error/InvalidParameterException')
 const InternalErrorException = require('./error/InternalErrorException')
 
 /**
- * @param {PipelineContext} context
- * @param {addRecentlyViewedProductsInput} input
- * @returns {Promise<void>}
+ * @param {PipelineContext} context context
+ * @param {addRecentlyViewedProductsInput} input input
  */
 module.exports = async function (context, input) {
   if (!input.productIds || !Array.isArray(input.productIds)) {
@@ -26,8 +25,8 @@ module.exports = async function (context, input) {
 }
 
 /**
- * @param {PipelineStorage} storage
- * @param {number} maximumEntriesPerUser
+ * @param {PipelineStorage} storage storage
+ * @param {number} maximumEntriesPerUser maximum entries
  * @returns {RecentlyViewedProductIdsList}
  */
 async function getRecentlyViewedProductsList (storage, maximumEntriesPerUser) {

@@ -107,6 +107,7 @@ exports[`ProductImage should render a placeholder and then an image 2`] = `
       ]
     }
     src="http://localhost"
+    srcmap={null}
     transition={null}
   >
     <div
@@ -162,6 +163,7 @@ exports[`ProductImage should render an image 1`] = `
       ]
     }
     src="http://localhost"
+    srcmap={null}
     transition={null}
   >
     <div
@@ -217,6 +219,7 @@ exports[`ProductImage should render an image and then placeholder on error 1`] =
       ]
     }
     src="http://localhost"
+    srcmap={null}
     transition={null}
   >
     <div

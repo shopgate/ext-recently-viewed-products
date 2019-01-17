@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { bin2hex } from '@shopgate/pwa-common/helpers/data';
-import Link from '@shopgate/pwa-common/components/Router/components/Link';
+import Link from '@shopgate/pwa-common/components/Link';
 import Ellipsis from '@shopgate/pwa-common/components/Ellipsis';
 import Grid from '@shopgate/pwa-common/components/Grid';
 import { ITEM_PATH } from '@shopgate/pwa-common-commerce/product/constants/index';
@@ -13,7 +13,6 @@ import Price from '@shopgate/pwa-ui-shared/Price';
 import DiscountBadge from '@shopgate/pwa-ui-shared/DiscountBadge';
 import PriceStriked from '@shopgate/pwa-ui-shared/PriceStriked';
 import ProductImage from '../ProductImage';
-import { TRAMPOLINE_PATH } from '../../constants';
 import styles from './style';
 
 /**
@@ -31,7 +30,7 @@ const ProductCard = ({
 }) => (
   <Link
     tagName="a"
-    href={`${TRAMPOLINE_PATH}${ITEM_PATH}/${bin2hex(product.id)}`}
+    href={`${ITEM_PATH}/${bin2hex(product.id)}`}
     className={styles.container}
     itemProp="item"
     itemScope

@@ -1,7 +1,4 @@
-import {
-  HISTORY_PUSH_ACTION,
-  HISTORY_REPLACE_ACTION,
-} from '@shopgate/pwa-common/constants/ActionTypes';
+import { ACTION_PUSH } from '@virtuous/conductor';
 import subscriptions from './index';
 
 const mockedAddRecentlyViewedProducts = jest.fn();
@@ -12,7 +9,7 @@ jest.mock('../actions', () => ({
 }));
 
 jest.mock('@shopgate/pwa-common-commerce/product/selectors/product', () => ({
-  getCurrentBaseProductId: () => 1,
+  getProductIdFromRoute: () => 1,
 }));
 
 describe('Subscriptions', () => {
@@ -34,25 +31,21 @@ describe('Subscriptions', () => {
   });
   it('should addProductToList$ on correct pages', () => {
     const positives = [
-      '/item',
+      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId' } },
 
     ];
     const negatives = [
-      '/item/21321321/reviews',
-      '/item/21321321/reviews/',
-      '/item/21321321/write_review',
-      '/item/21321321/write_review/',
+      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/reviews' } },
+      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/reviews/' } },
+      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/write_review' } },
+      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/write_review' } },
     ];
-    positives.forEach((pathname) => {
-      expect(calls[0][0].operator.predicate({ pathname, historyAction: HISTORY_PUSH_ACTION }))
-        .toBe(true);
-      expect(calls[0][0].operator.predicate({ pathname, historyAction: HISTORY_REPLACE_ACTION }))
+    positives.forEach((action) => {
+      expect(calls[0][0].operator.predicate({ action }))
         .toBe(true);
     });
-    negatives.forEach((pathname) => {
-      expect(calls[0][0].operator.predicate({ pathname, historyAction: HISTORY_PUSH_ACTION }))
-        .toBe(false);
-      expect(calls[0][0].operator.predicate({ pathname, historyAction: HISTORY_REPLACE_ACTION }))
+    negatives.forEach((action) => {
+      expect(calls[0][0].operator.predicate({ action }))
         .toBe(false);
     });
   });

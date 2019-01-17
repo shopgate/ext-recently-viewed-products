@@ -1,3 +1,4 @@
+import { getCurrentRoute } from '@shopgate/pwa-common/helpers/router';
 import {
   defaultState,
   createStateWithProducts,
@@ -10,6 +11,10 @@ import {
   isShowMoreVisible,
 } from './index';
 
+jest.mock('@shopgate/pwa-common/helpers/router', () => ({
+  getCurrentRoute: jest.fn(),
+}));
+
 describe('selectors', () => {
   let stateWithProducts;
 
@@ -19,6 +24,7 @@ describe('selectors', () => {
 
   describe('getRecentlyViewedProducts', () => {
     it('should return an empty array', () => {
+      getCurrentRoute.mockImplementation(() => ({ params: { productId: '616263' } }));
       const result = getRecentlyViewedProducts({
         extensions: {}, product: { currentProduct: { productId: null } },
       });
@@ -27,6 +33,7 @@ describe('selectors', () => {
     });
 
     it('should return all products', () => {
+      getCurrentRoute.mockImplementation(() => ({ params: { productId: '616263' } }));
       const result = getRecentlyViewedProducts(stateWithProducts);
       expect(result).toBeInstanceOf(Array);
       expect(result).toHaveLength(2);
@@ -34,6 +41,7 @@ describe('selectors', () => {
     });
 
     it('should only return the first product', () => {
+      getCurrentRoute.mockImplementation(() => ({ params: { productId: '616263' } }));
       const result = getRecentlyViewedProducts(stateWithProducts, 1);
       expect(result).toBeInstanceOf(Array);
       expect(result).toHaveLength(1);
@@ -41,11 +49,11 @@ describe('selectors', () => {
     });
 
     it('should not return the current product', () => {
+      getCurrentRoute.mockImplementation(() => ({ params: { productId: '32' } }));
       const result = getRecentlyViewedProducts({
         ...stateWithProducts,
         product: {
           ...stateWithProducts.product,
-          currentProduct: { productId: 2 },
         },
       });
       expect(result).toBeInstanceOf(Array);
@@ -73,7 +81,8 @@ describe('selectors', () => {
 
   describe('isShowMoreVisible', () => {
     it('should return true when enough products are available', () => {
-      stateWithProducts = createStateWithProducts(RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT + 1);
+      const extraProduct = RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT + 2;
+      stateWithProducts = createStateWithProducts(extraProduct);
       const result = isShowMoreVisible(stateWithProducts);
       expect(result).toBe(true);
     });

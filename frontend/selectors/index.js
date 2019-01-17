@@ -1,7 +1,10 @@
 import { createSelector } from 'reselect';
-import { getMenuById } from '@shopgate/pwa-common/selectors/menu';
 import { QUICKLINKS_MENU } from '@shopgate/pwa-common/constants/MenuIDs';
-import { getProducts, getCurrentBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
+import { getCurrentPathname } from '@shopgate/pwa-common/selectors/router';
+import { CART_PATH } from '@shopgate/pwa-common-commerce/cart/constants';
+import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
+import { getProducts, getProductIdFromRoute } from '@shopgate/pwa-common-commerce/product/selectors/product';
+import { getMenuById } from '@shopgate/pwa-common/selectors/menu';
 import {
   REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS,
   RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
@@ -23,10 +26,10 @@ const getRecentlyViewedProductsState = state =>
  * @returns {Object} The result.
  */
 export const getRecentlyViewedProducts = createSelector(
-  state => getProducts(state),
+  getProducts,
   (state, limit) => limit,
   getRecentlyViewedProductsState,
-  state => getCurrentBaseProductId(state),
+  getProductIdFromRoute,
   (productsById, limit, recentlyViewedProductsState, currentBaseProductId) => {
     let { productIds = [] } = recentlyViewedProductsState || {};
 
@@ -59,7 +62,7 @@ export const getRecentlyViewedProducts = createSelector(
  */
 export const getPageUrl = (state) => {
   // Check if quicklinks are available.
-  const quicklinks = (getMenuById(state, QUICKLINKS_MENU).entries || []);
+  const quicklinks = (getMenuById(state, { id: QUICKLINKS_MENU }) || []);
   // Search for an entry with the expected url.
   const { url: pageUrl = null } = quicklinks.find(({ url }) => url.endsWith(pageId)) || {};
   return pageUrl;
@@ -74,4 +77,14 @@ export const isShowMoreVisible = createSelector(
   getPageUrl,
   getRecentlyViewedProducts,
   (url, products) => !!(url && products.length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT)
+);
+
+export const isCartPage = createSelector(
+  getCurrentPathname,
+  pathname => pathname === CART_PATH
+);
+
+export const isProductPage = createSelector(
+  getCurrentPathname,
+  pathname => pathname === ITEM_PATTERN
 );

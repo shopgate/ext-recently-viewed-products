@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "1.0.0",
   "id": "@shopgate/recently-viewed-products",
   "components": [
     {
@@ -19,12 +19,6 @@
       "type": "portals",
       "path": "frontend/components/ProductSlider",
       "target": "product.reviews.after"
-    },
-    {
-      "id": "Trampoline",
-      "path": "frontend/routes/Trampoline.jsx",
-      "target": "app.routes",
-      "type": "portals"
     },
     {
       "id": "RecentlyViewedPage",
