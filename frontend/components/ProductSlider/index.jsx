@@ -35,8 +35,8 @@ const createSliderItem = (product) => {
  */
 class ProductSlider extends Component {
   static propTypes = {
-    isCartPage: PropTypes.bool.isRequired,
-    isProductPage: PropTypes.bool.isRequired,
+    isCartPage: PropTypes.bool,
+    isProductPage: PropTypes.bool,
     products: PropTypes.arrayOf(PropTypes.shape()),
     showMore: PropTypes.bool,
     showMoreUrl: PropTypes.string,
@@ -46,6 +46,8 @@ class ProductSlider extends Component {
     products: [],
     showMore: false,
     showMoreUrl: null,
+    isCartPage: false,
+    isProductPage: false,
   };
 
   /**
@@ -102,7 +104,7 @@ class ProductSlider extends Component {
           <h3 className={styles.headline}>
             <I18n.Text string={headline} />
           </h3>
-          { this.props.showMore && (
+          { this.props.showMore && this.props.showMoreUrl && (
             <div className={styles.showMoreContainer}>
               <ButtonLink href={this.props.showMoreUrl} noGap>
                 <I18n.Text string="recently_viewed_products.show_more" />
