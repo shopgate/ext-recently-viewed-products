@@ -11,13 +11,13 @@
     {
       "id": "ProductSlider-cart",
       "type": "portals",
-      "path": "frontend/components/ProductSlider",
+      "path": "frontend/portals/CartEmptyAfter",
       "target": "cart.empty.after"
     },
     {
       "id": "ProductSlider-pdp",
       "type": "portals",
-      "path": "frontend/components/ProductSlider",
+      "path": "frontend/portals/PDPReviewsAfter",
       "target": "product.reviews.after"
     },
     {

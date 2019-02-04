@@ -1,8 +1,9 @@
 import { routeDidEnter$ } from '@shopgate/pwa-common/streams';
-import { getProductIdFromRoute } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import { appDidStart$ } from '@shopgate/pwa-common/streams/app';
 import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
 import { ACTION_PUSH } from '@virtuous/conductor';
+import { hex2bin } from '@shopgate/pwa-common/helpers/data';
+import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import {
   addRecentlyViewedProducts,
   fetchRecentlyViewedProducts,
@@ -21,13 +22,22 @@ export default function recentlyViewedProducts(subscribe) {
     action.historyAction === ACTION_PUSH && action.route.pattern === ITEM_PATTERN
   ));
 
-  subscribe(productWillEnterForward$, ({ dispatch }) => {
+  subscribe(productWillEnterForward$, ({ dispatch, action, getState }) => {
     // Add the current product to the list when the product page was opened
-    const productId = getProductIdFromRoute();
-    if (productId === null) {
+
+    const productId = hex2bin(action.route.params.productId);
+    if (!productId) {
       return;
     }
-    dispatch(addRecentlyViewedProducts([productId]));
+    const baseProductId = getBaseProductId(getState(), { productId });
+
+    let resultProductId = productId;
+    // If it is known that this product is a variant and we do have base product knowledge,
+    // then dispatch that one.
+    if (baseProductId && productId !== baseProductId) {
+      resultProductId = baseProductId;
+    }
+    dispatch(addRecentlyViewedProducts([resultProductId]));
   });
 
   subscribe(appDidStart$, ({ dispatch }) => {

@@ -44,5 +44,8 @@
       "node_modules/",
       "coverage/"
     ]
+  },
+  "dependencies": {
+    "@shopgate/pwa-extension-kit": "^0.2.0"
   }
 }

@@ -2,8 +2,8 @@ import React, { Component as mockedComponent } from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { getEmptyStore, getStoreWithProducts } from '../../mock';
-import { RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT } from '../../constants';
 import ProductSlider from './index';
+import { getRecentlyViewedProducts } from '../../selectors';
 
 /* eslint-disable require-jsdoc, global-require */
 jest.mock('@shopgate/pwa-common/components/Slider', () => (class extends mockedComponent {
@@ -19,13 +19,14 @@ jest.mock(
   '@shopgate/pwa-common/helpers/config',
   () => require('@shopgate/pwa-common/helpers/config/mock')
 );
+
 /* eslint-enable */
 
 describe('ProductSlider', () => {
   it('should render nothing', () => {
     const component = mount((
       <Provider store={getEmptyStore()}>
-        <ProductSlider />
+        <ProductSlider products={[]} />
       </Provider>
     ));
 
@@ -34,9 +35,11 @@ describe('ProductSlider', () => {
   });
 
   it('should render slider', () => {
+    const store = getStoreWithProducts();
+    const products = getRecentlyViewedProducts(store.getState());
     const component = mount((
       <Provider store={getStoreWithProducts()}>
-        <ProductSlider />
+        <ProductSlider products={products} showMore={false} isCartPage />
       </Provider>
     ));
 
@@ -46,14 +49,16 @@ describe('ProductSlider', () => {
   });
 
   it('should render slider with a show more button', () => {
+    const store = getStoreWithProducts();
+    const products = getRecentlyViewedProducts(store.getState());
     const component = mount((
-      <Provider store={getStoreWithProducts(RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT + 1)}>
-        <ProductSlider />
+      <Provider store={getStoreWithProducts()}>
+        <ProductSlider products={products} showMore isCartPage />
       </Provider>
     ));
 
     expect(component).toMatchSnapshot();
-    expect(component.find('Item').length).toBe(RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT);
+    expect(component.find('Item').length).toBe(2);
     expect(component.find('ButtonLink').length).toBe(1);
   });
 });

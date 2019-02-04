@@ -8,15 +8,19 @@ jest.mock('../actions', () => ({
   fetchRecentlyViewedProducts: (...args) => mockedFetchRecentlyViewedProducts(...args),
 }));
 
-jest.mock('@shopgate/pwa-common-commerce/product/selectors/product', () => ({
-  getProductIdFromRoute: () => 1,
-}));
-
 describe('Subscriptions', () => {
   let calls;
   const mockedDispatch = jest.fn();
   // eslint-disable-next-line require-jsdoc
-  const mockedGetState = () => {};
+  const mockedGetState = () => ({
+    product: {
+      productsById: {
+        10: {
+          id: '10',
+        },
+      },
+    },
+  });
 
   beforeEach(() => {
     mockedDispatch.mockClear();
@@ -50,7 +54,11 @@ describe('Subscriptions', () => {
     });
   });
   it('should react on addProductToList$', () => {
-    calls[0][1]({ dispatch: mockedDispatch, getState: mockedGetState });
+    calls[0][1]({
+      dispatch: mockedDispatch,
+      getState: mockedGetState,
+      action: { route: { params: { productId: '10' } } },
+    });
     expect(mockedDispatch).toHaveBeenCalled();
     expect(mockedAddRecentlyViewedProducts).toHaveBeenCalled();
   });
