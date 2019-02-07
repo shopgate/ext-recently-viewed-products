@@ -81,7 +81,7 @@ exports[`ProductSlider should render slider 1`] = `
       showMoreUrl="/page/recently-viewed"
     >
       <div
-        className="css-ypjkl5"
+        className="css-11vmbmr"
       >
         <div
           className={
@@ -109,7 +109,7 @@ exports[`ProductSlider should render slider 1`] = `
         <_class
           classNames={
             Object {
-              "container": "css-y5yof0",
+              "container": "css-1xfu8wy",
             }
           }
           controls={false}
@@ -468,7 +468,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
       showMoreUrl="/page/recently-viewed"
     >
       <div
-        className="css-ypjkl5"
+        className="css-11vmbmr"
       >
         <div
           className={
@@ -600,7 +600,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
         <_class
           classNames={
             Object {
-              "container": "css-y5yof0",
+              "container": "css-1xfu8wy",
             }
           }
           controls={false}

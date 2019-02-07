@@ -8,13 +8,13 @@ const sliderContainer = css({
   marginLeft: 'auto',
   marginRight: 'auto',
   position: 'relative',
-  paddingBottom: variables.gap.small,
+  paddingBottom: variables.gap.big,
 }).toString();
 
 const slider = css({
   width: '100%',
   flex: 1,
-  padding: `${variables.gap.small}px 0 ${variables.gap.big}px`,
+  padding: `${variables.gap.small}px`,
 }).toString();
 
 const sliderItem = css({
