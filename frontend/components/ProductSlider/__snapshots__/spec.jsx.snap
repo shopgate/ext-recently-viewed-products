@@ -86,12 +86,12 @@ exports[`ProductSlider should render slider 1`] = `
         <div
           className={
             Object {
-              "data-css-341xub": "",
+              "data-css-1clsrg5": "",
             }
           }
         >
           <h3
-            className="css-10y5zmf"
+            className="css-14l6086"
           >
             <Translate
               className=""
@@ -473,12 +473,12 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
         <div
           className={
             Object {
-              "data-css-341xub": "",
+              "data-css-1clsrg5": "",
             }
           }
         >
           <h3
-            className="css-10y5zmf"
+            className="css-14l6086"
           >
             <Translate
               className=""
