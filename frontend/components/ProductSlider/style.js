@@ -14,7 +14,7 @@ const sliderContainer = css({
 const slider = css({
   width: '100%',
   flex: 1,
-  padding: `${variables.gap.small}px 0`,
+  padding: `${variables.gap.small}px 0 ${variables.gap.big}px`,
 }).toString();
 
 const sliderItem = css({

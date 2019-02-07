@@ -81,7 +81,7 @@ exports[`ProductSlider should render slider 1`] = `
       showMoreUrl="/page/recently-viewed"
     >
       <div
-        className="css-1my1qng"
+        className="css-ypjkl5"
       >
         <div
           className={
@@ -468,7 +468,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
       showMoreUrl="/page/recently-viewed"
     >
       <div
-        className="css-1my1qng"
+        className="css-ypjkl5"
       >
         <div
           className={
