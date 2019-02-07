@@ -98,13 +98,14 @@ class ProductSlider extends Component {
       headline += '_cart';
     }
 
+    const hasShowMore = this.props.showMore && this.props.showMoreUrl
     return (
       <div className={styles.slider}>
         <div className={styles.headlineContainer}>
-          <h3 className={styles.headline}>
+          <h3 className={styles.headline(hasShowMore)}>
             <I18n.Text string={headline} />
           </h3>
-          { this.props.showMore && this.props.showMoreUrl && (
+          { hasShowMore && (
             <div className={styles.showMoreContainer}>
               <ButtonLink href={this.props.showMoreUrl} noGap>
                 <I18n.Text string="recently_viewed_products.show_more" />

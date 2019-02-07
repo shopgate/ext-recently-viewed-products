@@ -1,5 +1,6 @@
 import { css } from 'glamor';
 import { themeConfig } from '@shopgate/pwa-common/helpers/config';
+import { isIOSTheme } from '@shopgate/pwa-extension-kit/env/helpers';
 
 const { colors, variables } = themeConfig;
 
@@ -65,15 +66,18 @@ const card = css({
 const headlineContainer = css({
   display: 'flex',
   justifyContent: 'space-between',
-  margin: `${variables.gap.small}px 0 ${variables.gap.small}px ${variables.gap.small}px`,
+  alignItems: 'center',
+  padding: '8px 0',
   overflow: 'hidden',
 });
 
-const headline = css({
-  fontSize: 'medium',
+const headline = hasShowMore => css({
+  fontSize: isIOSTheme() ? 22 : 18,
+  width: '100%',
   // The Button which is right aligned to the headline has a paddingTop modification by 1px
-  margin: `${variables.gap.small + 1}px ${variables.gap.small}px`,
-  textAlign: 'left',
+  margin: isIOSTheme() ? '8px 16px' : '8px 8px 8px 12px',
+  padding: 0,
+  textAlign: hasShowMore || isIOSTheme() ? 'left' : 'center',
 }).toString();
 
 const showMoreContainer = css({
