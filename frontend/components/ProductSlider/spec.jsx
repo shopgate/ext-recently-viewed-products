@@ -20,6 +20,10 @@ jest.mock(
   () => require('@shopgate/pwa-common/helpers/config/mock')
 );
 
+jest.mock('@shopgate/pwa-extension-kit/env/helpers', () => ({
+  isIOSTheme: () => true,
+}));
+
 /* eslint-enable */
 
 describe('ProductSlider', () => {
