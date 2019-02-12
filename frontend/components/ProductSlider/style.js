@@ -71,6 +71,11 @@ const headlineContainer = css({
   overflow: 'hidden',
 });
 
+/**
+ * Headline css
+ * @param {bool} hasShowMore Whether there is more button visible.
+ * @returns {string}
+ */
 const headline = hasShowMore => css({
   fontSize: isIOSTheme() ? 22 : 18,
   width: '100%',
