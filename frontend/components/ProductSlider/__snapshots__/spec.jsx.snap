@@ -81,7 +81,7 @@ exports[`ProductSlider should render slider 1`] = `
       showMoreUrl="/page/recently-viewed"
     >
       <div
-        className="css-11vmbmr"
+        className="css-1my1qng"
       >
         <div
           className={
@@ -128,7 +128,7 @@ exports[`ProductSlider should render slider 1`] = `
                   className="css-6r0d5j"
                 >
                   <div
-                    className="css-1l0if7f css-6r0d5j"
+                    className="css-1czp7w7 css-6r0d5j"
                   >
                     <ProductCard
                       hideName={false}
@@ -272,7 +272,7 @@ exports[`ProductSlider should render slider 1`] = `
                   className="css-6r0d5j"
                 >
                   <div
-                    className="css-1l0if7f css-6r0d5j"
+                    className="css-1czp7w7 css-6r0d5j"
                   >
                     <ProductCard
                       hideName={false}
@@ -468,7 +468,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
       showMoreUrl="/page/recently-viewed"
     >
       <div
-        className="css-11vmbmr"
+        className="css-1my1qng"
       >
         <div
           className={
@@ -619,7 +619,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                   className="css-6r0d5j"
                 >
                   <div
-                    className="css-1l0if7f css-6r0d5j"
+                    className="css-1czp7w7 css-6r0d5j"
                   >
                     <ProductCard
                       hideName={false}
@@ -763,7 +763,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                   className="css-6r0d5j"
                 >
                   <div
-                    className="css-1l0if7f css-6r0d5j"
+                    className="css-1czp7w7 css-6r0d5j"
                   >
                     <ProductCard
                       hideName={false}

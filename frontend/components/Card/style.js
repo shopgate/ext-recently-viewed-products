@@ -7,7 +7,7 @@ const shadow = '0 5px 7px rgba(0,0,0,0.09), 0 3px 6px rgba(0,0,0,0.07)';
 
 export default css({
   boxShadow: shadow,
-  margin: '5px 5px 10px',
+  margin: '5px 8px 10px',
   borderRadius: 2,
   background: colors.light,
   overflow: 'hidden',
