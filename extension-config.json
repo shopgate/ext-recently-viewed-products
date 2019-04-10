@@ -1,7 +1,13 @@
 {
-  "version": "1.0.3",
+  "version": "1.1.0",
   "id": "@shopgate/recently-viewed-products",
   "components": [
+    {
+      "id": "ProductSlider-widget",
+      "path": "frontend/components/ProductSlider/index.jsx",
+      "type": "widgets",
+      "description": "Recently viewed products widget"
+    },
     {
       "id": "EmptyCart",
       "type": "portals",
