@@ -17,6 +17,27 @@ Configuration is done by extension config.
 }
 ```
 
+
+## Widget
+If you want to use the recently viewed product slider as a widget, you can create a HTML widget with following content:
+
+```html
+<!--Widget
+{
+  "type": "@shopgate/recently-viewed-products/ProductSlider-widget",
+  "settings": {
+	"headline": "My custom headline",
+	"autoPlay": false
+  }
+}
+-->
+```
+
+Settings:
+- autoPlay (optional): false
+- headline (optional): "Recently viewed items"
+
+
 ## About Shopgate
 
 Shopgate is the leading mobile commerce platform.
