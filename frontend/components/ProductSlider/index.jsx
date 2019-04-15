@@ -35,6 +35,8 @@ const createSliderItem = (product) => {
  */
 class ProductSlider extends Component {
   static propTypes = {
+    autoPlay: PropTypes.bool,
+    headline: PropTypes.string,
     isCartPage: PropTypes.bool,
     isProductPage: PropTypes.bool,
     products: PropTypes.arrayOf(PropTypes.shape()),
@@ -43,11 +45,13 @@ class ProductSlider extends Component {
   };
 
   static defaultProps = {
+    autoPlay: false,
     products: [],
     showMore: false,
     showMoreUrl: null,
     isCartPage: false,
     isProductPage: false,
+    headline: null,
   };
 
   /**
@@ -98,12 +102,12 @@ class ProductSlider extends Component {
       headline += '_cart';
     }
 
-    const hasShowMore = this.props.showMore && this.props.showMoreUrl
+    const hasShowMore = this.props.showMore && this.props.showMoreUrl;
     return (
       <div className={styles.slider}>
         <div className={styles.headlineContainer}>
           <h3 className={styles.headline(hasShowMore)}>
-            <I18n.Text string={headline} />
+            <I18n.Text string={this.props.headline ? this.props.headline : headline} />
           </h3>
           { hasShowMore && (
             <div className={styles.showMoreContainer}>
@@ -115,6 +119,7 @@ class ProductSlider extends Component {
         </div>
 
         <Slider
+          autoPlay={this.props.autoPlay}
           loop={false}
           indicators={false}
           controls={false}
