@@ -153,7 +153,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                             className="css-1rbh2c4"
                           >
                             <div
-                              className="css-by38mh"
+                              className="css-12eiq26"
                               itemProp="name"
                             >
                               <Ellipsis
@@ -293,7 +293,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                             className="css-1rbh2c4"
                           >
                             <div
-                              className="css-by38mh"
+                              className="css-12eiq26"
                               itemProp="name"
                             >
                               <Ellipsis
