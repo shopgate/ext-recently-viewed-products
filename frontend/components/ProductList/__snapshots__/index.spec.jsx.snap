@@ -150,7 +150,7 @@ exports[`ProductList should render a list of products 1`] = `
                           className="css-1rbh2c4"
                         >
                           <div
-                            className="css-by38mh"
+                            className="css-12eiq26"
                             itemProp="name"
                           >
                             <Ellipsis
@@ -290,7 +290,7 @@ exports[`ProductList should render a list of products 1`] = `
                           className="css-1rbh2c4"
                         >
                           <div
-                            className="css-by38mh"
+                            className="css-12eiq26"
                             itemProp="name"
                           >
                             <Ellipsis

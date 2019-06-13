@@ -17,7 +17,9 @@ exports[`ProductSlider should render nothing 1`] = `
     products={Array []}
   >
     <ProductSlider
+      autoPlay={false}
       dispatch={[Function]}
+      headline={null}
       isCartPage={false}
       isProductPage={false}
       products={Array []}
@@ -60,7 +62,9 @@ exports[`ProductSlider should render slider 1`] = `
     showMore={false}
   >
     <ProductSlider
+      autoPlay={false}
       dispatch={[Function]}
+      headline={null}
       isCartPage={true}
       isProductPage={false}
       products={
@@ -107,6 +111,7 @@ exports[`ProductSlider should render slider 1`] = `
           </h3>
         </div>
         <_class
+          autoPlay={false}
           classNames={
             Object {
               "container": "css-1xfu8wy",
@@ -230,7 +235,7 @@ exports[`ProductSlider should render slider 1`] = `
                               className="css-1rbh2c4"
                             >
                               <div
-                                className="css-by38mh"
+                                className="css-12eiq26"
                                 itemProp="name"
                               >
                                 <Ellipsis
@@ -374,7 +379,7 @@ exports[`ProductSlider should render slider 1`] = `
                               className="css-1rbh2c4"
                             >
                               <div
-                                className="css-by38mh"
+                                className="css-12eiq26"
                                 itemProp="name"
                               >
                                 <Ellipsis
@@ -447,7 +452,9 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
     showMore={true}
   >
     <ProductSlider
+      autoPlay={false}
       dispatch={[Function]}
+      headline={null}
       isCartPage={true}
       isProductPage={false}
       products={
@@ -598,6 +605,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
           </div>
         </div>
         <_class
+          autoPlay={false}
           classNames={
             Object {
               "container": "css-1xfu8wy",
@@ -721,7 +729,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                               className="css-1rbh2c4"
                             >
                               <div
-                                className="css-by38mh"
+                                className="css-12eiq26"
                                 itemProp="name"
                               >
                                 <Ellipsis
@@ -865,7 +873,7 @@ exports[`ProductSlider should render slider with a show more button 1`] = `
                               className="css-1rbh2c4"
                             >
                               <div
-                                className="css-by38mh"
+                                className="css-12eiq26"
                                 itemProp="name"
                               >
                                 <Ellipsis
