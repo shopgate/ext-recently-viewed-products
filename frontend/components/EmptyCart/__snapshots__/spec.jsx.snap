@@ -56,10 +56,12 @@ exports[`EmptyCart page should render empty cart icon and title 1`] = `
       <Translate
         className=""
         params={Object {}}
+        role={null}
         string="cart.empty"
       >
         <span
           className=""
+          role={null}
         >
           cart.empty
         </span>

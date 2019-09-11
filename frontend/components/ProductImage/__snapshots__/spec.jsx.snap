@@ -111,7 +111,7 @@ exports[`ProductImage should render a placeholder and then an image 2`] = `
     transition={null}
   >
     <div
-      className="css-326p2s "
+      className="css-vfdozt "
     />
   </Image>
 </ProductImage>
@@ -167,7 +167,7 @@ exports[`ProductImage should render an image 1`] = `
     transition={null}
   >
     <div
-      className="css-326p2s "
+      className="css-vfdozt "
     />
   </Image>
 </ProductImage>
@@ -223,7 +223,7 @@ exports[`ProductImage should render an image and then placeholder on error 1`] =
     transition={null}
   >
     <div
-      className="css-326p2s "
+      className="css-vfdozt "
     />
   </Image>
 </ProductImage>

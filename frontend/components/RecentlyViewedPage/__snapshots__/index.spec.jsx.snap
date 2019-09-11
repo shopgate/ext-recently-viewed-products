@@ -40,18 +40,22 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
             data-test-id="ProductListRecentlyViewed"
             itemScope={true}
             itemType="http://schema.org/ItemList"
+            role={null}
           >
             <ul
               className="css-19sufr5"
+              role={null}
             >
               <ListItem
                 className="css-pd41kd"
                 isSelected={false}
                 key="1"
+                role={null}
               >
                 <li
                   className="css-1p5q8vq css-pd41kd css-16gj3o1"
                   data-test-id="listItem"
+                  role={null}
                 >
                   <ProductCard
                     hideName={false}
@@ -75,6 +79,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                       tagName="a"
                     >
                       <Link
+                        aria-label={null}
                         className="css-b4pchx"
                         disabled={false}
                         historyPush={[Function]}
@@ -84,15 +89,19 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         replace={false}
+                        role="link"
                         state={Object {}}
+                        tabIndex={null}
                         tag="div"
                         tagName="a"
                       >
                         <div
+                          aria-label={null}
                           className="css-c6ki83 css-b4pchx"
                           data-test-id="link: /item/31"
                           onClick={[Function]}
                           role="link"
+                          tabIndex={null}
                         >
                           <ProductImage
                             alt="1"
@@ -145,7 +154,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                               transition={null}
                             >
                               <div
-                                className="css-326p2s "
+                                className="css-vfdozt "
                               />
                             </Image>
                           </ProductImage>
@@ -188,10 +197,12 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                 className="css-pd41kd"
                 isSelected={false}
                 key="2"
+                role={null}
               >
                 <li
                   className="css-1p5q8vq css-pd41kd css-16gj3o1"
                   data-test-id="listItem"
+                  role={null}
                 >
                   <ProductCard
                     hideName={false}
@@ -215,6 +226,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                       tagName="a"
                     >
                       <Link
+                        aria-label={null}
                         className="css-b4pchx"
                         disabled={false}
                         historyPush={[Function]}
@@ -224,15 +236,19 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                         itemScope={true}
                         itemType="http://schema.org/Product"
                         replace={false}
+                        role="link"
                         state={Object {}}
+                        tabIndex={null}
                         tag="div"
                         tagName="a"
                       >
                         <div
+                          aria-label={null}
                           className="css-c6ki83 css-b4pchx"
                           data-test-id="link: /item/32"
                           onClick={[Function]}
                           role="link"
+                          tabIndex={null}
                         >
                           <ProductImage
                             alt="2"
@@ -285,7 +301,7 @@ exports[`RecentlyViewedPage hould render a product list when a valid pageId is p
                               transition={null}
                             >
                               <div
-                                className="css-326p2s "
+                                className="css-vfdozt "
                               />
                             </Image>
                           </ProductImage>

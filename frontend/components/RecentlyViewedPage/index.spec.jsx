@@ -14,7 +14,7 @@ describe('RecentlyViewedPage', () => {
     ));
 
     expect(component).toMatchSnapshot();
-    expect(component.html()).toBe(null);
+    expect(component.html()).toBe("");
   });
 
   it('hould render a product list when a valid pageId is passed', () => {

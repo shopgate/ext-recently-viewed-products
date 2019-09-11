@@ -35,7 +35,7 @@ describe('ProductSlider', () => {
     ));
 
     expect(component).toMatchSnapshot();
-    expect(component.html()).toBe(null);
+    expect(component.html()).toBe("");
   });
 
   it('should render slider', () => {
@@ -46,7 +46,7 @@ describe('ProductSlider', () => {
         <ProductSlider products={products} showMore={false} isCartPage />
       </Provider>
     ));
-
+    component.setState({ ready: true });
     expect(component).toMatchSnapshot();
     expect(component.find('Item').length).toBe(2);
     expect(component.find('ButtonLink').length).toBe(0);
@@ -60,7 +60,7 @@ describe('ProductSlider', () => {
         <ProductSlider products={products} showMore isCartPage />
       </Provider>
     ));
-
+    component.setState({ ready: true })
     expect(component).toMatchSnapshot();
     expect(component.find('Item').length).toBe(2);
     expect(component.find('ButtonLink').length).toBe(1);
