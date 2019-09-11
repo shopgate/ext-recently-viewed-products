@@ -54,12 +54,26 @@ class ProductSlider extends Component {
     headline: null,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      ready: false
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ ready: true });
+    }, 1)
+  }
+
   /**
    * Should component update given the new props?
    * @param {Object} nextProps The next component props.
+   * @param {Object} nextState The next component state.
    * @return {boolean} Update or not.
    */
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (nextProps.isCartPage !== this.props.isCartPage) {
       return true;
     }
@@ -69,6 +83,10 @@ class ProductSlider extends Component {
     }
 
     if (nextProps.products.length !== this.props.products.length) {
+      return true;
+    }
+
+    if (nextState.ready !== this.state.ready) {
       return true;
     }
 
@@ -103,13 +121,16 @@ class ProductSlider extends Component {
     }
 
     const hasShowMore = this.props.showMore && this.props.showMoreUrl;
+    if (!this.state.ready) {
+      return null;
+    }
     return (
       <div className={styles.slider}>
         <div className={styles.headlineContainer}>
           <h3 className={styles.headline(hasShowMore)}>
             <I18n.Text string={this.props.headline ? this.props.headline : headline} />
           </h3>
-          { hasShowMore && (
+          {hasShowMore && (
             <div className={styles.showMoreContainer}>
               <ButtonLink href={this.props.showMoreUrl} noGap>
                 <I18n.Text string="recently_viewed_products.show_more" />

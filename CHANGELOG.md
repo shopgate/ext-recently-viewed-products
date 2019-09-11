@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.2.2]
+### Fixed
+* Added timeout to allow react-id-swiper to apply styling on PDP
+
 ## [1.2.1]
 ### Fixed
 * Long product names are being broken with browser native hyphenation.
