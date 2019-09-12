@@ -24,6 +24,8 @@ jest.mock('@shopgate/pwa-extension-kit/env/helpers', () => ({
   isIOSTheme: () => true,
 }));
 
+jest.useFakeTimers();
+
 /* eslint-enable */
 
 describe('ProductSlider', () => {
@@ -46,7 +48,8 @@ describe('ProductSlider', () => {
         <ProductSlider products={products} showMore={false} isCartPage />
       </Provider>
     ));
-    component.setState({ ready: true });
+    jest.runAllTimers();
+    component.update();
     expect(component).toMatchSnapshot();
     expect(component.find('Item').length).toBe(2);
     expect(component.find('ButtonLink').length).toBe(0);
@@ -60,7 +63,8 @@ describe('ProductSlider', () => {
         <ProductSlider products={products} showMore isCartPage />
       </Provider>
     ));
-    component.setState({ ready: true })
+    jest.runAllTimers();
+    component.update();
     expect(component).toMatchSnapshot();
     expect(component.find('Item').length).toBe(2);
     expect(component.find('ButtonLink').length).toBe(1);
