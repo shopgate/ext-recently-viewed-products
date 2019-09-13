@@ -5,8 +5,8 @@ import {
 } from '../mock/index';
 import {
   getRecentlyViewedProducts,
-  getRecentlyViewedProductsWithLimit,
-  getRecentlyViewedForProductWithLimit,
+  getRecentlyViewedProductIdsWithLimit,
+  getRecentlyViewedProductIdsForProductWithLimit,
   getPageUrl,
   hasMore, hasMoreForProduct,
 } from './index';
@@ -39,19 +39,19 @@ describe('selectors', () => {
     });
 
     it('should only return the first product', () => {
-      const result = getRecentlyViewedProductsWithLimit(stateWithProducts);
+      const result = getRecentlyViewedProductIdsWithLimit(stateWithProducts);
       expect(result).toBeInstanceOf(Array);
       expect(result).toHaveLength(1);
-      expect(result[0]).toEqual(stateWithProducts.product.productsById[1].productData);
+      expect(result[0]).toEqual(stateWithProducts.product.productsById[1].productData.id);
     });
 
     it('should not return the current product', () => {
-      const result = getRecentlyViewedForProductWithLimit({
+      const result = getRecentlyViewedProductIdsForProductWithLimit({
         ...stateWithProducts,
       }, { productId: '616263' });
       expect(result).toBeInstanceOf(Array);
       expect(result).toHaveLength(1);
-      expect(result[0]).toEqual(stateWithProducts.product.productsById[1].productData);
+      expect(result[0]).toEqual(stateWithProducts.product.productsById[1].productData.id);
     });
 
     it('should return true for hasMore', () => {

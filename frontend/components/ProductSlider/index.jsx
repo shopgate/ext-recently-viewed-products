@@ -1,158 +1,89 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import I18n from '@shopgate/pwa-common/components/I18n';
-import Slider from '@shopgate/pwa-common/components/Slider';
-import ButtonLink from '@shopgate/pwa-ui-shared/ButtonLink';
-import { showOnPdpPage, showOnEmptyCartPage } from '../../config';
-import Card from '../Card';
-import ProductCard from '../ProductCard';
+import { useTheme } from '@shopgate/engage/core';
+import { I18n, ButtonLink } from '@shopgate/engage/components';
+import getConfig from '../../helpers/getConfig';
 import connect from './connector';
 import styles from './style';
 
+const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
+
 /**
- * Creates an item for a single product.
- * @param {Object} product The product data.
- * @return {JSX} The rendered product card.
+ * Recently viewed ProductSlider
+ * @param {boolean} isCartPage Indicates if current page is cart
+ * @param {boolean} isProductPage Indicates if current page is PDP
+ * @param {boolean} showMore Indicates is showMore link should be displayed when applicable
+ * @param {string[]} productIds Array of product ids
+ * @param {string} showMoreUrl Path to show more page
+ * @param {string} headline Headline for Product slider
+ * @return {JSX}
  */
-const createSliderItem = (product) => {
-  const key = `s${product.id}`;
+const ProductSlider = ({
+  isCartPage,
+  isProductPage,
+  showMore,
+  productIds,
+  showMoreUrl,
+  headline,
+}) => {
+  if (isCartPage && !showOnEmptyCartPage) {
+    return null;
+  }
+
+  if (isProductPage && !showOnPdpPage) {
+    return null;
+  }
+  const { ProductSlider: BaseProductSlider } = useTheme();
+
+  let defaultHeadline = 'recently_viewed_products.headline';
+
+  if (isCartPage) {
+    defaultHeadline += '_cart';
+  }
+
+  const hasShowMore = showMore && showMoreUrl;
+
   return (
-    <Slider.Item key={key} className={styles.sliderItem}>
-      <Card className={styles.card}>
-        <ProductCard
-          product={product}
-          titleRows={2}
-          hidePrice
-          hideRating
-        />
-      </Card>
-    </Slider.Item>
+    <div className={styles.slider}>
+      <div className={styles.headlineContainer}>
+        <h3 className={styles.headline(hasShowMore)}>
+          <I18n.Text string={headline || defaultHeadline} />
+        </h3>
+        {hasShowMore && (
+          <div className={styles.showMoreContainer}>
+            <ButtonLink href={showMoreUrl} noGap>
+              <I18n.Text string="recently_viewed_products.show_more" />
+            </ButtonLink>
+          </div>
+        )}
+      </div>
+      <BaseProductSlider
+        productIds={productIds}
+        autoplay
+        delay={7000}
+        slidesPerView={2.3}
+        snap={false}
+      />
+    </div>
   );
 };
 
-/**
- * The ProductSlider component
- */
-class ProductSlider extends Component {
-  static propTypes = {
-    autoPlay: PropTypes.bool,
-    headline: PropTypes.string,
-    isCartPage: PropTypes.bool,
-    isProductPage: PropTypes.bool,
-    products: PropTypes.arrayOf(PropTypes.shape()),
-    showMore: PropTypes.bool,
-    showMoreUrl: PropTypes.string,
-  };
+ProductSlider.propTypes = {
+  headline: PropTypes.string,
+  isCartPage: PropTypes.bool,
+  isProductPage: PropTypes.bool,
+  productIds: PropTypes.arrayOf(PropTypes.string),
+  showMore: PropTypes.bool,
+  showMoreUrl: PropTypes.string,
+};
 
-  static defaultProps = {
-    autoPlay: false,
-    products: [],
-    showMore: false,
-    showMoreUrl: null,
-    isCartPage: false,
-    isProductPage: false,
-    headline: null,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      ready: false
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ ready: true });
-    }, 1)
-  }
-
-  /**
-   * Should component update given the new props?
-   * @param {Object} nextProps The next component props.
-   * @param {Object} nextState The next component state.
-   * @return {boolean} Update or not.
-   */
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextProps.isCartPage !== this.props.isCartPage) {
-      return true;
-    }
-
-    if (nextProps.isProductPage !== this.props.isProductPage) {
-      return true;
-    }
-
-    if (nextProps.products.length !== this.props.products.length) {
-      return true;
-    }
-
-    if (nextState.ready !== this.state.ready) {
-      return true;
-    }
-
-    return this.props.products.every(({ id }, index) => id !== nextProps.products[index].id);
-  }
-
-  /**
-   * Renders the component.
-   * @returns {JSX}
-   */
-  render() {
-    if (this.props.isCartPage && !showOnEmptyCartPage) {
-      return null;
-    }
-
-    if (this.props.isProductPage && !showOnPdpPage) {
-      return null;
-    }
-
-    const items = this.props.products.map((
-      product => createSliderItem(product)
-    ));
-
-    if (!items.length) {
-      return null;
-    }
-
-    let headline = 'recently_viewed_products.headline';
-
-    if (this.props.isCartPage) {
-      headline += '_cart';
-    }
-
-    const hasShowMore = this.props.showMore && this.props.showMoreUrl;
-    if (!this.state.ready) {
-      return null;
-    }
-    return (
-      <div className={styles.slider}>
-        <div className={styles.headlineContainer}>
-          <h3 className={styles.headline(hasShowMore)}>
-            <I18n.Text string={this.props.headline ? this.props.headline : headline} />
-          </h3>
-          {hasShowMore && (
-            <div className={styles.showMoreContainer}>
-              <ButtonLink href={this.props.showMoreUrl} noGap>
-                <I18n.Text string="recently_viewed_products.show_more" />
-              </ButtonLink>
-            </div>
-          )}
-        </div>
-
-        <Slider
-          autoPlay={this.props.autoPlay}
-          loop={false}
-          indicators={false}
-          controls={false}
-          snapItems={false}
-          slidesPerView={2.3}
-          classNames={{ container: styles.sliderContainer }}
-        >
-          {items}
-        </Slider>
-      </div>
-    );
-  }
-}
+ProductSlider.defaultProps = {
+  headline: null,
+  isCartPage: false,
+  isProductPage: false,
+  productIds: [],
+  showMore: false,
+  showMoreUrl: null,
+};
 
 export default connect(ProductSlider);

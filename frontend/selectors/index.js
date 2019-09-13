@@ -43,12 +43,23 @@ export const getRecentlyViewedProducts = createSelector(
 );
 
 /**
- * Gets recently viewed products with configured limit.
- * @returns {Array}
+ * Gets a list of recently viewed productIds filtered to ensure full products are cached.
+ * @param {Object} state The application state.
+ * @param {number} limit The maximum number of products to return.
+ * @returns {string[]} The result.
  */
-export const getRecentlyViewedProductsWithLimit = createSelector(
+export const getRecentlyViewedProductsIds = createSelector(
   getRecentlyViewedProducts,
-  products => products.slice(0, RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT)
+  (products = []) => products.map(product => product.id)
+);
+
+/**
+ * Gets recently viewed products with configured limit.
+ * @returns {string[]}
+ */
+export const getRecentlyViewedProductIdsWithLimit = createSelector(
+  getRecentlyViewedProductsIds,
+  productIds => productIds.slice(0, RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT)
 );
 
 /**
@@ -56,44 +67,43 @@ export const getRecentlyViewedProductsWithLimit = createSelector(
  * @returns {bool}
  */
 export const hasMore = createSelector(
-  getRecentlyViewedProducts,
-  products => products.length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT
+  getRecentlyViewedProductsIds,
+  productIds => productIds.length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT
 );
 
 /**
  * Gets recently viewed products without product given via props.
- * @returns {Array}
+ * @returns {string[]}
  */
-export const getRecentlyViewedProductForProduct = createSelector(
+export const getRecentlyViewedProductIdsForProduct = createSelector(
   getBaseProductId,
-  getRecentlyViewedProducts,
+  getRecentlyViewedProductsIds,
   /**
    * Take care that only products appear on the list where a product entity is available and
    * the product is not the current shown product.
    * @param {string} baseProductId Base product id.
-   * @param {Array} recentlyViewedProducts Products.
-   * @returns {Array}
+   * @param {string[]} recentlyViewedProductIds Products.
+   * @returns {string[]}
    */
-  (baseProductId, recentlyViewedProducts) => recentlyViewedProducts.filter(productData => (
-    productData.id !== baseProductId && productData.baseProductId !== baseProductId
-  ))
+  (baseProductId, recentlyViewedProductIds) => recentlyViewedProductIds
+    .filter(recentlyViewedProductId => recentlyViewedProductId !== baseProductId)
 );
 
 /**
  * Gets recently viewed products without product given via props with configured limit.
  * @returns {Array}
  */
-export const getRecentlyViewedForProductWithLimit = createSelector(
-  getRecentlyViewedProductForProduct,
-  products => products.slice(0, RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT)
+export const getRecentlyViewedProductIdsForProductWithLimit = createSelector(
+  getRecentlyViewedProductIdsForProduct,
+  productIds => productIds.slice(0, RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT)
 );
 /**
  * Checks if for given product there are more recently viewed products.
  * @returns {bool}
 */
 export const hasMoreForProduct = createSelector(
-  getRecentlyViewedProductForProduct,
-  products => products.length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT
+  getRecentlyViewedProductIdsForProduct,
+  productIds => productIds.length > RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT
 );
 
 /**

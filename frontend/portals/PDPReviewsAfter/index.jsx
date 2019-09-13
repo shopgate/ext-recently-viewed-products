@@ -1,27 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withPageProductId } from '@shopgate/pwa-extension-kit/connectors';
-import { getRecentlyViewedForProductWithLimit, hasMoreForProduct } from '../../selectors';
+import { withCurrentProduct } from '@shopgate/engage/core';
+import { getRecentlyViewedProductIdsForProductWithLimit, hasMoreForProduct } from '../../selectors';
 import ProductsSlider from '../../components/ProductSlider';
 
 /**
  * Portal position for Products Slider on PDP.
  * @param {string} productId Product Id from route.
- * @param {Array} products Products collection.
+ * @param {string[]} productIds Products collection.
  * @param {bool} showMore Whether to show more button.
  * @returns {JSX}
  */
-const PDPReviewsAfter = ({ products, showMore }) => (
+const PDPReviewsAfter = ({ productIds, showMore }) => (
   <ProductsSlider
     isProductPage
     showMore={showMore}
-    products={products}
+    productIds={productIds}
   />
 );
 
 PDPReviewsAfter.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  productIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   showMore: PropTypes.bool.isRequired,
 };
 
@@ -32,9 +32,9 @@ PDPReviewsAfter.propTypes = {
  * @returns {Object}
  */
 const mapStateToProps = (state, props) => ({
-  products: getRecentlyViewedForProductWithLimit(state, props),
+  productIds: getRecentlyViewedProductIdsForProductWithLimit(state, props),
   showMore: hasMoreForProduct(state, props),
 });
 
-export default withPageProductId(connect(mapStateToProps)(PDPReviewsAfter));
+export default withCurrentProduct(connect(mapStateToProps)(PDPReviewsAfter));
 
