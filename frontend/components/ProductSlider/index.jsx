@@ -33,6 +33,11 @@ const ProductSlider = ({
   if (isProductPage && !showOnPdpPage) {
     return null;
   }
+
+  if (!productIds.length) {
+    return null;
+  }
+
   const { ProductSlider: BaseProductSlider } = useTheme();
 
   let defaultHeadline = 'recently_viewed_products.headline';
