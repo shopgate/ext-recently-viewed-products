@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.2.2]
+### Added
+* Use of Theme components for ProductSlider and ProductList
+
 ## [1.2.1]
 ### Fixed
 * Long product names are being broken with browser native hyphenation.

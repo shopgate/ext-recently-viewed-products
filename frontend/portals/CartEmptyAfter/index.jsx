@@ -2,24 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ProductsSlider from '../../components/ProductSlider';
-import { getRecentlyViewedProductsWithLimit, hasMore } from '../../selectors';
+import { getRecentlyViewedProductIdsWithLimit, hasMore } from '../../selectors';
 
 /**
  * Portal position for Products Slider on PDP.
- * @params {Array} products Products collection.
- * @params {bool} showMore Whether to show more button (products.length > totalCount)
+ * @params {string[]} productIds Product id collection.
+ * @params {bool} showMore Whether to show more button (productIds.length > totalCount)
  * @returns {JSX}
  */
-const CartEmptyAfter = ({ products, showMore }) => (
+const CartEmptyAfter = ({ productIds, showMore }) => (
   <ProductsSlider
     isCartPage
     showMore={showMore}
-    products={products}
+    productIds={productIds}
   />
 );
 
 CartEmptyAfter.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  productIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   showMore: PropTypes.bool.isRequired,
 };
 
@@ -29,7 +29,7 @@ CartEmptyAfter.propTypes = {
  * @returns {Object}
  */
 const mapStateToProps = state => ({
-  products: getRecentlyViewedProductsWithLimit(state),
+  productIds: getRecentlyViewedProductIdsWithLimit(state),
   showMore: hasMore(state),
 });
 
