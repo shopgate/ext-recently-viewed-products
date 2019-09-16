@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.2.3]
+### Fixed
+* Don't show headline if there are no products
+
 ## [1.2.2]
 ### Added
 * Use of Theme components for ProductSlider and ProductList
