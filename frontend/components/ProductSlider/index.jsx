@@ -66,7 +66,6 @@ const ProductSlider = ({
         productIds={productIds}
         autoplay
         delay={7000}
-        slidesPerView={2.3}
         snap={false}
       />
     </div>

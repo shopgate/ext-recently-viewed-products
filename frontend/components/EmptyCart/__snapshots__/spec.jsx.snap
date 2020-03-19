@@ -54,13 +54,13 @@ exports[`EmptyCart page should render empty cart icon and title 1`] = `
       className="css-16oe47w"
     >
       <Translate
-        className=""
+        className={null}
         params={Object {}}
         role={null}
         string="cart.empty"
       >
         <span
-          className=""
+          className={null}
           role={null}
         >
           cart.empty
