@@ -5,6 +5,7 @@ import { I18n, ButtonLink } from '@shopgate/engage/components';
 import getConfig from '../../helpers/getConfig';
 import connect from './connector';
 import styles from './style';
+import ThemeProvideProductCard from '../ThemeProvideProductCard';
 
 const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
 
@@ -62,13 +63,14 @@ const ProductSlider = ({
           </div>
         )}
       </div>
-      <BaseProductSlider
-        productIds={productIds}
-        autoplay
-        delay={7000}
-        slidesPerView={2.3}
-        snap={false}
-      />
+      <ThemeProvideProductCard>
+        <BaseProductSlider
+          productIds={productIds}
+          autoplay
+          delay={7000}
+          snap={false}
+        />
+      </ThemeProvideProductCard>
     </div>
   );
 };

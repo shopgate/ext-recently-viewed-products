@@ -10,13 +10,13 @@ exports[`ProductList should render as expected 1`] = `
     }
   >
     <Translate
-      className=""
+      className={null}
       params={Object {}}
       role={null}
       string="recently_viewed_products.empty_product_list"
     >
       <span
-        className=""
+        className={null}
         role={null}
       >
         recently_viewed_products.empty_product_list
