@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.3.0]
+### Added
+* nl-NL translations
+
 ## [1.2.3]
 ### Fixed
 * Don't show headline if there are no products
