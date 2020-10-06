@@ -51,6 +51,11 @@
       "type": "translations",
       "path": "frontend/locale/de-DE.json",
       "id": "locale/de-DE"
+    },
+    {
+      "type": "translations",
+      "path": "frontend/locale/nl-NL.json",
+      "id": "locale/nl-NL"
     }
   ],
   "configuration": {
