@@ -9,14 +9,14 @@ Configuration is done by extension config.
 
 ```json
 {
-"maximumHistoryEntriesPerUser": "Number, defaults to 50, Maximum of recently viewed item in the history of a user",
+    "maximumHistoryEntriesPerUser": "Number, defaults to 50, Maximum of recently viewed item in the history of a user",
     "pageId": "String, defaults to recently-viewed. ID of the cmd page where the recently views products should be shown as list",
     "sliderLimit" : "Number, defaults to 10. Number of items shown in the slider",
     "showOnEmptyCartPage" : "Boolean. Defaults to true. Whether slider is shown on the empty cart page",
-    "showOnPdpPage" : "Boolean. Defaults to true. Whether slider is shown on the product detail page"
+    "showOnPdpPage" : "Boolean. Defaults to true. Whether slider is shown on the product detail page",
+    "pdpPosition" : "String. Defaults to 'product.reviews.after'. Portal position of the slider on pdp. Possible positions product.reviews.after, product.description.before, product.description.after, product.header.after, product.properties.after."
 }
 ```
-
 
 ## Widget
 If you want to use the recently viewed product slider as a widget, you can create a HTML widget with following content:

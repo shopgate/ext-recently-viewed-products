@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withCurrentProduct } from '@shopgate/engage/core';
 import { getRecentlyViewedProductIdsForProductWithLimit, hasMoreForProduct } from '../../selectors';
 import ProductsSlider from '../../components/ProductSlider';
+import { pdpPosition } from '../../config';
 
 /**
  * Portal position for Products Slider on PDP.
@@ -12,15 +13,22 @@ import ProductsSlider from '../../components/ProductSlider';
  * @param {bool} showMore Whether to show more button.
  * @returns {JSX}
  */
-const PDPReviewsAfter = ({ productIds, showMore }) => (
-  <ProductsSlider
-    isProductPage
-    showMore={showMore}
-    productIds={productIds}
-  />
-);
+const PDPReviewsAfter = ({ productIds, showMore, name }) => {
+  if (name !== pdpPosition) {
+    return null;
+  }
+
+  return (
+    <ProductsSlider
+      isProductPage
+      showMore={showMore}
+      productIds={productIds}
+    />
+  );
+};
 
 PDPReviewsAfter.propTypes = {
+  name: PropTypes.string.isRequired,
   productIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   showMore: PropTypes.bool.isRequired,
 };

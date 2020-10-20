@@ -3,6 +3,10 @@
 ## [Unreleased]
 
 
+## [1.4.0]
+### Added
+* now config for portal position
+
 ## [1.3.0]
 ### Added
 * nl-NL translations

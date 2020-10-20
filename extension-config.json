@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "id": "@shopgate/recently-viewed-products",
   "components": [
     {
@@ -24,7 +24,13 @@
       "id": "ProductSlider-pdp",
       "type": "portals",
       "path": "frontend/portals/PDPReviewsAfter",
-      "target": "product.reviews.after"
+      "target": [
+        "product.reviews.after",
+        "product.description.before",
+        "product.description.after",
+        "product.header.after",
+        "product.properties.after"
+      ]
     },
     {
       "id": "RecentlyViewedPage",
@@ -102,6 +108,15 @@
       "params": {
         "type": "boolean",
         "label": "Slider is shown on the product detail page"
+      }
+    },
+    "pdpPosition": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "product.reviews.after",
+      "params": {
+        "type": "text",
+        "label": "Portal position of the slider on pdp"
       }
     }
   }
