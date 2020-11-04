@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withCurrentProduct } from '@shopgate/engage/core';
 import { getRecentlyViewedProductIdsForProductWithLimit, hasMoreForProduct } from '../../selectors';
 import ProductsSlider from '../../components/ProductSlider';
-import { pdpPosition } from '../../config';
+import { pdpPosition, pdpHeadline } from '../../config';
 
 /**
  * Portal position for Products Slider on PDP.
@@ -23,6 +23,7 @@ const PDPReviewsAfter = ({ productIds, showMore, name }) => {
       isProductPage
       showMore={showMore}
       productIds={productIds}
+      headline={pdpHeadline}
     />
   );
 };
