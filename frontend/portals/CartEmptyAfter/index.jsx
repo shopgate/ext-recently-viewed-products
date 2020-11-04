@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ProductsSlider from '../../components/ProductSlider';
 import { getRecentlyViewedProductIdsWithLimit, hasMore } from '../../selectors';
+import { cartHeadline } from '../../config';
 
 /**
  * Portal position for Products Slider on PDP.
@@ -15,6 +16,7 @@ const CartEmptyAfter = ({ productIds, showMore }) => (
     isCartPage
     showMore={showMore}
     productIds={productIds}
+    headline={cartHeadline}
   />
 );
 

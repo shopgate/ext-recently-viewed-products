@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "id": "@shopgate/recently-viewed-products",
   "components": [
     {
@@ -117,6 +117,24 @@
       "params": {
         "type": "text",
         "label": "Portal position of the slider on pdp"
+      }
+    },
+    "pdpHeadline": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": null,
+      "params": {
+        "type": "text",
+        "label": "Headline for slider on pdp"
+      }
+    },
+    "cartHeadline": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": null,
+      "params": {
+        "type": "text",
+        "label": "Headline for slider on empty cart"
       }
     }
   }

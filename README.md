@@ -15,6 +15,8 @@ Configuration is done by extension config.
     "showOnEmptyCartPage" : "Boolean. Defaults to true. Whether slider is shown on the empty cart page",
     "showOnPdpPage" : "Boolean. Defaults to true. Whether slider is shown on the product detail page",
     "pdpPosition" : "String. Defaults to 'product.reviews.after'. Portal position of the slider on pdp. Possible positions product.reviews.after, product.description.before, product.description.after, product.header.after, product.properties.after."
+    "pdpHeadline" : "String. Defaults to 'null'. Headline for slider on pdp. Takes default headline from extension if null",
+    "cartHeadline" : "String. Defaults to 'null'. Headline for slider on empty cart page. Takes default headline from extension if null "
 }
 ```
 
