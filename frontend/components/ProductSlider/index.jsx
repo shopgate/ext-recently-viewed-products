@@ -17,6 +17,7 @@ const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
  * @param {string[]} productIds Array of product ids
  * @param {string} showMoreUrl Path to show more page
  * @param {string} headline Headline for Product slider
+ * @param {string} className className
  * @return {JSX}
  */
 const ProductSlider = ({
@@ -26,6 +27,7 @@ const ProductSlider = ({
   productIds,
   showMoreUrl,
   headline,
+  className,
 }) => {
   if (isCartPage && !showOnEmptyCartPage) {
     return null;
@@ -50,7 +52,7 @@ const ProductSlider = ({
   const hasShowMore = showMore && showMoreUrl;
 
   return (
-    <div className={styles.slider}>
+    <div className={`${styles.slider} ${className}`}>
       <div className={styles.headlineContainer}>
         <h3 className={styles.headline(hasShowMore)}>
           <I18n.Text string={headline || defaultHeadline} />
@@ -76,6 +78,7 @@ const ProductSlider = ({
 };
 
 ProductSlider.propTypes = {
+  className: PropTypes.string,
   headline: PropTypes.string,
   isCartPage: PropTypes.bool,
   isProductPage: PropTypes.bool,
@@ -91,6 +94,7 @@ ProductSlider.defaultProps = {
   productIds: [],
   showMore: false,
   showMoreUrl: null,
+  className: '',
 };
 
 export default connect(ProductSlider);
