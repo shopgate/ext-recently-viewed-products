@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.5.0]
+### Added
+* now config for headline on pdp and cart page
 
 ## [1.4.0]
 ### Added

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { css } from 'glamor';
 import ProductsSlider from '../../components/ProductSlider';
 import { getRecentlyViewedProductIdsWithLimit, hasMore } from '../../selectors';
+import { cartHeadline } from '../../config';
 
 const paddingiOS = css({
   paddingBottom: 'calc(var(--tabbar-height))',
@@ -21,6 +22,7 @@ const CartEmptyAfter = ({ productIds, showMore }) => (
     isCartPage
     showMore={showMore}
     productIds={productIds}
+    headline={cartHeadline}
   />
 );
 
