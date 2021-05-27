@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { css } from 'glamor';
 import ProductsSlider from '../../components/ProductSlider';
 import { getRecentlyViewedProductIdsWithLimit, hasMore } from '../../selectors';
 import { cartHeadline } from '../../config';
+
+const paddingiOS = css({
+  paddingBottom: 'calc(var(--tabbar-height))',
+}).toString();
 
 /**
  * Portal position for Products Slider on PDP.
@@ -13,6 +18,7 @@ import { cartHeadline } from '../../config';
  */
 const CartEmptyAfter = ({ productIds, showMore }) => (
   <ProductsSlider
+    className={paddingiOS}
     isCartPage
     showMore={showMore}
     productIds={productIds}
