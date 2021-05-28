@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.5.1]
+### Fixed
+* fixed overlapping TabBar issue
+
 ## [1.5.0]
 ### Added
 * now config for headline on pdp and cart page
