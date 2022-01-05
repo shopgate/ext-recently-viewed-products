@@ -15,21 +15,41 @@ import {
   PIPELINE_GET_VIEWED_PRODUCTS,
   PIPELINE_ADD_VIEWED_PRODUCTS,
   GET_VIEWED_PRODUCTS_LIMIT,
-  LOCALSTORAGE_KEY,
+  LOCAL_STORAGE_KEY_LIST,
+  LOCAL_STORAGE_KEY_FLAG,
 } from '../constants';
 import { storeInFrontend } from '../config';
 
 /**
  * @return {Array}
  */
-const getItemsFromStorage = () => JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY));
+const getItemsFromStorage = () => JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_KEY_LIST));
+/**
+ * @return {Array}
+ */
+const getFlagFromStorage = () => JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_KEY_FLAG));
 
 /**
  * @param {Array} entries entries
  */
 const setItemsToStorage = (entries) => {
-  window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(entries));
+  window.localStorage.setItem(LOCAL_STORAGE_KEY_LIST, JSON.stringify(entries));
 };
+/**
+ * @param {boolean} flag flag
+ */
+const setFlagToStorage = (flag) => {
+  window.localStorage.setItem(LOCAL_STORAGE_KEY_FLAG, JSON.stringify(flag));
+};
+
+/**
+ * @param {Array} currentIds currentIds
+ * @param {Array} newIds newIds
+ * @return {Array}
+ */
+const mergeProductIds = (currentIds, newIds) => Array.from(new Set([...newIds, ...currentIds]))
+  .filter(Boolean)
+  .slice(0, GET_VIEWED_PRODUCTS_LIMIT);
 
 /**
  * @param {Array} productIds productIds
@@ -53,20 +73,26 @@ const fetchMissingProducts = async (productIds, state, dispatch) => {
 
 /**
  * Dispatches a getViewedProducts pipeline request.
- * @param {boolean} migrateToFrontend flag if data should be moved to localstorage
  * @return {Function} A redux thunk.
  */
-export const fetchRecentlyViewedProducts = (migrateToFrontend = false) =>
+export const fetchRecentlyViewedProducts = () =>
   async (dispatch, getState) => {
     dispatch(requestRecentlyViewedProducts());
 
-    if (!migrateToFrontend && storeInFrontend) {
-      const productIds = getItemsFromStorage();
+    let needsMigration = false;
 
-      await fetchMissingProducts(productIds, getState(), dispatch);
-      dispatch(receiveRecentlyViewedProducts(productIds));
+    if (storeInFrontend) {
+      needsMigration = getFlagFromStorage() === null;
 
-      return;
+      // We haven't moved the data from backend to frontend yet.
+      // So we have to call the pipeline first and store the data from there
+      if (!needsMigration) {
+        const productIds = getItemsFromStorage();
+        await fetchMissingProducts(productIds, getState(), dispatch);
+        dispatch(receiveRecentlyViewedProducts(productIds));
+
+        return;
+      }
     }
 
     new PipelineRequest(PIPELINE_GET_VIEWED_PRODUCTS)
@@ -82,8 +108,17 @@ export const fetchRecentlyViewedProducts = (migrateToFrontend = false) =>
         await fetchMissingProducts(productIds, getState(), dispatch);
 
         // move data to localstorage
-        if (migrateToFrontend) {
-          setItemsToStorage(productIds);
+        if (storeInFrontend && needsMigration) {
+          const storedProductIds = getItemsFromStorage();
+          const mergedIds = mergeProductIds(productIds, storedProductIds);
+
+          // save that the migration happened
+          setFlagToStorage(true);
+          setItemsToStorage(mergedIds);
+
+          dispatch(receiveRecentlyViewedProducts(mergedIds));
+
+          return;
         }
 
         dispatch(receiveRecentlyViewedProducts(productIds));
@@ -102,31 +137,17 @@ export const fetchRecentlyViewedProducts = (migrateToFrontend = false) =>
 export const addRecentlyViewedProducts = (productIds = []) => (dispatch) => {
   dispatch(requestAddRecentlyViewedProducts(productIds));
 
-  let migrateToFrontend = false;
-
   if (storeInFrontend) {
     const currentEntries = getItemsFromStorage();
+    const mergedEntries = mergeProductIds(currentEntries, productIds);
+    setItemsToStorage(mergedEntries);
 
-    if (currentEntries === null) {
-      // no existing localstorage entry -> migration needed
-      migrateToFrontend = true;
-    }
+    dispatch(successAddRecentlyViewedProducts(productIds));
+    // Fetch the updated product list
+    dispatch(fetchRecentlyViewedProducts());
 
-    // no migration needed -> skip the pipeline
-    if (!migrateToFrontend) {
-      const mergedEntries = Array.from(new Set([...productIds, ...currentEntries]))
-        .filter(Boolean)
-        .slice(0, GET_VIEWED_PRODUCTS_LIMIT);
-
-      setItemsToStorage(mergedEntries);
-
-      dispatch(successAddRecentlyViewedProducts(productIds));
-      // Fetch the updated product list
-      dispatch(fetchRecentlyViewedProducts(migrateToFrontend));
-
-      // skip pipeline
-      return;
-    }
+    // skip pipeline
+    return;
   }
 
   new PipelineRequest(PIPELINE_ADD_VIEWED_PRODUCTS)
@@ -136,7 +157,7 @@ export const addRecentlyViewedProducts = (productIds = []) => (dispatch) => {
     .then(() => {
       dispatch(successAddRecentlyViewedProducts(productIds));
       // Fetch the updated product list
-      dispatch(fetchRecentlyViewedProducts(migrateToFrontend));
+      dispatch(fetchRecentlyViewedProducts());
     })
     .catch((err) => {
       logger.error(err);
