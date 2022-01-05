@@ -7,6 +7,7 @@ export const GET_VIEWED_PRODUCTS_LIMIT = maximumHistoryEntriesPerUser;
 export const RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT = sliderLimit;
 
 export const REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS = '@shopgate/recently-viewed-products/productList';
+export const LOCALSTORAGE_KEY = '@shopgate/recently-viewed-products@2.0.0/productList';
 
 export const REQUEST_RECENTLY_VIEWED_PRODUCTS = 'REQUEST_RECENTLY_VIEWED_PRODUCTS';
 export const RESPONSE_RECENTLY_VIEWED_PRODUCTS = 'RESPONSE_RECENTLY_VIEWED_PRODUCTS';

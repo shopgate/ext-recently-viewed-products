@@ -25,7 +25,7 @@ export const receiveRecentlyViewedProducts = (productIds = []) => ({
   productIds,
 });
 
-  /**
+/**
  * The error recently viewed products action.
  * @returns {Object}
  */

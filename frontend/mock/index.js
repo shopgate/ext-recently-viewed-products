@@ -83,7 +83,7 @@ export const stateWithoutValidMenuEntries = {
 
 /**
  * Empty store.
- * @returns {function}
+ * @returns {Function}
  */
 export const getEmptyStore = () => configureStore()(defaultState);
 
