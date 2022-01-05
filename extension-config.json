@@ -68,7 +68,7 @@
     "storeInFrontend": {
       "type": "admin",
       "destination": "frontend",
-      "default": false,
+      "default": true,
       "params": {
         "type": "checkbox",
         "label": "Flag if the list of viewed products should be stored in frontends localstorage"
