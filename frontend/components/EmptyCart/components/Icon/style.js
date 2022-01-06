@@ -49,7 +49,6 @@ const handle = css({
   ...basketBase,
 }).toString();
 
-
 export default {
   leave1,
   leave2,
