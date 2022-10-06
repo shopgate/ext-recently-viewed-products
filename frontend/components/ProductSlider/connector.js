@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getPageUrl } from '../../selectors';
+import { getCurrentProductId, getPageUrl } from '../../selectors';
 
 /**
  * Maps the contents of the state to the component props.
@@ -8,6 +8,7 @@ import { getPageUrl } from '../../selectors';
  */
 const mapStateToProps = state => ({
   showMoreUrl: getPageUrl(state),
+  currentProductId: getCurrentProductId(state)
 });
 
 export default connect(mapStateToProps);

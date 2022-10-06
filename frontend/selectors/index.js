@@ -7,6 +7,7 @@ import {
   RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
 } from '../constants';
 import { pageId } from '../config';
+import { getCurrentRoute } from '@shopgate/pwa-common/selectors/router';
 /**
  * Gets the recently viewed products redux state.
  * @param {Object} state State.
@@ -118,3 +119,16 @@ export const getPageUrl = (state) => {
   const { url: pageUrl = null } = quicklinks.find(({ url }) => url.endsWith(pageId)) || {};
   return pageUrl;
 };
+
+/**
+ * A selector that returns the productId of the currently opened product
+ * @param {Object} state State.
+ * @return {string|null}
+ */
+ export const getCurrentProductId = createSelector(
+  getCurrentRoute,
+  (currentRoute) => {
+    if (typeof currentRoute.state !== 'object') return null;
+    return currentRoute.state.productId || null;
+  }
+)

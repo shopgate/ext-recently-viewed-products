@@ -7,7 +7,7 @@ import connect from './connector';
 import styles from './style';
 import ThemeProvideProductCard from '../ThemeProvideProductCard';
 
-const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
+const { showOnPdpPage, showOnEmptyCartPage, hiddenForProductIds } = getConfig();
 
 /**
  * Recently viewed ProductSlider
@@ -28,12 +28,17 @@ const ProductSlider = ({
   showMoreUrl,
   headline,
   className,
+  currentProductId
 }) => {
   if (isCartPage && !showOnEmptyCartPage) {
     return null;
   }
 
   if (isProductPage && !showOnPdpPage) {
+    return null;
+  }
+  
+  if ([...hiddenForProductIds].includes(currentProductId)) {
     return null;
   }
 
@@ -85,6 +90,7 @@ ProductSlider.propTypes = {
   productIds: PropTypes.arrayOf(PropTypes.string),
   showMore: PropTypes.bool,
   showMoreUrl: PropTypes.string,
+  currentProductId: PropTypes.string
 };
 
 ProductSlider.defaultProps = {
@@ -95,6 +101,7 @@ ProductSlider.defaultProps = {
   showMore: false,
   showMoreUrl: null,
   className: '',
+  currentProductId: ''
 };
 
 export default connect(ProductSlider);

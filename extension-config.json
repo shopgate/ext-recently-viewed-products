@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1-beta.1",
   "id": "@shopgate/recently-viewed-products",
   "components": [
     {
@@ -144,6 +144,15 @@
       "params": {
         "type": "text",
         "label": "Headline for slider on empty cart"
+      }
+    },
+    "hiddenForProductIds": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": [""],
+      "params": {
+        "type": "json",
+        "label": "An array of productIds (string), where the slider shouldn't be visible"
       }
     }
   }
