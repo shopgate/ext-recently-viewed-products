@@ -20,7 +20,7 @@ const icon = css({
 
 const title = css({
   textAlign: 'left',
-  color: colors.shade11,
+  color: colors.shade6,
 }).toString();
 
 export default {
