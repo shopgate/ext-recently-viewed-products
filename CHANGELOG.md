@@ -4,11 +4,11 @@
 ### Added
 * Improved accessibility for screen readers
 
-## [2.0.0]
+## 2.0.0
 ### Added
 * New config `storeInFrontend` to store recently viewed list in frontend. If `storeInFrontend` is true, no pipeline will be called anymore
 
-## [1.5.1]
+## 1.5.1
 ### Fixed
 * fixed overlapping TabBar issue
 
