@@ -5,8 +5,7 @@ import styles from './style';
 
 /**
  * The Cart Empty component.
- * @param {Object} props The component props.
- * @return {JSX}
+ * @return {JSX.Element}
  */
 const Empty = () => (
   <div className={styles.container}>

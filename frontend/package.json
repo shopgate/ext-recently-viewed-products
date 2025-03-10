@@ -34,10 +34,6 @@
     "react-hot-loader": "^4.11.0",
     "react-transform-catch-errors": "^1.0.2"
   },
-  "peerDependencies": {
-    "@shopgate/pwa-common": "^6.7.1",
-    "@shopgate/pwa-common-commerce": "^6.7.1"
-  },
   "jest": {
     "testPathIgnorePatterns": [
       "node_modules/",

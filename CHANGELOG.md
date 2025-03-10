@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased]
+## [2.1.0]
+### Added
+* Improved accessibility for screen readers
 
 ## [2.0.0]
 ### Added
@@ -39,7 +41,10 @@
 * Long product names are being broken with browser native hyphenation.
 * Updated dev dependencies in order to fix security issues.
 
-[Unreleased]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.2.4...HEAD
+[2.1.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.0.0...v2.1.0
+[1.5.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.4.0...v1.5.0
+[1.4.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.3.0...v1.4.0
+[1.3.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.2.4...v1.3.0
 [1.2.4]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.2.1...v1.2.2
