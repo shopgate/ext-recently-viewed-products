@@ -18,7 +18,7 @@ const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
  * @param {string} showMoreUrl Path to show more page
  * @param {string} headline Headline for Product slider
  * @param {string} className className
- * @return {JSX}
+ * @return {JSX.Element}
  */
 const ProductSlider = ({
   isCartPage,
@@ -29,6 +29,8 @@ const ProductSlider = ({
   headline,
   className,
 }) => {
+  const { ProductSlider: BaseProductSlider } = useTheme();
+
   if (isCartPage && !showOnEmptyCartPage) {
     return null;
   }
@@ -41,8 +43,6 @@ const ProductSlider = ({
     return null;
   }
 
-  const { ProductSlider: BaseProductSlider } = useTheme();
-
   let defaultHeadline = 'recently_viewed_products.headline';
 
   if (isCartPage) {
@@ -54,7 +54,7 @@ const ProductSlider = ({
   return (
     <div className={`${styles.slider} ${className}`}>
       <div className={styles.headlineContainer}>
-        <h3 className={styles.headline(hasShowMore)}>
+        <h3 className={`${styles.headline(hasShowMore)} headline`}>
           <I18n.Text string={headline || defaultHeadline} />
         </h3>
         {hasShowMore && (
