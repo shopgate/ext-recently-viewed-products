@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+### Added
+- Human readable css class for the product slider headline `recently-viewed-products__product-slider__headline`
+
 ## [2.1.0]
 ### Added
 * Improved accessibility for screen readers
