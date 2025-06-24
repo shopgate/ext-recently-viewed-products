@@ -1,8 +1,12 @@
 # Changelog
 
-## [2.2.0]
+## 2.2.0
 ### Added
 * Added support for images configured in theme config
+
+## 2.1.1
+### Added
+* Human readable css class for the product slider headline `recently-viewed-products__product-slider__headline`
 
 ## [2.1.0]
 ### Added
