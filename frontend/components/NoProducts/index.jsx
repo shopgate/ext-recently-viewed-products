@@ -4,7 +4,7 @@ import styles from './style';
 
 /**
  * No products component
- * @returns {JSX}
+ * @returns {JSX.Element}
  */
 const NoProducts = () => (
   <div className={styles.wrapper}>
