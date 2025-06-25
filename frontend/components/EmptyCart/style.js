@@ -1,7 +1,7 @@
 import { css } from 'glamor';
 import { themeConfig } from '@shopgate/pwa-common/helpers/config';
 
-const { colors, variables } = themeConfig;
+const { colors } = themeConfig;
 
 const container = css({
   display: 'flex',
@@ -18,10 +18,6 @@ const icon = css({
   padding: '1em 0 0',
 }).toString();
 
-const image = css({
-  width: variables.emptyPage.icon,
-}).toString();
-
 const title = css({
   textAlign: 'left',
   color: colors.shade6,
@@ -31,5 +27,4 @@ export default {
   container,
   icon,
   title,
-  image,
 };

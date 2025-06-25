@@ -6,6 +6,7 @@ import Icon from './components/Icon';
 import styles from './style';
 
 const { svgImages = {} } = themeConfig || {};
+const { emptyCart = '' } = svgImages || {};
 
 /**
  * The Cart Empty component.
@@ -13,22 +14,18 @@ const { svgImages = {} } = themeConfig || {};
  * @param {React.node} children children to display if image is configured in theme config
  * @return {JSX.Element}
  */
-const Empty = ({ children }) => {
-  const { emptyCart = '' } = svgImages || {};
-
-  return (
-    <div className={styles.container}>
-      <div className={emptyCart ? styles.image : styles.icon} aria-hidden>
-        {emptyCart ? children : <Icon />}
-      </div>
-      {!emptyCart && (
+const Empty = ({ children }) => (
+  <div className={styles.container}>
+    <div className={emptyCart ? null : styles.icon} aria-hidden>
+      {emptyCart ? children : <Icon />}
+    </div>
+    {!emptyCart && (
       <div className={styles.title}>
         <I18n.Text string="cart.empty" />
       </div>
-      )}
-    </div>
-  );
-};
+    )}
+  </div>
+);
 
 Empty.propTypes = {
   children: PropTypes.node,
