@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.2.0]
+* Added support for the product data expiration system
+
 ## [2.1.0]
 ### Added
 * Improved accessibility for screen readers
@@ -41,6 +44,7 @@
 * Long product names are being broken with browser native hyphenation.
 * Updated dev dependencies in order to fix security issues.
 
+[2.2.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.0.0...v2.1.0
 [1.5.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.3.0...v1.4.0

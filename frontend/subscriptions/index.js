@@ -1,6 +1,7 @@
 import { routeDidEnter$ } from '@shopgate/pwa-common/streams';
 import { appDidStart$ } from '@shopgate/pwa-common/streams/app';
 import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
+import { productDataExpired$ } from '@shopgate/pwa-common-commerce/product/streams';
 import { ACTION_PUSH } from '@virtuous/conductor';
 import { hex2bin } from '@shopgate/pwa-common/helpers/data';
 import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
@@ -44,4 +45,12 @@ export default function recentlyViewedProducts(subscribe) {
     // Initially fetch the product list at the app start
     dispatch(fetchRecentlyViewedProducts());
   });
+
+  // Only subscribe when the PWA provides the productDataExpired$ stream.
+  if (productDataExpired$) {
+    subscribe(productDataExpired$, ({ dispatch }) => {
+      // Fetch the product list when the product data is expired
+      dispatch(fetchRecentlyViewedProducts());
+    });
+  }
 }
