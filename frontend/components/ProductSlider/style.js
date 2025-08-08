@@ -73,7 +73,7 @@ const headlineContainer = css({
 
 /**
  * Headline css
- * @param {bool} hasShowMore Whether there is more button visible.
+ * @param {boolean} hasShowMore Whether there is more button visible.
  * @returns {string}
  */
 const headline = hasShowMore => css({
