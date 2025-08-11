@@ -4,9 +4,10 @@ import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
 import { ACTION_PUSH } from '@virtuous/conductor';
 import { hex2bin } from '@shopgate/pwa-common/helpers/data';
 import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
-import {
-  sendDefaultLocationCodeSuccess$,
-} from '@shopgate/engage/locations';
+// import {
+//   sendDefaultLocationCodeSuccess$,
+// } from '@shopgate/engage/locations';
+import { productDataExpired$ } from '@shopgate/engage/product';
 import {
   addRecentlyViewedProducts,
   fetchRecentlyViewedProducts,
@@ -48,8 +49,8 @@ export default function recentlyViewedProducts(subscribe) {
     dispatch(fetchRecentlyViewedProducts());
   });
 
-  // Expire the recently viewed products when location is updated
-  subscribe(sendDefaultLocationCodeSuccess$, ({ dispatch }) => {
+  // Fetch recently viewed products when product data was expired
+  subscribe(productDataExpired$, ({ dispatch }) => {
     dispatch(fetchRecentlyViewedProducts());
   });
 }
