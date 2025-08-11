@@ -5,6 +5,9 @@ import { ACTION_PUSH } from '@virtuous/conductor';
 import { hex2bin } from '@shopgate/pwa-common/helpers/data';
 import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import {
+  sendDefaultLocationCodeSuccess$,
+} from '@shopgate/engage/locations';
+import {
   addRecentlyViewedProducts,
   fetchRecentlyViewedProducts,
 } from '../actions';
@@ -42,6 +45,11 @@ export default function recentlyViewedProducts(subscribe) {
 
   subscribe(appDidStart$, ({ dispatch }) => {
     // Initially fetch the product list at the app start
+    dispatch(fetchRecentlyViewedProducts());
+  });
+
+  // Expire the recently viewed products when location is updated
+  subscribe(sendDefaultLocationCodeSuccess$, ({ dispatch }) => {
     dispatch(fetchRecentlyViewedProducts());
   });
 }
