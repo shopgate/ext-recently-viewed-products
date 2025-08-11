@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.0
+### Added
+* Added reloading of the recently viewed products list after products have been expired.
+
 ## 2.2.0
 ### Added
 * Added support for images configured in theme config

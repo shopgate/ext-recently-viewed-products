@@ -59,7 +59,11 @@ const mergeProductIds = (currentIds, newIds) => Array.from(new Set([...newIds, .
  */
 const fetchMissingProducts = async (productIds, state, dispatch) => {
   // Collect the productIds where no product entity is available within the store
-  const missingProductsIds = productIds.filter(id => !getProductById(state, { productId: id }));
+  // Also check if the product is expired (expires === 0)
+  const missingProductsIds = productIds.filter((id) => {
+    const matchedProduct = getProductById(state, { productId: id });
+    return !getProductById(state, { productId: id }) || matchedProduct.expires === 0;
+  });
   if (missingProductsIds.length) {
     // Fetch missing product data before the store is updated with the recently viewed list
     await dispatch(getProducts({

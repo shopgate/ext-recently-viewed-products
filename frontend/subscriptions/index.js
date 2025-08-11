@@ -4,6 +4,7 @@ import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
 import { ACTION_PUSH } from '@virtuous/conductor';
 import { hex2bin } from '@shopgate/pwa-common/helpers/data';
 import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
+import { productDataExpired$ } from '@shopgate/engage/product';
 import {
   addRecentlyViewedProducts,
   fetchRecentlyViewedProducts,
@@ -42,6 +43,11 @@ export default function recentlyViewedProducts(subscribe) {
 
   subscribe(appDidStart$, ({ dispatch }) => {
     // Initially fetch the product list at the app start
+    dispatch(fetchRecentlyViewedProducts());
+  });
+
+  // Fetch recently viewed products when product data was expired
+  subscribe(productDataExpired$, ({ dispatch }) => {
     dispatch(fetchRecentlyViewedProducts());
   });
 }
