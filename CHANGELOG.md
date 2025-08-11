@@ -2,7 +2,7 @@
 
 ## 2.3.0
 ### Added
-* Added reloading of the recently viewed products list after products have been expired on a location change.
+* Added reloading of the recently viewed products list after products have been expired.
 
 ## 2.2.0
 ### Added
