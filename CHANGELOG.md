@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.0
+### Added
+* Added support for product data expiration
+
 ## 2.2.0
 ### Added
 * Added support for images configured in theme config

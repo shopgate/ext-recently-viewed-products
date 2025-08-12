@@ -2,6 +2,7 @@ import PipelineRequest from '@shopgate/pwa-core/classes/PipelineRequest';
 import { ERROR_HANDLE_SUPPRESS } from '@shopgate/pwa-core/constants/ErrorHandleTypes';
 import { getProductById } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import getProducts from '@shopgate/pwa-common-commerce/product/actions/getProducts';
+import { shouldFetchData } from '@shopgate/pwa-common/helpers/redux';
 import { logger } from '@shopgate/pwa-core/helpers';
 import {
   requestRecentlyViewedProducts,
@@ -59,7 +60,11 @@ const mergeProductIds = (currentIds, newIds) => Array.from(new Set([...newIds, .
  */
 const fetchMissingProducts = async (productIds, state, dispatch) => {
   // Collect the productIds where no product entity is available within the store
-  const missingProductsIds = productIds.filter(id => !getProductById(state, { productId: id }));
+  const missingProductsIds = productIds.filter((id) => {
+    const product = getProductById(state, { productId: id });
+    return !product || shouldFetchData(product);
+  });
+
   if (missingProductsIds.length) {
     // Fetch missing product data before the store is updated with the recently viewed list
     await dispatch(getProducts({
