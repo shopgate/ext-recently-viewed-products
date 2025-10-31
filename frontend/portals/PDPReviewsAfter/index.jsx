@@ -10,7 +10,7 @@ import { pdpPosition, pdpHeadline } from '../../config';
  * Portal position for Products Slider on PDP.
  * @param {string} productId Product Id from route.
  * @param {string[]} productIds Products collection.
- * @param {bool} showMore Whether to show more button.
+ * @param {boolean} showMore Whether to show more button.
  * @returns {JSX}
  */
 const PDPReviewsAfter = ({ productIds, showMore, name }) => {
