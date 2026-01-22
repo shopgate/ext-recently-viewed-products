@@ -7,8 +7,11 @@ import { getRecentlyViewedProductIdsWithLimit, hasMore } from '../../selectors';
 /**
  * Portal position for Products Slider on PDP.
  * @params {string[]} productIds Product id collection.
- * @params {bool} showMore Whether to show more button (products.length > totalCount)
- * @returns {JSX}
+ * @params {Object} settings Widget settings.
+ * @params {string} settings.headline headline text.
+ * @params {boolean} settings.autoPlay Whether to enable autoplay.
+ * @params {boolean} showMore Whether to show more button (products.length > totalCount)
+ * @returns {JSX.Element}
  */
 const Widget = ({ productIds, showMore, settings }) => (
   <ProductsSlider
@@ -22,7 +25,10 @@ const Widget = ({ productIds, showMore, settings }) => (
 Widget.propTypes = {
   productIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   showMore: PropTypes.bool.isRequired,
-  settings: PropTypes.shape({}),
+  settings: PropTypes.shape({
+    headline: PropTypes.string,
+    autoPlay: PropTypes.bool,
+  }),
 };
 
 Widget.defaultProps = {
