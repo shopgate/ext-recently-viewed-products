@@ -1,10 +1,14 @@
 # Changelog
 
-## 2.3.0
+## [2.4.0]
+### Removed
+* Removed fallback text for headline
+
+## [2.3.0]
 ### Added
 * Added support for product data expiration
 
-## 2.2.0
+## [2.2.0]
 ### Added
 * Added support for images configured in theme config
 
@@ -53,6 +57,8 @@
 * Long product names are being broken with browser native hyphenation.
 * Updated dev dependencies in order to fix security issues.
 
+[2.4.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.3.0...v2.4.0
+[2.3.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v2.0.0...v2.1.0
 [1.5.0]: https://github.com/shopgate/ext-recently-viewed-products/compare/v1.4.0...v1.5.0

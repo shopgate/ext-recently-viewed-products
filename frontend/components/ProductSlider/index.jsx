@@ -41,20 +41,16 @@ const ProductSlider = ({
     return null;
   }
 
-  let defaultHeadline = 'recently_viewed_products.headline';
-
-  if (isCartPage) {
-    defaultHeadline += '_cart';
-  }
-
   const hasShowMore = showMore && showMoreUrl;
 
   return (
     <div className={`${styles.slider} ${className}`}>
       <div className={styles.headlineContainer}>
+        {headline && (
         <h3 className={`${styles.headline(hasShowMore)} recently-viewed-products__product-slider__headline`}>
-          <I18n.Text string={headline || defaultHeadline} />
+          <I18n.Text string={headline} />
         </h3>
+        )}
         {hasShowMore && (
           <div className={styles.showMoreContainer}>
             <ButtonLink href={showMoreUrl} noGap>
