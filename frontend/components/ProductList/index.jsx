@@ -1,19 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@shopgate/engage/core';
+import { useSelector } from 'react-redux';
+import { useThemeComponents } from '@shopgate/engage/core/hooks';
 import NoProducts from '../NoProducts';
-import connect from './connector';
+import { getRecentlyViewedProducts } from '../../selectors';
 
 /**
  * Recently viewed product list
- * @param {Object[]} products Products to be displayed
  * @return {JSX}
  */
-const ProductList = ({ products }) => {
+const ProductList = () => {
+  const products = useSelector(getRecentlyViewedProducts);
+  const { ProductGrid } = useThemeComponents();
+
   if (!products.length) {
     return <NoProducts />;
   }
-  const { ProductGrid } = useTheme();
+
   return (
     <ProductGrid
       products={products}
@@ -22,12 +24,4 @@ const ProductList = ({ products }) => {
   );
 };
 
-ProductList.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape()),
-};
-
-ProductList.defaultProps = {
-  products: [],
-};
-
-export default connect(ProductList);
+export default ProductList;

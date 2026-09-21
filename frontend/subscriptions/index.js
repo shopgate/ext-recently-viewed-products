@@ -1,10 +1,7 @@
-import { routeDidEnter$ } from '@shopgate/pwa-common/streams';
-import { appDidStart$ } from '@shopgate/pwa-common/streams/app';
-import { ITEM_PATTERN } from '@shopgate/pwa-common-commerce/product/constants';
-import { productDataExpired$ } from '@shopgate/pwa-common-commerce/product/streams';
+import { routeDidEnter$, appDidStart$, hex2bin } from '@shopgate/engage/core';
+import { ITEM_PATTERN, productDataExpired$ } from '@shopgate/engage/product';
+import { getBaseProductId } from '@shopgate/engage/product/selectors/product';
 import { ACTION_PUSH } from '@virtuous/conductor';
-import { hex2bin } from '@shopgate/pwa-common/helpers/data';
-import { getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import {
   addRecentlyViewedProducts,
   fetchRecentlyViewedProducts,

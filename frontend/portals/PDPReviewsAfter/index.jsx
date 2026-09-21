@@ -1,19 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { withCurrentProduct } from '@shopgate/engage/core';
 import { getRecentlyViewedProductIdsForProductWithLimit, hasMoreForProduct } from '../../selectors';
 import ProductsSlider from '../../components/ProductSlider';
-import { pdpPosition, pdpHeadline } from '../../config';
+import config from '../../config.json';
+
+const { pdpPosition, pdpHeadline } = config;
 
 /**
  * Portal position for Products Slider on PDP.
  * @param {string} productId Product Id from route.
- * @param {string[]} productIds Products collection.
- * @param {boolean} showMore Whether to show more button.
+ * @param {string} variantId Selected variant id.
+ * @param {string} name Portal position name.
  * @returns {JSX}
  */
-const PDPReviewsAfter = ({ productIds, showMore, name }) => {
+const PDPReviewsAfter = ({ productId, variantId, name }) => {
+  const productProps = {
+    productId,
+    variantId,
+  };
+  const productIds = useSelector(
+    state => getRecentlyViewedProductIdsForProductWithLimit(state, productProps)
+  );
+  const showMore = useSelector(state => hasMoreForProduct(state, productProps));
+
   if (name !== pdpPosition) {
     return null;
   }
@@ -30,20 +41,13 @@ const PDPReviewsAfter = ({ productIds, showMore, name }) => {
 
 PDPReviewsAfter.propTypes = {
   name: PropTypes.string.isRequired,
-  productIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-  showMore: PropTypes.bool.isRequired,
+  productId: PropTypes.string,
+  variantId: PropTypes.string,
 };
 
-/**
- * Maps state to props.
- * @param {Object} state State
- * @param {Object} props Props.
- * @returns {Object}
- */
-const mapStateToProps = (state, props) => ({
-  productIds: getRecentlyViewedProductIdsForProductWithLimit(state, props),
-  showMore: hasMoreForProduct(state, props),
-});
+PDPReviewsAfter.defaultProps = {
+  productId: null,
+  variantId: null,
+};
 
-export default withCurrentProduct(connect(mapStateToProps)(PDPReviewsAfter));
-
+export default withCurrentProduct(PDPReviewsAfter);

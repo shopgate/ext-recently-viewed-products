@@ -11,7 +11,6 @@ jest.mock('../actions', () => ({
 describe('Subscriptions', () => {
   let calls;
   const mockedDispatch = jest.fn();
-  // eslint-disable-next-line require-jsdoc
   const mockedGetState = () => ({
     product: {
       productsById: {
@@ -29,9 +28,8 @@ describe('Subscriptions', () => {
   it('should subscribe to all required streams', () => {
     const mockedSubscribe = jest.fn();
     subscriptions(mockedSubscribe);
-    // eslint-disable-next-line prefer-destructuring
     calls = mockedSubscribe.mock.calls;
-    expect(calls.length).toBe(2);
+    expect(calls.length).toBe(3);
   });
   it('should addProductToList$ on correct pages', () => {
     const positives = [

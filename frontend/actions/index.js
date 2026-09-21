@@ -1,9 +1,11 @@
-import PipelineRequest from '@shopgate/pwa-core/classes/PipelineRequest';
-import { ERROR_HANDLE_SUPPRESS } from '@shopgate/pwa-core/constants/ErrorHandleTypes';
-import { getProductById } from '@shopgate/pwa-common-commerce/product/selectors/product';
 import getProducts from '@shopgate/pwa-common-commerce/product/actions/getProducts';
-import { shouldFetchData } from '@shopgate/pwa-common/helpers/redux';
-import { logger } from '@shopgate/pwa-core/helpers';
+import {
+  PipelineRequest,
+  ERROR_HANDLE_SUPPRESS,
+  shouldFetchData,
+  logger,
+} from '@shopgate/engage/core';
+import { getProductById } from '@shopgate/engage/product/selectors/product';
 import {
   requestRecentlyViewedProducts,
   receiveRecentlyViewedProducts,
@@ -19,7 +21,9 @@ import {
   LOCAL_STORAGE_KEY_LIST,
   LOCAL_STORAGE_KEY_FLAG,
 } from '../constants';
-import { storeInFrontend } from '../config';
+import config from '../config.json';
+
+const { storeInFrontend } = config;
 
 /**
  * @return {Array}

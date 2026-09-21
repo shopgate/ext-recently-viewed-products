@@ -1,13 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { I18n, ButtonLink } from '@shopgate/engage/components';
+import { useSelector } from 'react-redux';
+import { I18n } from '@shopgate/engage/components';
+import { Button } from '@shopgate/engage/components/v2';
+import { isIOSTheme } from '@shopgate/engage/core';
 import { ProductSlider as BaseProductSlider } from '@shopgate/engage/product/components';
+import { makeStyles } from '@shopgate/engage/styles';
 import getConfig from '../../helpers/getConfig';
-import connect from './connector';
-import styles from './style';
-import ThemeProvideProductCard from '../ThemeProvideProductCard';
+import { getPageUrl } from '../../selectors';
 
 const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
+
+const useStyles = makeStyles()(theme => ({
+  slider: {
+    width: '100%',
+    flex: 1,
+    padding: '8px 0',
+  },
+  headlineContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '8px 0',
+    overflow: 'hidden',
+  },
+  headline: {
+    fontSize: isIOSTheme() ? theme.typography.h2.fontSize : theme.typography.h4.fontSize,
+    width: '100%',
+    margin: isIOSTheme() ? '8px 16px' : '8px 8px 8px 12px',
+    padding: 0,
+  },
+  headlineLeft: {
+    textAlign: 'left',
+  },
+  headlineCentered: {
+    textAlign: 'center',
+  },
+  showMoreContainer: {
+    '& button': {
+      fontSize: 'medium',
+    },
+  },
+}));
 
 /**
  * Recently viewed ProductSlider
@@ -15,7 +49,6 @@ const { showOnPdpPage, showOnEmptyCartPage } = getConfig();
  * @param {boolean} isProductPage Indicates if current page is PDP
  * @param {boolean} showMore Indicates is showMore link should be displayed when applicable
  * @param {string[]} productIds Array of product ids
- * @param {string} showMoreUrl Path to show more page
  * @param {string} headline Headline for Product slider
  * @param {string} className className
  * @return {JSX.Element}
@@ -25,10 +58,12 @@ const ProductSlider = ({
   isProductPage,
   showMore,
   productIds,
-  showMoreUrl,
   headline,
   className,
 }) => {
+  const { classes, cx } = useStyles();
+  const showMoreUrl = useSelector(getPageUrl);
+
   if (isCartPage && !showOnEmptyCartPage) {
     return null;
   }
@@ -44,29 +79,27 @@ const ProductSlider = ({
   const hasShowMore = showMore && showMoreUrl;
 
   return (
-    <div className={`${styles.slider} ${className}`}>
-      <div className={styles.headlineContainer}>
+    <div className={cx(classes.slider, className)}>
+      <div className={classes.headlineContainer}>
         {headline && (
-        <h3 className={`${styles.headline(hasShowMore)} recently-viewed-products__product-slider__headline`}>
+        <h3 className={cx(classes.headline, (hasShowMore || isIOSTheme()) ? classes.headlineLeft : classes.headlineCentered, 'recently-viewed-products__product-slider__headline')}>
           <I18n.Text string={headline} />
         </h3>
         )}
         {hasShowMore && (
-          <div className={styles.showMoreContainer}>
-            <ButtonLink href={showMoreUrl} noGap>
+          <div className={classes.showMoreContainer}>
+            <Button href={showMoreUrl} variant="link" color="primary">
               <I18n.Text string="recently_viewed_products.show_more" />
-            </ButtonLink>
+            </Button>
           </div>
         )}
       </div>
-      <ThemeProvideProductCard>
-        <BaseProductSlider
-          productIds={productIds}
-          autoplay
-          delay={7000}
-          snap={false}
-        />
-      </ThemeProvideProductCard>
+      <BaseProductSlider
+        productIds={productIds}
+        autoplay
+        delay={7000}
+        snap={false}
+      />
     </div>
   );
 };
@@ -78,7 +111,6 @@ ProductSlider.propTypes = {
   isProductPage: PropTypes.bool,
   productIds: PropTypes.arrayOf(PropTypes.string),
   showMore: PropTypes.bool,
-  showMoreUrl: PropTypes.string,
 };
 
 ProductSlider.defaultProps = {
@@ -87,8 +119,7 @@ ProductSlider.defaultProps = {
   isProductPage: false,
   productIds: [],
   showMore: false,
-  showMoreUrl: null,
   className: '',
 };
 
-export default connect(ProductSlider);
+export default ProductSlider;
