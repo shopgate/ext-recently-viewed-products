@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductList from '../ProductList';
-import { pageId } from '../../config';
+import config from '../../config.json';
+
+const { pageId } = config;
 
 /**
  * The RecentlyViewedPage will display the list of recently viewed products at

@@ -1,12 +1,13 @@
 import { createSelector } from 'reselect';
-import { QUICKLINKS_MENU } from '@shopgate/pwa-common/constants/MenuIDs';
-import { getProducts, getBaseProductId } from '@shopgate/pwa-common-commerce/product/selectors/product';
-import { getMenuById } from '@shopgate/pwa-common/selectors/menu';
+import { QUICKLINKS_MENU, getMenuById } from '@shopgate/engage/core';
+import { getProducts, getBaseProductId } from '@shopgate/engage/product/selectors/product';
 import {
   REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS,
   RECENTLY_VIEWED_PRODUCTS_SLIDER_LIMIT,
 } from '../constants';
-import { pageId } from '../config';
+import config from '../config.json';
+
+const { pageId } = config;
 /**
  * Gets the recently viewed products redux state.
  * @param {Object} state State.

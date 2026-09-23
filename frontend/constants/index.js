@@ -1,4 +1,6 @@
-import { maximumHistoryEntriesPerUser, sliderLimit } from '../config';
+import config from '../config.json';
+
+const { maximumHistoryEntriesPerUser, sliderLimit } = config;
 
 export const PIPELINE_ADD_VIEWED_PRODUCTS = 'shopgate.user.addViewedProducts';
 export const PIPELINE_GET_VIEWED_PRODUCTS = 'shopgate.user.getViewedProducts';
