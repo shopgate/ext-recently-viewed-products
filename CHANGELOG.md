@@ -8,7 +8,7 @@
 * Replaced redux `connect` connectors with `useSelector` hooks.
 * Imports now come from `@shopgate/engage/*`.
 * Migrated the component tests from enzyme to React Testing Library.
-* `@shopgate/engage` is now a `^7.32.0-beta.19` dev dependency and `>=7.32.0-beta.19` peer dependency (drops PWA 6 support); dropped `@shopgate/pwa-extension-kit` and the legacy babel/glamor toolchain.
+* `@shopgate/engage` is now a `^7.32.0-beta.20` dev dependency and `>=7.32.0-beta.20` peer dependency (drops PWA 6 support); dropped `@shopgate/pwa-extension-kit` and the legacy babel/glamor toolchain.
 
 ### Removed
 * Removed the unused ProductSlider card/price styles and the dead `PlaceholderIcon` component.

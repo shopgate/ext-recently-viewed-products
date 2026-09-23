@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useThemeComponents } from '@shopgate/engage/core/hooks';
+import { ProductGrid } from '@shopgate/engage/product/components';
 import NoProducts from '../NoProducts';
 import { getRecentlyViewedProducts } from '../../selectors';
 
@@ -10,7 +10,6 @@ import { getRecentlyViewedProducts } from '../../selectors';
  */
 const ProductList = () => {
   const products = useSelector(getRecentlyViewedProducts);
-  const { ProductGrid } = useThemeComponents();
 
   if (!products.length) {
     return <NoProducts />;

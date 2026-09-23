@@ -33,14 +33,29 @@ describe('Subscriptions', () => {
   });
   it('should addProductToList$ on correct pages', () => {
     const positives = [
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId' } },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId' },
+      },
 
     ];
     const negatives = [
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/reviews' } },
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/reviews/' } },
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/write_review' } },
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/write_review' } },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/reviews' },
+      },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/reviews/' },
+      },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/write_review' },
+      },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/write_review' },
+      },
     ];
     positives.forEach((action) => {
       expect(calls[0][0].operator.predicate({ action }))

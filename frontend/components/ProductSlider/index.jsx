@@ -37,6 +37,7 @@ const useStyles = makeStyles()(theme => ({
     textAlign: 'center',
   },
   showMoreContainer: {
+    padding: theme.spacing(1, 2),
     '& button': {
       fontSize: 'medium',
     },
@@ -82,9 +83,15 @@ const ProductSlider = ({
     <div className={cx(classes.slider, className)}>
       <div className={classes.headlineContainer}>
         {headline && (
-        <h3 className={cx(classes.headline, (hasShowMore || isIOSTheme()) ? classes.headlineLeft : classes.headlineCentered, 'recently-viewed-products__product-slider__headline')}>
-          <I18n.Text string={headline} />
-        </h3>
+          <h3
+            className={cx(
+              classes.headline,
+              (hasShowMore || isIOSTheme()) ? classes.headlineLeft : classes.headlineCentered,
+              'recently-viewed-products__product-slider__headline'
+            )}
+          >
+            <I18n.Text string={headline} />
+          </h3>
         )}
         {hasShowMore && (
           <div className={classes.showMoreContainer}>
