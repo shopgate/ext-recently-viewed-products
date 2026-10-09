@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import NoProducts from './index';
 
-describe('ProductList', () => {
-  it('should render as expected', () => {
-    const component = mount(<NoProducts />);
+describe('NoProducts', () => {
+  it('should render the empty product list message', () => {
+    render(<NoProducts />);
 
-    expect(component).toMatchSnapshot();
+    expect(screen.getByText('recently_viewed_products.empty_product_list')).toBeInTheDocument();
   });
 });

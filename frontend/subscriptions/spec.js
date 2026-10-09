@@ -11,7 +11,6 @@ jest.mock('../actions', () => ({
 describe('Subscriptions', () => {
   let calls;
   const mockedDispatch = jest.fn();
-  // eslint-disable-next-line require-jsdoc
   const mockedGetState = () => ({
     product: {
       productsById: {
@@ -29,20 +28,34 @@ describe('Subscriptions', () => {
   it('should subscribe to all required streams', () => {
     const mockedSubscribe = jest.fn();
     subscriptions(mockedSubscribe);
-    // eslint-disable-next-line prefer-destructuring
     calls = mockedSubscribe.mock.calls;
-    expect(calls.length).toBe(2);
+    expect(calls.length).toBe(3);
   });
   it('should addProductToList$ on correct pages', () => {
     const positives = [
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId' } },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId' },
+      },
 
     ];
     const negatives = [
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/reviews' } },
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/reviews/' } },
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/write_review' } },
-      { historyAction: ACTION_PUSH, route: { pattern: '/item/:productId/write_review' } },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/reviews' },
+      },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/reviews/' },
+      },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/write_review' },
+      },
+      {
+        historyAction: ACTION_PUSH,
+        route: { pattern: '/item/:productId/write_review' },
+      },
     ];
     positives.forEach((action) => {
       expect(calls[0][0].operator.predicate({ action }))

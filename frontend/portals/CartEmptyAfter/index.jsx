@@ -1,45 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { css } from 'glamor';
+import { useSelector } from 'react-redux';
+import { makeStyles } from '@shopgate/engage/styles';
 import ProductsSlider from '../../components/ProductSlider';
 import { getRecentlyViewedProductIdsWithLimit, hasMore } from '../../selectors';
-import { cartHeadline } from '../../config';
+import config from '../../config.json';
 
-const paddingiOS = css({
-  paddingBottom: 'calc(var(--tabbar-height))',
-}).toString();
+const { cartHeadline } = config;
+
+const useStyles = makeStyles()(() => ({
+  paddingiOS: {
+    paddingBottom: 'var(--tabbar-height, 0px)',
+  },
+}));
 
 /**
- * Portal position for Products Slider on PDP.
- * @params {string[]} productIds Product id collection.
- * @params {bool} showMore Whether to show more button (productIds.length > totalCount)
+ * Portal position for the Products Slider on the empty cart page.
  * @returns {JSX}
  */
-const CartEmptyAfter = ({ productIds, showMore }) => (
-  <ProductsSlider
-    className={paddingiOS}
-    isCartPage
-    showMore={showMore}
-    productIds={productIds}
-    headline={cartHeadline}
-  />
-);
+const CartEmptyAfter = () => {
+  const { classes } = useStyles();
+  const productIds = useSelector(getRecentlyViewedProductIdsWithLimit);
+  const showMore = useSelector(hasMore);
 
-CartEmptyAfter.propTypes = {
-  productIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-  showMore: PropTypes.bool.isRequired,
+  return (
+    <ProductsSlider
+      className={classes.paddingiOS}
+      isCartPage
+      showMore={showMore}
+      productIds={productIds}
+      headline={cartHeadline}
+    />
+  );
 };
 
-/**
- * Maps state to props.
- * @param {Object} state State.
- * @returns {Object}
- */
-const mapStateToProps = state => ({
-  productIds: getRecentlyViewedProductIdsWithLimit(state),
-  showMore: hasMore(state),
-});
-
-export default connect(mapStateToProps)(CartEmptyAfter);
-
+export default CartEmptyAfter;

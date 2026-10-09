@@ -5,7 +5,6 @@ import {
 } from './index';
 import { ERROR_RECENTLY_VIEWED_PRODUCTS } from '../constants';
 
-// eslint-disable-next-line require-jsdoc
 let mockedResolveCb = () => {};
 jest.mock('@shopgate/pwa-core/classes/PipelineRequest', () => mockedPipelineRequestFactory((...args) => {
   mockedResolveCb(...args);
@@ -18,8 +17,9 @@ jest.mock('@shopgate/pwa-core/helpers', () => ({
   },
 }));
 
+jest.mock('../config.json', () => ({ storeInFrontend: false }));
+
 describe('Actions', () => {
-  // eslint-disable-next-line require-jsdoc
   const getState = () => ({
     product: {
       productsById: {},

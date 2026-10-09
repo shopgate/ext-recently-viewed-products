@@ -1,7 +1,9 @@
 import configureStore from 'redux-mock-store';
-import { QUICKLINKS_MENU } from '@shopgate/pwa-common/constants/MenuIDs';
+import { QUICKLINKS_MENU } from '@shopgate/engage/core';
 import { REDUX_NAMESPACE_RECENTLY_VIEWED_PRODUCTS } from '../constants';
-import { pageId } from '../config';
+import config from '../config.json';
+
+const { pageId } = config;
 
 export const defaultState = {
   extensions: {
