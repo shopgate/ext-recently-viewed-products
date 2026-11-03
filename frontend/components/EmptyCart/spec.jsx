@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import EmptyCart from './index';
 
-describe('EmptyCart page', () => {
-  it('should render empty cart icon and title', () => {
-    const component = mount(<EmptyCart />);
-    expect(component.find('Icon').exists()).toBe(true);
-    expect(component.html().indexOf('cart.empty')).toBeTruthy();
-    expect(component).toMatchSnapshot();
+describe('EmptyCart', () => {
+  it('should render the empty cart icon and title', () => {
+    const { container } = render(<EmptyCart />);
+
+    expect(screen.getByText('cart.empty')).toBeInTheDocument();
+    expect(container.querySelector('svg')).toBeInTheDocument();
   });
 });
